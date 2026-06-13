@@ -1,0 +1,170 @@
+name: Build ZMK firmware
+
+on:
+  push:
+    branches:
+      - prime
+    paths:
+      - "config/**"
+  pull_request:
+    paths:
+      - "config/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+    CONFIG_PATH: "config"
+    FALLBACK_BINARY: "bin"
+    ARCHIVE_NAME: "firmware"
+
+jobs:
+  build:
+    permissions:
+      actions: write
+      contents: read
+    runs-on: ubuntu-latest
+    container:
+      image: zmkfirmware/zmk-build-arm:stable
+    name: Build
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - board: nice_nano_v2
+            shield: urchin_left nice_view_adapter nice_view_gem
+            snippet: studio-rpc-usb-uart
+            cmake-args: -DCONFIG_ZMK_STUDIO=y
+          - board: nice_nano_v2
+            shield: urchin_right nice_view_adapter nice_view_gem
+          - board: nice_nano_v2
+            shield: settings_reset
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Create build directory
+        run: |
+          echo "BUILD_DIR=$(mktemp -d)" >> $GITHUB_ENV
+
+      - name: Prepare variables
+        shell: bash
+        env:
+          board: ${{ matrix.board }}
+          shield: ${{ matrix.shield }}
+          snippet: ${{ matrix.snippet }}
+        run: |
+          set -euo pipefail
+
+          BASE_DIR="${TMPDIR:-/tmp}/zmk-config"
+          mkdir -p "${BASE_DIR}"
+          echo "BASE_DIR=${BASE_DIR}" >> $GITHUB_ENV
+          echo "EXTRA_WEST_ARGS=" >> $GITHUB_ENV
+
+          printf -v shield_arg ' -DSHIELD=%s' $shield
+          echo "EXTRA_CMAKE_ARGS=${shield_arg} -DZMK_EXTRA_MODULES='${BASE_DIR}'" >> $GITHUB_ENV
+          echo "ZEPHYR_VERSION=${ZEPHYR_VERSION}" >> $GITHUB_ENV
+
+          if [ -n "${snippet}" ]; then
+            echo "EXTRA_WEST_ARGS=-S \"${snippet}\"" >> $GITHUB_ENV
+          fi
+
+          echo "DISPLAY_NAME=${shield} - ${board}" >> $GITHUB_ENV
+          artifact="${shield// /-}-${board//\//_}-zmk"
+          echo "ARTIFACT_NAME=${artifact}" >> $GITHUB_ENV
+
+      - name: Copy config files to isolated temporary directory
+        run: |
+          mkdir -p "${BASE_DIR}/${CONFIG_PATH}"
+          cp -R "${CONFIG_PATH}"/* "${BASE_DIR}/${CONFIG_PATH}/"
+
+      - name: Cache west modules
+        uses: actions/cache@v4
+        continue-on-error: true
+        env:
+          cache_name: cache-zephyr-${{ env.ZEPHYR_VERSION }}-modules
+        with:
+          path: |
+            ${{ env.BASE_DIR }}/modules/
+            ${{ env.BASE_DIR }}/tools/
+            ${{ env.BASE_DIR }}/zephyr/
+            ${{ env.BASE_DIR }}/bootloader/
+            ${{ env.BASE_DIR }}/zmk/
+          key: ${{ runner.os }}-build-${{ env.cache_name }}-${{ hashFiles('**/west.yml', '**/build.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache_name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: West Init
+        working-directory: ${{ env.BASE_DIR }}
+        run: west init -l "${BASE_DIR}/${CONFIG_PATH}"
+
+      - name: West Update
+        working-directory: ${{ env.BASE_DIR }}
+        run: west update --fetch-opt=--filter=tree:0
+
+      - name: Check ZMK revision
+        working-directory: ${{ env.BASE_DIR }}
+        run: |
+          zmk_revision=$(west list -f "{revision}" zmk)
+          echo "zmk_revision=${zmk_revision}" >> $GITHUB_ENV
+          echo "ZMK revision: ${zmk_revision}"
+
+      - name: West Zephyr export
+        working-directory: ${{ env.BASE_DIR }}
+        run: west zephyr-export
+
+      - name: West Build (${{ env.DISPLAY_NAME }})
+        working-directory: ${{ env.BASE_DIR }}
+        run: |
+          west build -s zmk/app \
+            -d "${BUILD_DIR}" \
+            -b "${board}" \
+            ${EXTRA_WEST_ARGS} -- \
+            -DZMK_CONFIG="${BASE_DIR}/${CONFIG_PATH}" \
+            ${EXTRA_CMAKE_ARGS} \
+            ${{ matrix.cmake-args }}
+        env:
+          board: ${{ matrix.board }}
+          matrix-cmake-args: ${{ matrix.cmake-args }}
+
+      - name: Warn about building from main if build fails
+        if: failure() && env.zmk_revision == 'main'
+        run: |
+          echo "# Consider Pinning ZMK" >> $GITHUB_STEP_SUMMARY
+          echo "Your recent build failure might be the result of breaking changes made to ZMK's main branch." >> $GITHUB_STEP_SUMMARY
+          echo "Consider pinning your ZMK version to a release for increased stability." >> $GITHUB_STEP_SUMMARY
+
+      - name: Rename artifacts
+        run: |
+          mkdir "${BUILD_DIR}/artifacts"
+          if [ -f "${BUILD_DIR}/zephyr/zmk.uf2" ]; then
+            cp "${BUILD_DIR}/zephyr/zmk.uf2" "${BUILD_DIR}/artifacts/${ARTIFACT_NAME}.uf2"
+          elif [ -f "${BUILD_DIR}/zephyr/zmk.${FALLBACK_BINARY}" ]; then
+            cp "${BUILD_DIR}/zephyr/zmk.${FALLBACK_BINARY}" "${BUILD_DIR}/artifacts/${ARTIFACT_NAME}.${FALLBACK_BINARY}"
+          fi
+
+      - name: Archive (${{ env.DISPLAY_NAME }})
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifact-${{ env.ARTIFACT_NAME }}
+          path: ${{ env.BUILD_DIR }}/artifacts
+
+  merge:
+    permissions:
+      actions: write
+      contents: read
+    runs-on: ubuntu-latest
+    needs: build
+    name: Merge Output Artifacts
+    steps:
+      - name: Merge Artifacts
+        uses: actions/upload-artifact/merge@v4
+        with:
+          name: ${{ env.ARCHIVE_NAME }}
+          pattern: artifact-*
+          delete-merged: true

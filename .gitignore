@@ -1,0 +1,7 @@
+build/
+.cache/
+*.uf2
+*.bin
+.DS_Store
+result
+result-*

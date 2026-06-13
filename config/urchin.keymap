@@ -1,0 +1,90 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+&mt {
+  flavor = "tap-preferred";
+};
+
+/ {
+  combos {
+    compatible = "zmk,combos";
+    combo_left_return {
+        timeout-ms = <50>;
+        key-positions = <11 12>;
+        bindings = <&kp RETURN>;
+    };
+    combo_left_esc {
+        timeout-ms = <50>;
+        key-positions = <10 11 12 13>;
+        bindings = <&kp ESC>;
+    };
+    combo_right_return {
+        timeout-ms = <50>;
+        key-positions = <17 18>;
+        bindings = <&kp RETURN>;
+    };
+    combo_right_esc {
+        timeout-ms = <50>;
+        key-positions = <16 17 18 19>;
+        bindings = <&kp ESC>;
+    };
+    combo_mute {
+        timeout-ms = <50>;
+        key-positions = <8 9>;
+        bindings = <&kp C_MUTE>;
+        layers = <3 4>;
+    };
+  };
+	keymap {
+		compatible = "zmk,keymap";
+		layer_0 {
+			bindings = <
+        &kp Q        &kp W        &kp E         &kp R           &kp T        &kp Y           &kp U            &kp I             &kp O          &kp P 
+        &mt LCTRL A  &mt LGUI S   &mt LALT D    &mt LSHIFT F    &kp G        &kp H           &mt RSHIFT J     &mt RALT K        &mt RGUI L     &mt RCTRL SEMICOLON
+        &kp Z        &kp X        &kp C         &kp V           &kp B        &kp N           &kp M            &kp COMMA         &kp DOT        &kp SLASH
+                                                &mt LSHIFT ESC  &lt 1 SPACE  &lt 2 BACKSPACE &mt RGUI RETURN
+			>;
+		};
+		layer_1 {
+			bindings = <
+        &none        &none        &none         &none           &none        &kp HOME        &kp PG_DN        &kp PG_UP         &kp END        &kp DEL
+        &kp LCTRL    &kp LGUI     &kp LALT      &kp LSHIFT      &none        &kp LEFT        &mt RSHIFT DOWN  &mt RALT UP       &mt RGUI RIGHT &kp RCTRL
+        &none        &none        &none         &none           &none        &none           &none            &none             &none          &kp INS
+                                                &mt LSHIFT ESC  &none        &mo 3           &mt RGUI RETURN
+			>;
+		};
+		layer_2 {
+			bindings = <
+        &none        &none        &kp LBKT      &kp RBKT        &none        &kp PIPE        &none            &none             &none          &none
+        &mt LCTRL N1 &mt LGUI N2  &mt LALT N3   &mt LSHIFT N4   &kp N5       &kp N6          &mt RSHIFT N7    &mt RALT N8       &mt RGUI N9    &kp N0
+        &kp LS(N9)   &kp LS(N0)   &kp EQUAL     &kp PLUS        &kp MINUS    &kp BACKSLASH   &kp SINGLE_QUOTE &kp DOUBLE_QUOTES &kp TILDE      &kp GRAVE
+                                                &mt LSHIFT ESC  &lt 3 TAB    &none           &mt RGUI RETURN
+			>;
+		};
+		layer_3 {
+			bindings = <
+        &none        &none        &none         &none           &none        &kp C_PREV      &kp C_VOL_DN     &kp C_VOL_UP      &kp C_NEXT     &kp C_PLAY_PAUSE
+        &mt LCTRL F1 &mt LGUI F2  &mt LALT F3   &mt LSHIFT F4   &kp F5       &kp F6          &mt RSHIFT F7    &mt RALT F8       &mt RGUI F9    &kp F10
+        &none        &none        &kp F11       &none           &none        &none           &none            &kp F12           &none          &tog 4
+                                                &mt LSHIFT ESC  &none        &none           &mt RGUI RETURN
+			>;
+		};
+		layer_4 {
+			bindings = <
+        &kp LALT     &kp Q        &kp W         &kp E           &kp R        &kp C_PREV      &kp C_VOL_DN     &kp C_VOL_UP      &kp C_NEXT     &kp C_PLAY_PAUSE
+        &kp LSHIFT   &kp A        &kp S         &kp D           &kp F        &none           &none            &none             &none          &none
+        &kp LCTRL    &kp Z        &kp X         &kp C           &kp V        &none           &none            &none             &none          &none
+                                                &kp ESC         &kp SPACE    &tog 4          &none
+			>;
+		};
+	};
+};
+
+//  template {
+// 	  bindings = <
+//      &none        &none        &none         &none           &none        &none           &none            &none             &none          &none
+//      &kp LCTRL    &kp LGUI     &kp LALT      &kp LSHIFT      &none        &none           &kp RSHIFT       &kp RALT          &kp RGUI       &kp RCTRL
+//      &none        &none        &none         &none           &none        &none           &none            &none             &none          &none
+//                                              &none           &none        &none           &none
+// 	  >;
+//  }; */
