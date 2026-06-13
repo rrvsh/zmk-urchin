@@ -61,7 +61,15 @@ def token_display(tokens: list[str], index: int) -> tuple[str, int]:
         key = tokens[index + 1]
         return DISPLAY.get(key, key), index + 2
     if token == "&mo":
-        return f"MO {tokens[index + 1]}", index + 2
+        return f"hold L{tokens[index + 1]}", index + 2
+    if token == "&lt":
+        layer = tokens[index + 1]
+        key = DISPLAY.get(tokens[index + 2], tokens[index + 2])
+        return f"{key}\nhold L{layer}", index + 3
+    if token == "&mt":
+        mod = DISPLAY.get(tokens[index + 1], tokens[index + 1])
+        key = DISPLAY.get(tokens[index + 2], tokens[index + 2])
+        return f"{key}\nhold {mod}", index + 3
     if token == "&bootloader":
         return "Bootload", index + 1
     if token == "&none":
@@ -112,7 +120,8 @@ def parse_combos(text: str) -> list[dict[str, object]]:
 
 
 def cell(label: str, index: int) -> str:
-    return f'<td><span class="label">{html.escape(label)}</span><sub>{index}</sub></td>'
+    lines = "".join(f'<span>{html.escape(line)}</span>' for line in label.split("\n"))
+    return f'<td><span class="label">{lines}</span><sub>{index}</sub></td>'
 
 
 def cells(keys: list[str], positions: list[int], layer: int) -> str:
@@ -190,14 +199,16 @@ def render_html(layers: list[tuple[int, list[str]]], combos: list[dict[str, obje
   <style>
     body {{ font-family: system-ui, sans-serif; margin: 2rem; }}
     section {{ margin-bottom: 2rem; }}
-    .keyboard {{ display: flex; gap: 3rem; align-items: flex-start; }}
+    .keyboard {{ display: flex; gap: 4rem; align-items: flex-start; }}
     .side {{ display: flex; flex-direction: column; }}
     .left-side {{ align-items: flex-end; }}
     .right-side {{ align-items: flex-start; }}
     .thumbs {{ margin-top: 1rem; }}
     table {{ border-collapse: collapse; }}
-    td {{ border: 1px solid #666; min-width: 4.5rem; height: 2.5rem; text-align: center; padding: 0.25rem; position: relative; }}
-    td sub {{ position: absolute; right: 0.25rem; bottom: 0.15rem; color: #666; font-size: 0.7rem; }}
+    td {{ border: 1px solid #666; min-width: 5.5rem; height: 3.6rem; text-align: center; padding: 0.4rem 0.5rem 0.65rem; position: relative; }}
+    td .label {{ display: flex; flex-direction: column; gap: 0.25rem; align-items: center; justify-content: center; min-height: 3rem; }}
+    td .label span + span {{ color: #555; font-size: 0.82rem; }}
+    td sub {{ position: absolute; right: 0.35rem; bottom: 0.2rem; color: #666; font-size: 0.68rem; }}
     .combo {{ margin: 1.5rem 0; }}
     .combo h3 {{ margin-bottom: 0.25rem; }}
     .combo p {{ margin-top: 0; }}
@@ -210,6 +221,17 @@ def render_html(layers: list[tuple[int, list[str]]], combos: list[dict[str, obje
 <body>
   <h1>Urchin Keymap</h1>
   <p>Generated from <code>config/urchin.keymap</code>.</p>
+  <section>
+    <h2>Legend</h2>
+    <ul>
+      <li><code>hold Ln</code>: hold the key to activate layer <code>n</code>.</li>
+      <li>Two-line keys are dual-use: the first line is tap behavior, the second line is hold behavior.</li>
+      <li><code>--</code>: disabled key.</li>
+      <li><code>↧</code>: transparent key that falls through to a lower layer.</li>
+      <li><code>Bootload</code>: reset that half into UF2 bootloader mode.</li>
+      <li>Small bottom-right numbers are global key indices: <code>layer * 34 + physical position</code>.</li>
+    </ul>
+  </section>
   {layer_html}
   <section>
     <h2>Combos</h2>
