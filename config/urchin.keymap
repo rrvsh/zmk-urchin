@@ -38,15 +38,33 @@
         &kp Q      &kp W      &kp E      &kp R      &kp T       &kp Y      &kp U      &kp I      &kp O      &kp P
         &kp A      &kp S      &kp D      &kp F      &kp G       &kp H      &kp J      &kp K      &kp L      &kp SEMICOLON
         &kp Z      &kp X      &kp C      &kp V      &kp B       &kp N      &kp M      &kp COMMA  &kp DOT    &kp SLASH
-                                        &mo 1      &kp SPACE   &kp BACKSPACE &bootloader
+                                        &mo 1      &kp SPACE   &kp BACKSPACE &mo 2
 			>;
 		};
 
 		layer_1 {
 			bindings = <
-        &kp LCTRL  &kp LGUI   &kp LALT   &kp LSHIFT &bootloader &none      &none      &none      &none      &none
-        &kp N1     &kp N2     &kp N3     &kp N4     &kp N5      &none      &none      &none      &none      &none
-        &kp N6     &kp N7     &kp N8     &kp N9     &kp N0      &none      &none      &none      &none      &none
+        &kp LCTRL  &kp LGUI   &kp LALT   &kp LSHIFT &kp TAB    &none      &none      &none      &none      &none
+        &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &none      &none      &none      &none      &none
+        &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &none      &none      &none      &none      &none
+                                        &none      &none      &none      &mo 3
+			>;
+		};
+
+		layer_2 {
+			bindings = <
+        &none      &none      &none      &none      &none      &none      &none      &none      &none      &none
+        &none      &none      &none      &none      &none      &none      &none      &none      &none      &none
+        &none      &none      &none      &none      &none      &none      &none      &none      &none      &none
+                                        &mo 3      &none      &none      &none
+			>;
+		};
+
+		layer_3 {
+			bindings = <
+        &none      &none      &none      &none      &bootloader &bootloader &none      &none      &none      &none
+        &none      &none      &none      &none      &none       &none       &none      &none      &none      &none
+        &none      &none      &none      &none      &none       &none       &none      &none      &none      &none
                                         &none      &none       &none      &none
 			>;
 		};
