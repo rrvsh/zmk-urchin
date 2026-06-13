@@ -20,6 +20,10 @@ build-firmware:
 build-settings-reset:
     nix build .#settings-reset
 
+# Update the rendered keymap HTML.
+render-keymap:
+    python3 scripts/render_keymap.py
+
 # Update ZMK west dependency revisions and zephyrDepsHash.
 update:
     nix run .#update

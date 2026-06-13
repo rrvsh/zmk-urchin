@@ -102,7 +102,10 @@
         {
           default = pkgs.mkShell {
             inputsFrom = [ zmk-nix.devShells.${system}.default ];
-            packages = [ pkgs.just ];
+            packages = [
+              pkgs.just
+              pkgs.python3
+            ];
           };
         }
       );
