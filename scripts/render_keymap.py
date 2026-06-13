@@ -101,8 +101,12 @@ def parse_combos(text: str) -> list[tuple[str, str]]:
     return combos
 
 
-def cells(labels: list[str]) -> str:
-    return "".join(f"<td>{html.escape(label)}</td>" for label in labels)
+def cell(label: str, index: int) -> str:
+    return f'<td><span class="label">{html.escape(label)}</span><sub>{index}</sub></td>'
+
+
+def cells(keys: list[str], positions: list[int], layer: int) -> str:
+    return "".join(cell(keys[position], layer * 34 + position) for position in positions)
 
 
 def render_layer(layer: int, keys: list[str]) -> str:
@@ -112,19 +116,19 @@ def render_layer(layer: int, keys: list[str]) -> str:
   <div class="keyboard">
     <div class="side left-side">
       <table class="half left">
-        <tr>{cells(keys[0:5])}</tr>
-        <tr>{cells(keys[10:15])}</tr>
-        <tr>{cells(keys[20:25])}</tr>
+        <tr>{cells(keys, list(range(0, 5)), layer)}</tr>
+        <tr>{cells(keys, list(range(10, 15)), layer)}</tr>
+        <tr>{cells(keys, list(range(20, 25)), layer)}</tr>
       </table>
-      <table class="thumbs left-thumbs"><tr>{cells(keys[30:32])}</tr></table>
+      <table class="thumbs left-thumbs"><tr>{cells(keys, [30, 31], layer)}</tr></table>
     </div>
     <div class="side right-side">
       <table class="half right">
-        <tr>{cells(keys[5:10])}</tr>
-        <tr>{cells(keys[15:20])}</tr>
-        <tr>{cells(keys[25:30])}</tr>
+        <tr>{cells(keys, list(range(5, 10)), layer)}</tr>
+        <tr>{cells(keys, list(range(15, 20)), layer)}</tr>
+        <tr>{cells(keys, list(range(25, 30)), layer)}</tr>
       </table>
-      <table class="thumbs right-thumbs"><tr>{cells(keys[32:34])}</tr></table>
+      <table class="thumbs right-thumbs"><tr>{cells(keys, [32, 33], layer)}</tr></table>
     </div>
   </div>
 </section>
@@ -150,7 +154,8 @@ def render_html(layers: list[tuple[int, list[str]]], combos: list[tuple[str, str
     .right-side {{ align-items: flex-start; }}
     .thumbs {{ margin-top: 1rem; }}
     table {{ border-collapse: collapse; }}
-    td {{ border: 1px solid #666; min-width: 4.5rem; height: 2.5rem; text-align: center; padding: 0.25rem; }}
+    td {{ border: 1px solid #666; min-width: 4.5rem; height: 2.5rem; text-align: center; padding: 0.25rem; position: relative; }}
+    td sub {{ position: absolute; right: 0.25rem; bottom: 0.15rem; color: #666; font-size: 0.7rem; }}
     code {{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }}
   </style>
 </head>
