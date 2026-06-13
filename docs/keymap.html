@@ -22,8 +22,10 @@
     .combo-map td { background: #f7f7f7; }
     .combo-map td.active { background: #ffd166; border-color: #9a6700; }
     .combo-map td.active sub { color: #222; font-weight: 700; }
-    .missing-keysyms { columns: 4 12rem; }
-    .missing-keysyms li { break-inside: avoid; }
+    .missing-keysyms { width: 100%; table-layout: fixed; }
+    .missing-keysyms th, .missing-keysyms td { height: auto; min-width: 0; text-align: left; vertical-align: top; padding: 0.4rem 0.6rem; overflow-wrap: anywhere; }
+    .missing-keysyms th { background: #eee; }
+    .missing-keysyms tr.category th { background: #d9e8ff; font-size: 1.05rem; padding-top: 0.7rem; padding-bottom: 0.7rem; }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   </style>
 </head>
@@ -188,330 +190,1629 @@
 
   <section>
     <h2>Missing ZMK keysyms</h2>
-    <p>Deduped by resolved HID expression. If any alias for a keysym is used in the keymap, that keysym is considered present.</p>
+    <p>Loaded from tracked <code>docs/zmk-keysyms.json</code>. If any alias for a keysym is used in the keymap, that keysym is considered present.</p>
     <p>Used 53 of 373 deduped keysyms; missing 320.</p>
-    <ul class="missing-keysyms">
-      <li><code>ALT_ERASE</code></li>
-      <li><code>AMPS</code></li>
-      <li><code>AT</code></li>
-      <li><code>BSLH</code></li>
-      <li><code>CAPS</code></li>
-      <li><code>CARET</code></li>
-      <li><code>CLEAR</code></li>
-      <li><code>CLEAR2</code></li>
-      <li><code>CLEAR_AGAIN</code></li>
-      <li><code>COLON</code></li>
-      <li><code>CRSEL</code></li>
-      <li><code>CURU</code></li>
-      <li><code>C_AC_BACK</code></li>
-      <li><code>C_AC_BOOKMARKS</code></li>
-      <li><code>C_AC_CANCEL</code></li>
-      <li><code>C_AC_CLOSE</code></li>
-      <li><code>C_AC_COPY</code></li>
-      <li><code>C_AC_CUT</code></li>
-      <li><code>C_AC_DEL</code></li>
-      <li><code>C_AC_DESKTOP_SHOW_ALL_APPLICATIONS</code></li>
-      <li><code>C_AC_DESKTOP_SHOW_ALL_WINDOWS</code></li>
-      <li><code>C_AC_EDIT</code></li>
-      <li><code>C_AC_EXIT</code></li>
-      <li><code>C_AC_FIND</code></li>
-      <li><code>C_AC_FORWARD</code></li>
-      <li><code>C_AC_FORWARD_MAIL</code></li>
-      <li><code>C_AC_GOTO</code></li>
-      <li><code>C_AC_HOME</code></li>
-      <li><code>C_AC_INS</code></li>
-      <li><code>C_AC_NEW</code></li>
-      <li><code>C_AC_OPEN</code></li>
-      <li><code>C_AC_PASTE</code></li>
-      <li><code>C_AC_PRINT</code></li>
-      <li><code>C_AC_PROPS</code></li>
-      <li><code>C_AC_REDO</code></li>
-      <li><code>C_AC_REFRESH</code></li>
-      <li><code>C_AC_REPLY</code></li>
-      <li><code>C_AC_SAVE</code></li>
-      <li><code>C_AC_SCROLL_DOWN</code></li>
-      <li><code>C_AC_SCROLL_UP</code></li>
-      <li><code>C_AC_SEARCH</code></li>
-      <li><code>C_AC_SEND</code></li>
-      <li><code>C_AC_STOP</code></li>
-      <li><code>C_AC_UNDO</code></li>
-      <li><code>C_AC_VIEW_TOGGLE</code></li>
-      <li><code>C_AC_ZOOM</code></li>
-      <li><code>C_AC_ZOOM_IN</code></li>
-      <li><code>C_AC_ZOOM_OUT</code></li>
-      <li><code>C_ALT_AUDIO_INC</code></li>
-      <li><code>C_AL_AUDIO</code></li>
-      <li><code>C_AL_AV_CAPTURE_PLAYBACK</code></li>
-      <li><code>C_AL_CAL</code></li>
-      <li><code>C_AL_CALC</code></li>
-      <li><code>C_AL_CCC</code></li>
-      <li><code>C_AL_CHAT</code></li>
-      <li><code>C_AL_CONTACTS</code></li>
-      <li><code>C_AL_CONTROL_PANEL</code></li>
-      <li><code>C_AL_DB</code></li>
-      <li><code>C_AL_DOCS</code></li>
-      <li><code>C_AL_FILES</code></li>
-      <li><code>C_AL_FINANCE</code></li>
-      <li><code>C_AL_GRAPHICS_EDITOR</code></li>
-      <li><code>C_AL_HELP</code></li>
-      <li><code>C_AL_IM</code></li>
-      <li><code>C_AL_IMAGES</code></li>
-      <li><code>C_AL_JOURNAL</code></li>
-      <li><code>C_AL_KEYBOARD_LAYOUT</code></li>
-      <li><code>C_AL_LOCK</code></li>
-      <li><code>C_AL_LOGOFF</code></li>
-      <li><code>C_AL_MAIL</code></li>
-      <li><code>C_AL_MOVIES</code></li>
-      <li><code>C_AL_MY_COMPUTER</code></li>
-      <li><code>C_AL_NEWS</code></li>
-      <li><code>C_AL_NEXT_TASK</code></li>
-      <li><code>C_AL_PRESENTATION</code></li>
-      <li><code>C_AL_PREV_TASK</code></li>
-      <li><code>C_AL_SCREEN_SAVER</code></li>
-      <li><code>C_AL_SELECT_TASK</code></li>
-      <li><code>C_AL_SHEET</code></li>
-      <li><code>C_AL_SPELL</code></li>
-      <li><code>C_AL_TASK_MANAGER</code></li>
-      <li><code>C_AL_TEXT_EDITOR</code></li>
-      <li><code>C_AL_TIPS</code></li>
-      <li><code>C_AL_VOICEMAIL</code></li>
-      <li><code>C_AL_WORD</code></li>
-      <li><code>C_AL_WWW</code></li>
-      <li><code>C_ASPECT</code></li>
-      <li><code>C_BASS_BOOST</code></li>
-      <li><code>C_BKLT_TOG</code></li>
-      <li><code>C_BLUE</code></li>
-      <li><code>C_BRI_AUTO</code></li>
-      <li><code>C_BRI_DN</code></li>
-      <li><code>C_BRI_MAX</code></li>
-      <li><code>C_BRI_MIN</code></li>
-      <li><code>C_BRI_UP</code></li>
-      <li><code>C_CAPTIONS</code></li>
-      <li><code>C_CHAN_DEC</code></li>
-      <li><code>C_CHAN_INC</code></li>
-      <li><code>C_CHAN_LAST</code></li>
-      <li><code>C_DATA_ON_SCREEN</code></li>
-      <li><code>C_EJECT</code></li>
-      <li><code>C_FF</code></li>
-      <li><code>C_GREEN</code></li>
-      <li><code>C_HELP</code></li>
-      <li><code>C_KBIA_ACCEPT</code></li>
-      <li><code>C_KBIA_CANCEL</code></li>
-      <li><code>C_KBIA_NEXT</code></li>
-      <li><code>C_KBIA_NEXT_GRP</code></li>
-      <li><code>C_KBIA_PREV</code></li>
-      <li><code>C_KBIA_PREV_GRP</code></li>
-      <li><code>C_MEDIA_CABLE</code></li>
-      <li><code>C_MEDIA_CD</code></li>
-      <li><code>C_MEDIA_COMPUTER</code></li>
-      <li><code>C_MEDIA_DVD</code></li>
-      <li><code>C_MEDIA_GAMES</code></li>
-      <li><code>C_MEDIA_GUIDE</code></li>
-      <li><code>C_MEDIA_HOME</code></li>
-      <li><code>C_MEDIA_MESSAGES</code></li>
-      <li><code>C_MEDIA_PHONE</code></li>
-      <li><code>C_MEDIA_SATELLITE</code></li>
-      <li><code>C_MEDIA_TAPE</code></li>
-      <li><code>C_MEDIA_TUNER</code></li>
-      <li><code>C_MEDIA_TV</code></li>
-      <li><code>C_MEDIA_VCR</code></li>
-      <li><code>C_MEDIA_VCR_PLUS</code></li>
-      <li><code>C_MEDIA_VIDEOPHONE</code></li>
-      <li><code>C_MEDIA_WWW</code></li>
-      <li><code>C_MENU</code></li>
-      <li><code>C_MENU_DEC</code></li>
-      <li><code>C_MENU_DOWN</code></li>
-      <li><code>C_MENU_ESC</code></li>
-      <li><code>C_MENU_INC</code></li>
-      <li><code>C_MENU_LEFT</code></li>
-      <li><code>C_MENU_PICK</code></li>
-      <li><code>C_MENU_RIGHT</code></li>
-      <li><code>C_MENU_UP</code></li>
-      <li><code>C_MODE_STEP</code></li>
-      <li><code>C_MUTE</code></li>
-      <li><code>C_NEXT</code></li>
-      <li><code>C_PAUSE</code></li>
-      <li><code>C_PIP</code></li>
-      <li><code>C_PLAY</code></li>
-      <li><code>C_PP</code></li>
-      <li><code>C_PREV</code></li>
-      <li><code>C_PWR</code></li>
-      <li><code>C_QUIT</code></li>
-      <li><code>C_REC</code></li>
-      <li><code>C_RED</code></li>
-      <li><code>C_REPEAT</code></li>
-      <li><code>C_RESET</code></li>
-      <li><code>C_RW</code></li>
-      <li><code>C_SHUFFLE</code></li>
-      <li><code>C_SLEEP</code></li>
-      <li><code>C_SLEEP_MODE</code></li>
-      <li><code>C_SLOW</code></li>
-      <li><code>C_SLOW2</code></li>
-      <li><code>C_SNAPSHOT</code></li>
-      <li><code>C_STOP</code></li>
-      <li><code>C_STOP_EJECT</code></li>
-      <li><code>C_VOICE_COMMAND</code></li>
-      <li><code>C_VOL_DN</code></li>
-      <li><code>C_VOL_UP</code></li>
-      <li><code>C_YELLOW</code></li>
-      <li><code>DEL</code></li>
-      <li><code>DLLR</code></li>
-      <li><code>DQT</code></li>
-      <li><code>END</code></li>
-      <li><code>EQUAL</code></li>
-      <li><code>EXCL</code></li>
-      <li><code>EXSEL</code></li>
-      <li><code>F1</code></li>
-      <li><code>F10</code></li>
-      <li><code>F11</code></li>
-      <li><code>F12</code></li>
-      <li><code>F13</code></li>
-      <li><code>F14</code></li>
-      <li><code>F15</code></li>
-      <li><code>F16</code></li>
-      <li><code>F17</code></li>
-      <li><code>F18</code></li>
-      <li><code>F19</code></li>
-      <li><code>F2</code></li>
-      <li><code>F20</code></li>
-      <li><code>F21</code></li>
-      <li><code>F22</code></li>
-      <li><code>F23</code></li>
-      <li><code>F24</code></li>
-      <li><code>F3</code></li>
-      <li><code>F4</code></li>
-      <li><code>F5</code></li>
-      <li><code>F6</code></li>
-      <li><code>F7</code></li>
-      <li><code>F8</code></li>
-      <li><code>F9</code></li>
-      <li><code>GLOBE</code></li>
-      <li><code>GRAVE</code></li>
-      <li><code>GT</code></li>
-      <li><code>HASH</code></li>
-      <li><code>HOME</code></li>
-      <li><code>INS</code></li>
-      <li><code>INT1</code></li>
-      <li><code>INT2</code></li>
-      <li><code>INT3</code></li>
-      <li><code>INT4</code></li>
-      <li><code>INT5</code></li>
-      <li><code>INT6</code></li>
-      <li><code>INT7</code></li>
-      <li><code>INT8</code></li>
-      <li><code>INT9</code></li>
-      <li><code>KP_ASTERISK</code></li>
-      <li><code>KP_CLEAR</code></li>
-      <li><code>KP_COMMA</code></li>
-      <li><code>KP_DOT</code></li>
-      <li><code>KP_ENTER</code></li>
-      <li><code>KP_EQUAL</code></li>
-      <li><code>KP_EQUAL_AS400</code></li>
-      <li><code>KP_LPAR</code></li>
-      <li><code>KP_MINUS</code></li>
-      <li><code>KP_N0</code></li>
-      <li><code>KP_N1</code></li>
-      <li><code>KP_N2</code></li>
-      <li><code>KP_N3</code></li>
-      <li><code>KP_N4</code></li>
-      <li><code>KP_N5</code></li>
-      <li><code>KP_N6</code></li>
-      <li><code>KP_N7</code></li>
-      <li><code>KP_N8</code></li>
-      <li><code>KP_N9</code></li>
-      <li><code>KP_NUM</code></li>
-      <li><code>KP_PLUS</code></li>
-      <li><code>KP_RPAR</code></li>
-      <li><code>KP_SLASH</code></li>
-      <li><code>KSPC</code></li>
-      <li><code>K_APP</code></li>
-      <li><code>K_BACK</code></li>
-      <li><code>K_CALC</code></li>
-      <li><code>K_CANCEL</code></li>
-      <li><code>K_COPY</code></li>
-      <li><code>K_CUT</code></li>
-      <li><code>K_EDIT</code></li>
-      <li><code>K_EJECT</code></li>
-      <li><code>K_EXEC</code></li>
-      <li><code>K_FIND</code></li>
-      <li><code>K_FIND2</code></li>
-      <li><code>K_FORWARD</code></li>
-      <li><code>K_HELP</code></li>
-      <li><code>K_LOCK</code></li>
-      <li><code>K_MENU</code></li>
-      <li><code>K_MUTE</code></li>
-      <li><code>K_MUTE2</code></li>
-      <li><code>K_NEXT</code></li>
-      <li><code>K_PASTE</code></li>
-      <li><code>K_PP</code></li>
-      <li><code>K_PREV</code></li>
-      <li><code>K_PWR</code></li>
-      <li><code>K_REDO</code></li>
-      <li><code>K_REFRESH</code></li>
-      <li><code>K_SCROLL_DOWN</code></li>
-      <li><code>K_SCROLL_UP</code></li>
-      <li><code>K_SELECT</code></li>
-      <li><code>K_SLEEP</code></li>
-      <li><code>K_STOP</code></li>
-      <li><code>K_STOP2</code></li>
-      <li><code>K_STOP3</code></li>
-      <li><code>K_UNDO</code></li>
-      <li><code>K_VOL_DN</code></li>
-      <li><code>K_VOL_DN2</code></li>
-      <li><code>K_VOL_UP</code></li>
-      <li><code>K_VOL_UP2</code></li>
-      <li><code>K_WWW</code></li>
-      <li><code>LANG1</code></li>
-      <li><code>LANG2</code></li>
-      <li><code>LANG3</code></li>
-      <li><code>LANG4</code></li>
-      <li><code>LANG5</code></li>
-      <li><code>LANG6</code></li>
-      <li><code>LANG7</code></li>
-      <li><code>LANG8</code></li>
-      <li><code>LANG9</code></li>
-      <li><code>LBKT</code></li>
-      <li><code>LBRC</code></li>
-      <li><code>LCAPS</code></li>
-      <li><code>LNLCK</code></li>
-      <li><code>LPAR</code></li>
-      <li><code>LSLCK</code></li>
-      <li><code>LT</code></li>
-      <li><code>MINUS</code></li>
-      <li><code>NUBS</code></li>
-      <li><code>NUHS</code></li>
-      <li><code>OPER</code></li>
-      <li><code>OUT</code></li>
-      <li><code>PAUSE_BREAK</code></li>
-      <li><code>PG_DN</code></li>
-      <li><code>PG_UP</code></li>
-      <li><code>PIPE</code></li>
-      <li><code>PIPE2</code></li>
-      <li><code>PLUS</code></li>
-      <li><code>PRCNT</code></li>
-      <li><code>PRIOR</code></li>
-      <li><code>PSCRN</code></li>
-      <li><code>QMARK</code></li>
-      <li><code>RALT</code></li>
-      <li><code>RBKT</code></li>
-      <li><code>RBRC</code></li>
-      <li><code>RCMD</code></li>
-      <li><code>RCTRL</code></li>
-      <li><code>RET2</code></li>
-      <li><code>RPAR</code></li>
-      <li><code>RSHFT</code></li>
-      <li><code>SEPARATOR</code></li>
-      <li><code>SLCK</code></li>
-      <li><code>SQT</code></li>
-      <li><code>STAR</code></li>
-      <li><code>SYSREQ</code></li>
-      <li><code>SYS_PWR</code></li>
-      <li><code>SYS_SLEEP</code></li>
-      <li><code>SYS_WAKE</code></li>
-      <li><code>TILDE</code></li>
-      <li><code>TILDE2</code></li>
-      <li><code>UNDER</code></li>
-    </ul>
+    <table class="missing-keysyms">
+      <thead>
+        <tr>
+          <th>Keysym</th>
+          <th>Meaning</th>
+          <th>Aliases</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr class="category"><th colspan="3">Symbols (3)</th></tr>
+      <tr>
+        <td><code>EQUAL</code></td>
+        <td>Equal And Plus</td>
+        <td><code>EQL</code></td>
+      </tr>
+      <tr>
+        <td><code>GRAVE</code></td>
+        <td>Grave Accent And Tilde</td>
+        <td><code>GRAV</code></td>
+      </tr>
+      <tr>
+        <td><code>MINUS</code></td>
+        <td>Minus And Underscore</td>
+        <td></td>
+      </tr>
+      <tr class="category"><th colspan="3">Modifiers (4)</th></tr>
+      <tr>
+        <td><code>RALT</code></td>
+        <td>Modifier key: Rightalt</td>
+        <td><code>RIGHT_ALT</code></td>
+      </tr>
+      <tr>
+        <td><code>RCMD</code></td>
+        <td>Modifier key: Right Gui</td>
+        <td><code>RGUI</code>, <code>RIGHT_COMMAND</code>, <code>RIGHT_GUI</code>, <code>RIGHT_META</code>, <code>RIGHT_WIN</code>, <code>RMETA</code>, <code>RWIN</code></td>
+      </tr>
+      <tr>
+        <td><code>RCTRL</code></td>
+        <td>Modifier key: Rightcontrol</td>
+        <td><code>RCTL</code>, <code>RIGHT_CONTROL</code></td>
+      </tr>
+      <tr>
+        <td><code>RSHFT</code></td>
+        <td>Modifier key: Rightshift</td>
+        <td><code>RIGHT_SHIFT</code>, <code>RSFT</code>, <code>RSHIFT</code></td>
+      </tr>
+      <tr class="category"><th colspan="3">Navigation/editing (6)</th></tr>
+      <tr>
+        <td><code>DEL</code></td>
+        <td>Navigation/editing key: Delete Forward</td>
+        <td><code>DELETE</code></td>
+      </tr>
+      <tr>
+        <td><code>END</code></td>
+        <td>Navigation/editing key: End</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>HOME</code></td>
+        <td>Navigation/editing key: Home</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>INS</code></td>
+        <td>Navigation/editing key: Insert</td>
+        <td><code>INSERT</code></td>
+      </tr>
+      <tr>
+        <td><code>PG_DN</code></td>
+        <td>Navigation/editing key: Pagedown</td>
+        <td><code>PAGE_DOWN</code>, <code>PGDN</code></td>
+      </tr>
+      <tr>
+        <td><code>PG_UP</code></td>
+        <td>Navigation/editing key: Pageup</td>
+        <td><code>PAGE_UP</code>, <code>PGUP</code></td>
+      </tr>
+      <tr class="category"><th colspan="3">Function keys (24)</th></tr>
+      <tr>
+        <td><code>F1</code></td>
+        <td>Function key: F1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F10</code></td>
+        <td>Function key: F10</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F11</code></td>
+        <td>Function key: F11</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F12</code></td>
+        <td>Function key: F12</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F13</code></td>
+        <td>Function key: F13</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F14</code></td>
+        <td>Function key: F14</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F15</code></td>
+        <td>Function key: F15</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F16</code></td>
+        <td>Function key: F16</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F17</code></td>
+        <td>Function key: F17</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F18</code></td>
+        <td>Function key: F18</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F19</code></td>
+        <td>Function key: F19</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F2</code></td>
+        <td>Function key: F2</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F20</code></td>
+        <td>Function key: F20</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F21</code></td>
+        <td>Function key: F21</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F22</code></td>
+        <td>Function key: F22</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F23</code></td>
+        <td>Function key: F23</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F24</code></td>
+        <td>Function key: F24</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F3</code></td>
+        <td>Function key: F3</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F4</code></td>
+        <td>Function key: F4</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F5</code></td>
+        <td>Function key: F5</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F6</code></td>
+        <td>Function key: F6</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F7</code></td>
+        <td>Function key: F7</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F8</code></td>
+        <td>Function key: F8</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>F9</code></td>
+        <td>Function key: F9</td>
+        <td></td>
+      </tr>
+      <tr class="category"><th colspan="3">Keypad (25)</th></tr>
+      <tr>
+        <td><code>CLEAR2</code></td>
+        <td>Keypad/numpad key: Keypad Num Lock And Clear</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>KP_ASTERISK</code></td>
+        <td>Keypad/numpad key: Keypad Asterisk</td>
+        <td><code>KMLT</code>, <code>KP_MULTIPLY</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_CLEAR</code></td>
+        <td>Keypad/numpad key: Keypad Clear</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>KP_COMMA</code></td>
+        <td>Keypad/numpad key: Keypad Comma</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>KP_DOT</code></td>
+        <td>Keypad/numpad key: Keypad Period And Delete</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>KP_ENTER</code></td>
+        <td>Keypad/numpad key: Keypad Enter</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>KP_EQUAL</code></td>
+        <td>Keypad/numpad key: Keypad Equal</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>KP_EQUAL_AS400</code></td>
+        <td>Keypad/numpad key: Keypad Equal Sign</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>KP_LPAR</code></td>
+        <td>Keypad/numpad key: Keypad Left Parenthesis</td>
+        <td><code>KP_LEFT_PARENTHESIS</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_MINUS</code></td>
+        <td>Keypad/numpad key: Keypad Minus</td>
+        <td><code>KMIN</code>, <code>KP_SUBTRACT</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_N0</code></td>
+        <td>Keypad/numpad key: Keypad 0 And Insert</td>
+        <td><code>KP_NUMBER_0</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_N1</code></td>
+        <td>Keypad/numpad key: Keypad 1 And End</td>
+        <td><code>KP_NUMBER_1</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_N2</code></td>
+        <td>Keypad/numpad key: Keypad 2 And Down Arrow</td>
+        <td><code>KP_NUMBER_2</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_N3</code></td>
+        <td>Keypad/numpad key: Keypad 3 And Pagedn</td>
+        <td><code>KP_NUMBER_3</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_N4</code></td>
+        <td>Keypad/numpad key: Keypad 4 And Left Arrow</td>
+        <td><code>KP_NUMBER_4</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_N5</code></td>
+        <td>Keypad/numpad key: Keypad 5</td>
+        <td><code>KP_NUMBER_5</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_N6</code></td>
+        <td>Keypad/numpad key: Keypad 6 And Right Arrow</td>
+        <td><code>KP_NUMBER_6</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_N7</code></td>
+        <td>Keypad/numpad key: Keypad 7 And Home</td>
+        <td><code>KP_NUMBER_7</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_N8</code></td>
+        <td>Keypad/numpad key: Keypad 8 And Up Arrow</td>
+        <td><code>KP_NUMBER_8</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_N9</code></td>
+        <td>Keypad/numpad key: Keypad 9 And Pageup</td>
+        <td><code>KP_NUMBER_9</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_NUM</code></td>
+        <td>Keypad/numpad key: Keypad Num Lock And Clear</td>
+        <td><code>KP_NLCK</code>, <code>KP_NUMLOCK</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_PLUS</code></td>
+        <td>Keypad/numpad key: Keypad Plus</td>
+        <td><code>KPLS</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_RPAR</code></td>
+        <td>Keypad/numpad key: Keypad Right Parenthesis</td>
+        <td><code>KP_RIGHT_PARENTHESIS</code></td>
+      </tr>
+      <tr>
+        <td><code>KP_SLASH</code></td>
+        <td>Keypad/numpad key: Keypad Slash</td>
+        <td><code>KDIV</code>, <code>KP_DIVIDE</code></td>
+      </tr>
+      <tr>
+        <td><code>KSPC</code></td>
+        <td>Keypad/numpad key: Keypad Space</td>
+        <td></td>
+      </tr>
+      <tr class="category"><th colspan="3">Consumer/media (152)</th></tr>
+      <tr>
+        <td><code>C_AC_BACK</code></td>
+        <td>Consumer/media control: Ac Back</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_BOOKMARKS</code></td>
+        <td>Consumer/media control: Ac Bookmarks</td>
+        <td><code>C_AC_FAVORITES</code>, <code>C_AC_FAVOURITES</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_CANCEL</code></td>
+        <td>Consumer/media control: Ac Cancel</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_CLOSE</code></td>
+        <td>Consumer/media control: Ac Close</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_COPY</code></td>
+        <td>Consumer/media control: Ac Copy</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_CUT</code></td>
+        <td>Consumer/media control: Ac Cut</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_DEL</code></td>
+        <td>Consumer/media control: Ac Delete</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_DESKTOP_SHOW_ALL_APPLICATIONS</code></td>
+        <td>Consumer/media control: Ac Desktop Show All Applications</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_DESKTOP_SHOW_ALL_WINDOWS</code></td>
+        <td>Consumer/media control: Ac Desktop Show All Windows</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_EDIT</code></td>
+        <td>Consumer/media control: Ac Edit</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_EXIT</code></td>
+        <td>Consumer/media control: Ac Exit</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_FIND</code></td>
+        <td>Consumer/media control: Ac Find</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_FORWARD</code></td>
+        <td>Consumer/media control: Ac Forward</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_FORWARD_MAIL</code></td>
+        <td>Consumer/media control: Ac Forward Msg</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_GOTO</code></td>
+        <td>Consumer/media control: Ac Go To</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_HOME</code></td>
+        <td>Consumer/media control: Ac Home</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_INS</code></td>
+        <td>Consumer/media control: Ac Insert Mode</td>
+        <td><code>C_AC_INSERT</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_NEW</code></td>
+        <td>Consumer/media control: Ac New</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_OPEN</code></td>
+        <td>Consumer/media control: Ac Open</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_PASTE</code></td>
+        <td>Consumer/media control: Ac Paste</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_PRINT</code></td>
+        <td>Consumer/media control: Ac Print</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_PROPS</code></td>
+        <td>Consumer/media control: Ac Properties</td>
+        <td><code>C_AC_PROPERTIES</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_REDO</code></td>
+        <td>Consumer/media control: Ac Redo Repeat</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_REFRESH</code></td>
+        <td>Consumer/media control: Ac Refresh</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_REPLY</code></td>
+        <td>Consumer/media control: Ac Reply</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_SAVE</code></td>
+        <td>Consumer/media control: Ac Save</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_SCROLL_DOWN</code></td>
+        <td>Consumer/media control: Ac Scroll Down</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_SCROLL_UP</code></td>
+        <td>Consumer/media control: Ac Scroll Up</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_SEARCH</code></td>
+        <td>Consumer/media control: Ac Search</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_SEND</code></td>
+        <td>Consumer/media control: Ac Send</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_STOP</code></td>
+        <td>Consumer/media control: Ac Stop</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_UNDO</code></td>
+        <td>Consumer/media control: Ac Undo</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_VIEW_TOGGLE</code></td>
+        <td>Consumer/media control: Ac View Toggle</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_ZOOM</code></td>
+        <td>Consumer/media control: Ac Zoom</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_ZOOM_IN</code></td>
+        <td>Consumer/media control: Ac Zoom In</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AC_ZOOM_OUT</code></td>
+        <td>Consumer/media control: Ac Zoom Out</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_ALT_AUDIO_INC</code></td>
+        <td>Consumer/media control: Alternate Audio Increment</td>
+        <td><code>C_ALTERNATE_AUDIO_INCREMENT</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_AUDIO</code></td>
+        <td>Consumer/media control: Al Audio Browser</td>
+        <td><code>C_AL_AUDIO_BROWSER</code>, <code>C_AL_MUSIC</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_AV_CAPTURE_PLAYBACK</code></td>
+        <td>Consumer/media control: Al A V Capture Playback</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_CAL</code></td>
+        <td>Consumer/media control: Al Calendar Schedule</td>
+        <td><code>C_AL_CALENDAR</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_CALC</code></td>
+        <td>Consumer/media control: Al Calculator</td>
+        <td><code>C_AL_CALCULATOR</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_CCC</code></td>
+        <td>Consumer/media control: Al Control Configuration</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_CHAT</code></td>
+        <td>Consumer/media control: Al Network Chat</td>
+        <td><code>C_AL_NETWORK_CHAT</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_CONTACTS</code></td>
+        <td>Consumer/media control: Al Contacts Address Book</td>
+        <td><code>C_AL_ADDRESS_BOOK</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_CONTROL_PANEL</code></td>
+        <td>Consumer/media control: Al Control Panel</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_DB</code></td>
+        <td>Consumer/media control: Al Database App</td>
+        <td><code>C_AL_DATABASE</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_DOCS</code></td>
+        <td>Consumer/media control: Al Documents</td>
+        <td><code>C_AL_DOCUMENTS</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_FILES</code></td>
+        <td>Consumer/media control: Al File Browser</td>
+        <td><code>C_AL_FILE_BROWSER</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_FINANCE</code></td>
+        <td>Consumer/media control: Al Checkbook Finance</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_GRAPHICS_EDITOR</code></td>
+        <td>Consumer/media control: Al Graphics Editor</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_HELP</code></td>
+        <td>Consumer/media control: Al Integrated Help Center</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_IM</code></td>
+        <td>Consumer/media control: Al Instant Messaging</td>
+        <td><code>C_AL_INSTANT_MESSAGING</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_IMAGES</code></td>
+        <td>Consumer/media control: Al Image Browser</td>
+        <td><code>C_AL_IMAGE_BROWSER</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_JOURNAL</code></td>
+        <td>Consumer/media control: Al Log Journal Timecard</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_KEYBOARD_LAYOUT</code></td>
+        <td>Consumer/media control: Al Layout</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_LOCK</code></td>
+        <td>Consumer/media control: Al Terminal Lock Screensaver</td>
+        <td><code>C_AL_COFFEE</code>, <code>C_AL_SCREENSAVER</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_LOGOFF</code></td>
+        <td>Consumer/media control: Al Logoff</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_MAIL</code></td>
+        <td>Consumer/media control: Al Email Reader</td>
+        <td><code>C_AL_EMAIL</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_MOVIES</code></td>
+        <td>Consumer/media control: Al Movie Browser</td>
+        <td><code>C_AL_MOVIE_BROWSER</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_MY_COMPUTER</code></td>
+        <td>Consumer/media control: Al Local Machine Browser</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_NEWS</code></td>
+        <td>Consumer/media control: Al Newsreader</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_NEXT_TASK</code></td>
+        <td>Consumer/media control: Al Next Task Application</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_PRESENTATION</code></td>
+        <td>Consumer/media control: Al Presentation App</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_PREV_TASK</code></td>
+        <td>Consumer/media control: Al Previous Task Application</td>
+        <td><code>C_AL_PREVIOUS_TASK</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_SCREEN_SAVER</code></td>
+        <td>Consumer/media control: Al Screen Saver</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_SELECT_TASK</code></td>
+        <td>Consumer/media control: Al Select Task Application</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_SHEET</code></td>
+        <td>Consumer/media control: Al Spreadsheet</td>
+        <td><code>C_AL_SPREADSHEET</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_SPELL</code></td>
+        <td>Consumer/media control: Al Spell Check</td>
+        <td><code>C_AL_SPELLCHECK</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_TASK_MANAGER</code></td>
+        <td>Consumer/media control: Al Task Project Manager</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_TEXT_EDITOR</code></td>
+        <td>Consumer/media control: Al Text Editor</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_TIPS</code></td>
+        <td>Consumer/media control: Al Oem Features Tips Tutorial Browser</td>
+        <td><code>C_AL_OEM_FEATURES</code>, <code>C_AL_TUTORIAL</code></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_VOICEMAIL</code></td>
+        <td>Consumer/media control: Al Voicemail</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_WORD</code></td>
+        <td>Consumer/media control: Al Word Processor</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_AL_WWW</code></td>
+        <td>Consumer/media control: Al Internet Browser</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_ASPECT</code></td>
+        <td>Consumer/media control: Aspect</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_BASS_BOOST</code></td>
+        <td>Consumer/media control: Bass Boost</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_BKLT_TOG</code></td>
+        <td>Consumer/media control: Display Backlight Toggle</td>
+        <td><code>C_BACKLIGHT_TOGGLE</code></td>
+      </tr>
+      <tr>
+        <td><code>C_BLUE</code></td>
+        <td>Consumer/media control: Blue Menu Button</td>
+        <td><code>C_BLUE_BUTTON</code></td>
+      </tr>
+      <tr>
+        <td><code>C_BRI_AUTO</code></td>
+        <td>Consumer/media control: Display Set Auto Brightness</td>
+        <td><code>C_BRIGHTNESS_AUTO</code></td>
+      </tr>
+      <tr>
+        <td><code>C_BRI_DN</code></td>
+        <td>Consumer/media control: Display Brightness Decrement</td>
+        <td><code>C_BRIGHTNESS_DEC</code>, <code>C_BRI_DEC</code></td>
+      </tr>
+      <tr>
+        <td><code>C_BRI_MAX</code></td>
+        <td>Consumer/media control: Display Set Brightness To Maximum</td>
+        <td><code>C_BRIGHTNESS_MAXIMUM</code></td>
+      </tr>
+      <tr>
+        <td><code>C_BRI_MIN</code></td>
+        <td>Consumer/media control: Display Set Brightness To Minimum</td>
+        <td><code>C_BRIGHTNESS_MINIMUM</code></td>
+      </tr>
+      <tr>
+        <td><code>C_BRI_UP</code></td>
+        <td>Consumer/media control: Display Brightness Increment</td>
+        <td><code>C_BRIGHTNESS_INC</code>, <code>C_BRI_INC</code></td>
+      </tr>
+      <tr>
+        <td><code>C_CAPTIONS</code></td>
+        <td>Consumer/media control: Closed Caption</td>
+        <td><code>C_SUBTITLES</code></td>
+      </tr>
+      <tr>
+        <td><code>C_CHAN_DEC</code></td>
+        <td>Consumer/media control: Channel Decrement</td>
+        <td><code>C_CHANNEL_DEC</code></td>
+      </tr>
+      <tr>
+        <td><code>C_CHAN_INC</code></td>
+        <td>Consumer/media control: Channel Increment</td>
+        <td><code>C_CHANNEL_INC</code></td>
+      </tr>
+      <tr>
+        <td><code>C_CHAN_LAST</code></td>
+        <td>Consumer/media control: Recall Last</td>
+        <td><code>C_RECALL_LAST</code></td>
+      </tr>
+      <tr>
+        <td><code>C_DATA_ON_SCREEN</code></td>
+        <td>Consumer/media control: Data On Screen</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_EJECT</code></td>
+        <td>Consumer/media control: Eject</td>
+        <td><code>M_EJCT</code></td>
+      </tr>
+      <tr>
+        <td><code>C_FF</code></td>
+        <td>Consumer/media control: Fast Forward</td>
+        <td><code>C_FAST_FORWARD</code></td>
+      </tr>
+      <tr>
+        <td><code>C_GREEN</code></td>
+        <td>Consumer/media control: Green Menu Button</td>
+        <td><code>C_GREEN_BUTTON</code></td>
+      </tr>
+      <tr>
+        <td><code>C_HELP</code></td>
+        <td>Consumer/media control: Help</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_KBIA_ACCEPT</code></td>
+        <td>Consumer/media control: Input Assist Accept</td>
+        <td><code>C_KEYBOARD_INPUT_ASSIST_ACCEPT</code></td>
+      </tr>
+      <tr>
+        <td><code>C_KBIA_CANCEL</code></td>
+        <td>Consumer/media control: Input Assist Cancel</td>
+        <td><code>C_KEYBOARD_INPUT_ASSIST_CANCEL</code></td>
+      </tr>
+      <tr>
+        <td><code>C_KBIA_NEXT</code></td>
+        <td>Consumer/media control: Input Assist Next</td>
+        <td><code>C_KEYBOARD_INPUT_ASSIST_NEXT</code></td>
+      </tr>
+      <tr>
+        <td><code>C_KBIA_NEXT_GRP</code></td>
+        <td>Consumer/media control: Input Assist Next Group</td>
+        <td><code>C_KEYBOARD_INPUT_ASSIST_NEXT_GROUP</code></td>
+      </tr>
+      <tr>
+        <td><code>C_KBIA_PREV</code></td>
+        <td>Consumer/media control: Input Assist Previous</td>
+        <td><code>C_KEYBOARD_INPUT_ASSIST_PREVIOUS</code></td>
+      </tr>
+      <tr>
+        <td><code>C_KBIA_PREV_GRP</code></td>
+        <td>Consumer/media control: Input Assist Previous Group</td>
+        <td><code>C_KEYBOARD_INPUT_ASSIST_PREVIOUS_GROUP</code></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_CABLE</code></td>
+        <td>Consumer/media control: Media Select Cable</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_CD</code></td>
+        <td>Consumer/media control: Media Select Cd</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_COMPUTER</code></td>
+        <td>Consumer/media control: Media Select Computer</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_DVD</code></td>
+        <td>Consumer/media control: Media Select Dvd</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_GAMES</code></td>
+        <td>Consumer/media control: Media Select Games</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_GUIDE</code></td>
+        <td>Consumer/media control: Media Select Program Guide</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_HOME</code></td>
+        <td>Consumer/media control: Media Select Home</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_MESSAGES</code></td>
+        <td>Consumer/media control: Media Select Messages</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_PHONE</code></td>
+        <td>Consumer/media control: Media Select Telephone</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_SATELLITE</code></td>
+        <td>Consumer/media control: Media Select Satellite</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_TAPE</code></td>
+        <td>Consumer/media control: Media Select Tape</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_TUNER</code></td>
+        <td>Consumer/media control: Media Select Tuner</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_TV</code></td>
+        <td>Consumer/media control: Media Select Tv</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_VCR</code></td>
+        <td>Consumer/media control: Media Select Vcr</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_VCR_PLUS</code></td>
+        <td>Consumer/media control: Vcr Plus</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_VIDEOPHONE</code></td>
+        <td>Consumer/media control: Media Select Video Phone</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MEDIA_WWW</code></td>
+        <td>Consumer/media control: Media Select Www</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MENU</code></td>
+        <td>Consumer/media control: Menu</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MENU_DEC</code></td>
+        <td>Consumer/media control: Menu Value Decrease</td>
+        <td><code>C_MENU_DECREASE</code></td>
+      </tr>
+      <tr>
+        <td><code>C_MENU_DOWN</code></td>
+        <td>Consumer/media control: Menu Down</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MENU_ESC</code></td>
+        <td>Consumer/media control: Menu Escape</td>
+        <td><code>C_MENU_ESCAPE</code></td>
+      </tr>
+      <tr>
+        <td><code>C_MENU_INC</code></td>
+        <td>Consumer/media control: Menu Value Increase</td>
+        <td><code>C_MENU_INCREASE</code></td>
+      </tr>
+      <tr>
+        <td><code>C_MENU_LEFT</code></td>
+        <td>Consumer/media control: Menu Left</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MENU_PICK</code></td>
+        <td>Consumer/media control: Menu Pick</td>
+        <td><code>C_MENU_SELECT</code></td>
+      </tr>
+      <tr>
+        <td><code>C_MENU_RIGHT</code></td>
+        <td>Consumer/media control: Menu Right</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MENU_UP</code></td>
+        <td>Consumer/media control: Menu Up</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_MODE_STEP</code></td>
+        <td>Consumer/media control: Mode Step</td>
+        <td><code>C_MEDIA_STEP</code></td>
+      </tr>
+      <tr>
+        <td><code>C_MUTE</code></td>
+        <td>Consumer/media control: Mute</td>
+        <td><code>M_MUTE</code></td>
+      </tr>
+      <tr>
+        <td><code>C_NEXT</code></td>
+        <td>Consumer/media control: Scan Next Track</td>
+        <td><code>M_NEXT</code></td>
+      </tr>
+      <tr>
+        <td><code>C_PAUSE</code></td>
+        <td>Consumer/media control: Pause</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_PIP</code></td>
+        <td>Consumer/media control: Picture In Picture Toggle</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_PLAY</code></td>
+        <td>Consumer/media control: Play</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_PP</code></td>
+        <td>Consumer/media control: Play Pause</td>
+        <td><code>C_PLAY_PAUSE</code>, <code>M_PLAY</code></td>
+      </tr>
+      <tr>
+        <td><code>C_PREV</code></td>
+        <td>Consumer/media control: Scan Previous Track</td>
+        <td><code>C_PREVIOUS</code>, <code>M_PREV</code></td>
+      </tr>
+      <tr>
+        <td><code>C_PWR</code></td>
+        <td>Consumer/media control: Power</td>
+        <td><code>C_POWER</code></td>
+      </tr>
+      <tr>
+        <td><code>C_QUIT</code></td>
+        <td>Consumer/media control: Quit</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_REC</code></td>
+        <td>Consumer/media control: Record</td>
+        <td><code>C_RECORD</code></td>
+      </tr>
+      <tr>
+        <td><code>C_RED</code></td>
+        <td>Consumer/media control: Red Menu Button</td>
+        <td><code>C_RED_BUTTON</code></td>
+      </tr>
+      <tr>
+        <td><code>C_REPEAT</code></td>
+        <td>Consumer/media control: Repeat</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_RESET</code></td>
+        <td>Consumer/media control: Reset</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_RW</code></td>
+        <td>Consumer/media control: Rewind</td>
+        <td><code>C_REWIND</code></td>
+      </tr>
+      <tr>
+        <td><code>C_SHUFFLE</code></td>
+        <td>Consumer/media control: Random Play</td>
+        <td><code>C_RANDOM_PLAY</code></td>
+      </tr>
+      <tr>
+        <td><code>C_SLEEP</code></td>
+        <td>Consumer/media control: Sleep</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_SLEEP_MODE</code></td>
+        <td>Consumer/media control: Sleep Mode</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_SLOW</code></td>
+        <td>Consumer/media control: Slow</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_SLOW2</code></td>
+        <td>Consumer/media control: Slow Tracking</td>
+        <td><code>C_SLOW_TRACKING</code></td>
+      </tr>
+      <tr>
+        <td><code>C_SNAPSHOT</code></td>
+        <td>Consumer/media control: Snapshot</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_STOP</code></td>
+        <td>Consumer/media control: Stop</td>
+        <td><code>M_STOP</code></td>
+      </tr>
+      <tr>
+        <td><code>C_STOP_EJECT</code></td>
+        <td>Consumer/media control: Stop Eject</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_VOICE_COMMAND</code></td>
+        <td>Consumer/media control: Voice Command</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>C_VOL_DN</code></td>
+        <td>Consumer/media control: Volume Decrement</td>
+        <td><code>C_VOLUME_DOWN</code>, <code>M_VOLD</code></td>
+      </tr>
+      <tr>
+        <td><code>C_VOL_UP</code></td>
+        <td>Consumer/media control: Volume Increment</td>
+        <td><code>C_VOLUME_UP</code>, <code>M_VOLU</code></td>
+      </tr>
+      <tr>
+        <td><code>C_YELLOW</code></td>
+        <td>Consumer/media control: Yellow Menu Button</td>
+        <td><code>C_YELLOW_BUTTON</code></td>
+      </tr>
+      <tr>
+        <td><code>GLOBE</code></td>
+        <td>Consumer/media control: (ZMK_HID_USAGE(HID_USAGE_CONSUMER, 0x029D))</td>
+        <td><code>C_AC_NEXT_KEYBOARD_LAYOUT_SELECT</code></td>
+      </tr>
+      <tr class="category"><th colspan="3">System/power (3)</th></tr>
+      <tr>
+        <td><code>SYS_PWR</code></td>
+        <td>System control: System Power Down</td>
+        <td><code>SYSTEM_POWER</code></td>
+      </tr>
+      <tr>
+        <td><code>SYS_SLEEP</code></td>
+        <td>System control: System Sleep</td>
+        <td><code>SYSTEM_SLEEP</code></td>
+      </tr>
+      <tr>
+        <td><code>SYS_WAKE</code></td>
+        <td>System control: System Wake Up</td>
+        <td><code>SYSTEM_WAKE_UP</code></td>
+      </tr>
+      <tr class="category"><th colspan="3">International/language (22)</th></tr>
+      <tr>
+        <td><code>INT1</code></td>
+        <td>International1</td>
+        <td><code>INTERNATIONAL_1</code>, <code>INT_RO</code></td>
+      </tr>
+      <tr>
+        <td><code>INT2</code></td>
+        <td>International2</td>
+        <td><code>INTERNATIONAL_2</code>, <code>INT_KANA</code>, <code>INT_KATAKANAHIRAGANA</code></td>
+      </tr>
+      <tr>
+        <td><code>INT3</code></td>
+        <td>International3</td>
+        <td><code>INTERNATIONAL_3</code>, <code>INT_YEN</code></td>
+      </tr>
+      <tr>
+        <td><code>INT4</code></td>
+        <td>International4</td>
+        <td><code>INTERNATIONAL_4</code>, <code>INT_HENKAN</code></td>
+      </tr>
+      <tr>
+        <td><code>INT5</code></td>
+        <td>International5</td>
+        <td><code>INTERNATIONAL_5</code>, <code>INT_MUHENKAN</code></td>
+      </tr>
+      <tr>
+        <td><code>INT6</code></td>
+        <td>International6</td>
+        <td><code>INTERNATIONAL_6</code>, <code>INT_KPJPCOMMA</code></td>
+      </tr>
+      <tr>
+        <td><code>INT7</code></td>
+        <td>International7</td>
+        <td><code>INTERNATIONAL_7</code></td>
+      </tr>
+      <tr>
+        <td><code>INT8</code></td>
+        <td>International8</td>
+        <td><code>INTERNATIONAL_8</code></td>
+      </tr>
+      <tr>
+        <td><code>INT9</code></td>
+        <td>International9</td>
+        <td><code>INTERNATIONAL_9</code></td>
+      </tr>
+      <tr>
+        <td><code>LANG1</code></td>
+        <td>Lang1</td>
+        <td><code>LANGUAGE_1</code>, <code>LANG_HANGEUL</code></td>
+      </tr>
+      <tr>
+        <td><code>LANG2</code></td>
+        <td>Lang2</td>
+        <td><code>LANGUAGE_2</code>, <code>LANG_HANJA</code></td>
+      </tr>
+      <tr>
+        <td><code>LANG3</code></td>
+        <td>Lang3</td>
+        <td><code>LANGUAGE_3</code>, <code>LANG_KATAKANA</code></td>
+      </tr>
+      <tr>
+        <td><code>LANG4</code></td>
+        <td>Lang4</td>
+        <td><code>LANGUAGE_4</code>, <code>LANG_HIRAGANA</code></td>
+      </tr>
+      <tr>
+        <td><code>LANG5</code></td>
+        <td>Lang5</td>
+        <td><code>LANGUAGE_5</code>, <code>LANG_ZENKAKUHANKAKU</code></td>
+      </tr>
+      <tr>
+        <td><code>LANG6</code></td>
+        <td>Lang6</td>
+        <td><code>LANGUAGE_6</code></td>
+      </tr>
+      <tr>
+        <td><code>LANG7</code></td>
+        <td>Lang7</td>
+        <td><code>LANGUAGE_7</code></td>
+      </tr>
+      <tr>
+        <td><code>LANG8</code></td>
+        <td>Lang8</td>
+        <td><code>LANGUAGE_8</code></td>
+      </tr>
+      <tr>
+        <td><code>LANG9</code></td>
+        <td>Lang9</td>
+        <td><code>LANGUAGE_9</code></td>
+      </tr>
+      <tr>
+        <td><code>NUBS</code></td>
+        <td>Non Us Backslash And Pipe</td>
+        <td><code>NON_US_BACKSLASH</code>, <code>NON_US_BSLH</code></td>
+      </tr>
+      <tr>
+        <td><code>NUHS</code></td>
+        <td>Non Us Hash And Tilde</td>
+        <td><code>NON_US_HASH</code></td>
+      </tr>
+      <tr>
+        <td><code>PIPE2</code></td>
+        <td>Non Us Backslash And Pipe</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>TILDE2</code></td>
+        <td>Non Us Hash And Tilde</td>
+        <td></td>
+      </tr>
+      <tr class="category"><th colspan="3">Other keyboard keys (60)</th></tr>
+      <tr>
+        <td><code>ALT_ERASE</code></td>
+        <td>Alternate Erase</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>AMPS</code></td>
+        <td>7 And Ampersand</td>
+        <td><code>AMPERSAND</code></td>
+      </tr>
+      <tr>
+        <td><code>AT</code></td>
+        <td>2 And At</td>
+        <td><code>ATSN</code>, <code>AT_SIGN</code></td>
+      </tr>
+      <tr>
+        <td><code>BSLH</code></td>
+        <td>Backslash And Pipe</td>
+        <td><code>BACKSLASH</code></td>
+      </tr>
+      <tr>
+        <td><code>CAPS</code></td>
+        <td>Caps Lock</td>
+        <td><code>CAPSLOCK</code>, <code>CLCK</code></td>
+      </tr>
+      <tr>
+        <td><code>CARET</code></td>
+        <td>6 And Caret</td>
+        <td><code>CRRT</code></td>
+      </tr>
+      <tr>
+        <td><code>CLEAR</code></td>
+        <td>Clear</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>CLEAR_AGAIN</code></td>
+        <td>Clear Again</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>COLON</code></td>
+        <td>Semicolon And Colon</td>
+        <td><code>COLN</code></td>
+      </tr>
+      <tr>
+        <td><code>CRSEL</code></td>
+        <td>Crsel Props</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>DLLR</code></td>
+        <td>4 And Dollar</td>
+        <td><code>DOLLAR</code></td>
+      </tr>
+      <tr>
+        <td><code>DQT</code></td>
+        <td>Apostrophe And Quote</td>
+        <td><code>DOUBLE_QUOTES</code></td>
+      </tr>
+      <tr>
+        <td><code>EXCL</code></td>
+        <td>1 And Exclamation</td>
+        <td><code>BANG</code>, <code>EXCLAMATION</code></td>
+      </tr>
+      <tr>
+        <td><code>EXSEL</code></td>
+        <td>Exsel</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>GT</code></td>
+        <td>Period And Greater Than</td>
+        <td><code>GREATER_THAN</code>, <code>RABT</code></td>
+      </tr>
+      <tr>
+        <td><code>HASH</code></td>
+        <td>3 And Hash</td>
+        <td><code>POUND</code></td>
+      </tr>
+      <tr>
+        <td><code>K_APP</code></td>
+        <td>Application</td>
+        <td><code>GUI</code>, <code>K_APPLICATION</code>, <code>K_CMENU</code>, <code>K_CONTEXT_MENU</code></td>
+      </tr>
+      <tr>
+        <td><code>K_CANCEL</code></td>
+        <td>Cancel</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_COPY</code></td>
+        <td>Copy</td>
+        <td><code>COPY</code></td>
+      </tr>
+      <tr>
+        <td><code>K_CUT</code></td>
+        <td>Cut</td>
+        <td><code>CUT</code></td>
+      </tr>
+      <tr>
+        <td><code>K_EXEC</code></td>
+        <td>Execute</td>
+        <td><code>K_EXECUTE</code></td>
+      </tr>
+      <tr>
+        <td><code>K_FIND</code></td>
+        <td>Find</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_HELP</code></td>
+        <td>Help</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_MENU</code></td>
+        <td>Menu</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_MUTE</code></td>
+        <td>Mute</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_PASTE</code></td>
+        <td>Paste</td>
+        <td><code>PSTE</code></td>
+      </tr>
+      <tr>
+        <td><code>K_PWR</code></td>
+        <td>Power</td>
+        <td><code>K_POWER</code></td>
+      </tr>
+      <tr>
+        <td><code>K_REDO</code></td>
+        <td>Again</td>
+        <td><code>K_AGAIN</code></td>
+      </tr>
+      <tr>
+        <td><code>K_SELECT</code></td>
+        <td>Select</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_STOP</code></td>
+        <td>Stop</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_UNDO</code></td>
+        <td>Undo</td>
+        <td><code>UNDO</code></td>
+      </tr>
+      <tr>
+        <td><code>K_VOL_DN</code></td>
+        <td>Volume Down</td>
+        <td><code>K_VOLUME_DOWN</code>, <code>VOLD</code></td>
+      </tr>
+      <tr>
+        <td><code>K_VOL_UP</code></td>
+        <td>Volume Up</td>
+        <td><code>K_VOLUME_UP</code>, <code>VOLU</code></td>
+      </tr>
+      <tr>
+        <td><code>LBKT</code></td>
+        <td>Left Bracket And Left Brace</td>
+        <td><code>LEFT_BRACKET</code></td>
+      </tr>
+      <tr>
+        <td><code>LBRC</code></td>
+        <td>Left Bracket And Left Brace</td>
+        <td><code>LCUR</code>, <code>LEFT_BRACE</code></td>
+      </tr>
+      <tr>
+        <td><code>LCAPS</code></td>
+        <td>Locking Caps Lock</td>
+        <td><code>LOCKING_CAPS</code></td>
+      </tr>
+      <tr>
+        <td><code>LNLCK</code></td>
+        <td>Locking Num Lock</td>
+        <td><code>LOCKING_NUM</code></td>
+      </tr>
+      <tr>
+        <td><code>LPAR</code></td>
+        <td>9 And Left Parenthesis</td>
+        <td><code>LEFT_PARENTHESIS</code>, <code>LPRN</code></td>
+      </tr>
+      <tr>
+        <td><code>LSLCK</code></td>
+        <td>Locking Scroll Lock</td>
+        <td><code>LOCKING_SCROLL</code></td>
+      </tr>
+      <tr>
+        <td><code>LT</code></td>
+        <td>Comma And Less Than</td>
+        <td><code>LABT</code>, <code>LESS_THAN</code></td>
+      </tr>
+      <tr>
+        <td><code>OPER</code></td>
+        <td>Oper</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>OUT</code></td>
+        <td>Out</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>PAUSE_BREAK</code></td>
+        <td>Pause</td>
+        <td><code>PAUS</code></td>
+      </tr>
+      <tr>
+        <td><code>PIPE</code></td>
+        <td>Backslash And Pipe</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>PLUS</code></td>
+        <td>Equal And Plus</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>PRCNT</code></td>
+        <td>5 And Percent</td>
+        <td><code>PERCENT</code>, <code>PRCT</code></td>
+      </tr>
+      <tr>
+        <td><code>PRIOR</code></td>
+        <td>Prior</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>PSCRN</code></td>
+        <td>Printscreen</td>
+        <td><code>PRINTSCREEN</code>, <code>PRSC</code></td>
+      </tr>
+      <tr>
+        <td><code>QMARK</code></td>
+        <td>Slash And Question Mark</td>
+        <td><code>QUESTION</code></td>
+      </tr>
+      <tr>
+        <td><code>RBKT</code></td>
+        <td>Right Bracket And Right Brace</td>
+        <td><code>RIGHT_BRACKET</code></td>
+      </tr>
+      <tr>
+        <td><code>RBRC</code></td>
+        <td>Right Bracket And Right Brace</td>
+        <td><code>RCUR</code>, <code>RIGHT_BRACE</code></td>
+      </tr>
+      <tr>
+        <td><code>RET2</code></td>
+        <td>Return</td>
+        <td><code>RETURN2</code></td>
+      </tr>
+      <tr>
+        <td><code>RPAR</code></td>
+        <td>0 And Right Parenthesis</td>
+        <td><code>RIGHT_PARENTHESIS</code>, <code>RPRN</code></td>
+      </tr>
+      <tr>
+        <td><code>SEPARATOR</code></td>
+        <td>Separator</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>SLCK</code></td>
+        <td>Scroll Lock</td>
+        <td><code>SCLK</code>, <code>SCROLLLOCK</code></td>
+      </tr>
+      <tr>
+        <td><code>SQT</code></td>
+        <td>Apostrophe And Quote</td>
+        <td><code>APOS</code>, <code>APOSTROPHE</code>, <code>QUOT</code>, <code>SINGLE_QUOTE</code></td>
+      </tr>
+      <tr>
+        <td><code>STAR</code></td>
+        <td>8 And Asterisk</td>
+        <td><code>ASTERISK</code>, <code>ASTRK</code></td>
+      </tr>
+      <tr>
+        <td><code>SYSREQ</code></td>
+        <td>Sysreq Attention</td>
+        <td><code>ATTENTION</code></td>
+      </tr>
+      <tr>
+        <td><code>TILDE</code></td>
+        <td>Grave Accent And Tilde</td>
+        <td><code>TILD</code></td>
+      </tr>
+      <tr>
+        <td><code>UNDER</code></td>
+        <td>Minus And Underscore</td>
+        <td><code>UNDERSCORE</code></td>
+      </tr>
+      <tr class="category"><th colspan="3">Other (21)</th></tr>
+      <tr>
+        <td><code>CURU</code></td>
+        <td>Currency Unit</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_BACK</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF1))</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_CALC</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xFB))</td>
+        <td><code>K_CALCULATOR</code></td>
+      </tr>
+      <tr>
+        <td><code>K_EDIT</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF7))</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_EJECT</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xEC))</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_FIND2</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF4))</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_FORWARD</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF2))</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_LOCK</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF9))</td>
+        <td><code>K_COFFEE</code>, <code>K_SCREENSAVER</code></td>
+      </tr>
+      <tr>
+        <td><code>K_MUTE2</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xEF))</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_NEXT</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xEB))</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_PP</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xE8))</td>
+        <td><code>K_PLAY_PAUSE</code></td>
+      </tr>
+      <tr>
+        <td><code>K_PREV</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xEA))</td>
+        <td><code>K_PREVIOUS</code></td>
+      </tr>
+      <tr>
+        <td><code>K_REFRESH</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xFA))</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_SCROLL_DOWN</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF6))</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_SCROLL_UP</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF5))</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_SLEEP</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF8))</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_STOP2</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xE9))</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_STOP3</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF3))</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>K_VOL_DN2</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xEE))</td>
+        <td><code>K_VOLUME_DOWN2</code></td>
+      </tr>
+      <tr>
+        <td><code>K_VOL_UP2</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xED))</td>
+        <td><code>K_VOLUME_UP2</code></td>
+      </tr>
+      <tr>
+        <td><code>K_WWW</code></td>
+        <td>(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF0))</td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
   </section>
 
 </body>

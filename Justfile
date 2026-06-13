@@ -28,6 +28,10 @@ render-keymap:
 watch-keymap:
     python3 scripts/render_keymap.py --watch
 
+# Update the tracked ZMK keysym catalog from the locally built ZMK keys.h.
+update-keysyms:
+    python3 scripts/update_keysyms_catalog.py
+
 # Update ZMK west dependency revisions and zephyrDepsHash.
 update:
     nix run .#update

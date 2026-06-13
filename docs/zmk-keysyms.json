@@ -1,0 +1,4974 @@
+{
+  "source": "/nix/store/spwvfqn2iv02mf35fhxrxw2x2aahyrwx-urchin-firmware-west-deps/zmk/app/include/dt-bindings/zmk/keys.h",
+  "note": "Deduped by resolved HID expression from ZMK keys.h. Descriptions are local human-readable summaries.",
+  "category_order": [
+    "Letters",
+    "Numbers",
+    "Symbols",
+    "Shifted symbols",
+    "Modifiers",
+    "Navigation/editing",
+    "Whitespace/editing",
+    "Function keys",
+    "Keypad",
+    "Consumer/media",
+    "System/power",
+    "International/language",
+    "Other keyboard keys",
+    "Other"
+  ],
+  "keysyms": [
+    {
+      "keysym": "A",
+      "category": "Letters",
+      "description": "Letter key A",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "A"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_A))"
+    },
+    {
+      "keysym": "B",
+      "category": "Letters",
+      "description": "Letter key B",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "B"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_B))"
+    },
+    {
+      "keysym": "C",
+      "category": "Letters",
+      "description": "Letter key C",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_C))"
+    },
+    {
+      "keysym": "D",
+      "category": "Letters",
+      "description": "Letter key D",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "D"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_D))"
+    },
+    {
+      "keysym": "E",
+      "category": "Letters",
+      "description": "Letter key E",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "E"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_E))"
+    },
+    {
+      "keysym": "F",
+      "category": "Letters",
+      "description": "Letter key F",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F))"
+    },
+    {
+      "keysym": "G",
+      "category": "Letters",
+      "description": "Letter key G",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "G"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_G))"
+    },
+    {
+      "keysym": "H",
+      "category": "Letters",
+      "description": "Letter key H",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "H"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_H))"
+    },
+    {
+      "keysym": "I",
+      "category": "Letters",
+      "description": "Letter key I",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "I"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_I))"
+    },
+    {
+      "keysym": "J",
+      "category": "Letters",
+      "description": "Letter key J",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "J"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_J))"
+    },
+    {
+      "keysym": "K",
+      "category": "Letters",
+      "description": "Letter key K",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_K))"
+    },
+    {
+      "keysym": "L",
+      "category": "Letters",
+      "description": "Letter key L",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "L"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_L))"
+    },
+    {
+      "keysym": "M",
+      "category": "Letters",
+      "description": "Letter key M",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "M"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_M))"
+    },
+    {
+      "keysym": "N",
+      "category": "Letters",
+      "description": "Letter key N",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "N"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_N))"
+    },
+    {
+      "keysym": "O",
+      "category": "Letters",
+      "description": "Letter key O",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "O"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_O))"
+    },
+    {
+      "keysym": "P",
+      "category": "Letters",
+      "description": "Letter key P",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "P"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_P))"
+    },
+    {
+      "keysym": "Q",
+      "category": "Letters",
+      "description": "Letter key Q",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "Q"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_Q))"
+    },
+    {
+      "keysym": "R",
+      "category": "Letters",
+      "description": "Letter key R",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "R"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_R))"
+    },
+    {
+      "keysym": "S",
+      "category": "Letters",
+      "description": "Letter key S",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "S"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_S))"
+    },
+    {
+      "keysym": "T",
+      "category": "Letters",
+      "description": "Letter key T",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "T"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_T))"
+    },
+    {
+      "keysym": "U",
+      "category": "Letters",
+      "description": "Letter key U",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "U"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_U))"
+    },
+    {
+      "keysym": "V",
+      "category": "Letters",
+      "description": "Letter key V",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "V"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_V))"
+    },
+    {
+      "keysym": "W",
+      "category": "Letters",
+      "description": "Letter key W",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "W"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_W))"
+    },
+    {
+      "keysym": "X",
+      "category": "Letters",
+      "description": "Letter key X",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "X"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_X))"
+    },
+    {
+      "keysym": "Y",
+      "category": "Letters",
+      "description": "Letter key Y",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "Y"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_Y))"
+    },
+    {
+      "keysym": "Z",
+      "category": "Letters",
+      "description": "Letter key Z",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "Z"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_Z))"
+    },
+    {
+      "keysym": "N0",
+      "category": "Numbers",
+      "description": "Top-row number key: 0 And Right Parenthesis",
+      "aliases": [
+        "NUMBER_0",
+        "NUM_0"
+      ],
+      "deprecated_aliases": [
+        "NUM_0"
+      ],
+      "all_names": [
+        "N0",
+        "NUMBER_0",
+        "NUM_0"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_0_AND_RIGHT_PARENTHESIS))"
+    },
+    {
+      "keysym": "N1",
+      "category": "Numbers",
+      "description": "Top-row number key: 1 And Exclamation",
+      "aliases": [
+        "NUMBER_1",
+        "NUM_1"
+      ],
+      "deprecated_aliases": [
+        "NUM_1"
+      ],
+      "all_names": [
+        "N1",
+        "NUMBER_1",
+        "NUM_1"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_1_AND_EXCLAMATION))"
+    },
+    {
+      "keysym": "N2",
+      "category": "Numbers",
+      "description": "Top-row number key: 2 And At",
+      "aliases": [
+        "NUMBER_2",
+        "NUM_2"
+      ],
+      "deprecated_aliases": [
+        "NUM_2"
+      ],
+      "all_names": [
+        "N2",
+        "NUMBER_2",
+        "NUM_2"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_2_AND_AT))"
+    },
+    {
+      "keysym": "N3",
+      "category": "Numbers",
+      "description": "Top-row number key: 3 And Hash",
+      "aliases": [
+        "NUMBER_3",
+        "NUM_3"
+      ],
+      "deprecated_aliases": [
+        "NUM_3"
+      ],
+      "all_names": [
+        "N3",
+        "NUMBER_3",
+        "NUM_3"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_3_AND_HASH))"
+    },
+    {
+      "keysym": "N4",
+      "category": "Numbers",
+      "description": "Top-row number key: 4 And Dollar",
+      "aliases": [
+        "NUMBER_4",
+        "NUM_4"
+      ],
+      "deprecated_aliases": [
+        "NUM_4"
+      ],
+      "all_names": [
+        "N4",
+        "NUMBER_4",
+        "NUM_4"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_4_AND_DOLLAR))"
+    },
+    {
+      "keysym": "N5",
+      "category": "Numbers",
+      "description": "Top-row number key: 5 And Percent",
+      "aliases": [
+        "NUMBER_5",
+        "NUM_5"
+      ],
+      "deprecated_aliases": [
+        "NUM_5"
+      ],
+      "all_names": [
+        "N5",
+        "NUMBER_5",
+        "NUM_5"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_5_AND_PERCENT))"
+    },
+    {
+      "keysym": "N6",
+      "category": "Numbers",
+      "description": "Top-row number key: 6 And Caret",
+      "aliases": [
+        "NUMBER_6",
+        "NUM_6"
+      ],
+      "deprecated_aliases": [
+        "NUM_6"
+      ],
+      "all_names": [
+        "N6",
+        "NUMBER_6",
+        "NUM_6"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_6_AND_CARET))"
+    },
+    {
+      "keysym": "N7",
+      "category": "Numbers",
+      "description": "Top-row number key: 7 And Ampersand",
+      "aliases": [
+        "NUMBER_7",
+        "NUM_7"
+      ],
+      "deprecated_aliases": [
+        "NUM_7"
+      ],
+      "all_names": [
+        "N7",
+        "NUMBER_7",
+        "NUM_7"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_7_AND_AMPERSAND))"
+    },
+    {
+      "keysym": "N8",
+      "category": "Numbers",
+      "description": "Top-row number key: 8 And Asterisk",
+      "aliases": [
+        "NUMBER_8",
+        "NUM_8"
+      ],
+      "deprecated_aliases": [
+        "NUM_8"
+      ],
+      "all_names": [
+        "N8",
+        "NUMBER_8",
+        "NUM_8"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_8_AND_ASTERISK))"
+    },
+    {
+      "keysym": "N9",
+      "category": "Numbers",
+      "description": "Top-row number key: 9 And Left Parenthesis",
+      "aliases": [
+        "NUMBER_9",
+        "NUM_9"
+      ],
+      "deprecated_aliases": [
+        "NUM_9"
+      ],
+      "all_names": [
+        "N9",
+        "NUMBER_9",
+        "NUM_9"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_9_AND_LEFT_PARENTHESIS))"
+    },
+    {
+      "keysym": "COMMA",
+      "category": "Symbols",
+      "description": "Comma And Less Than",
+      "aliases": [
+        "CMMA"
+      ],
+      "deprecated_aliases": [
+        "CMMA"
+      ],
+      "all_names": [
+        "CMMA",
+        "COMMA"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_COMMA_AND_LESS_THAN))"
+    },
+    {
+      "keysym": "DOT",
+      "category": "Symbols",
+      "description": "Period And Greater Than",
+      "aliases": [
+        "PERIOD"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "DOT",
+        "PERIOD"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_PERIOD_AND_GREATER_THAN))"
+    },
+    {
+      "keysym": "EQUAL",
+      "category": "Symbols",
+      "description": "Equal And Plus",
+      "aliases": [
+        "EQL"
+      ],
+      "deprecated_aliases": [
+        "EQL"
+      ],
+      "all_names": [
+        "EQL",
+        "EQUAL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_EQUAL_AND_PLUS))"
+    },
+    {
+      "keysym": "GRAVE",
+      "category": "Symbols",
+      "description": "Grave Accent And Tilde",
+      "aliases": [
+        "GRAV"
+      ],
+      "deprecated_aliases": [
+        "GRAV"
+      ],
+      "all_names": [
+        "GRAV",
+        "GRAVE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE))"
+    },
+    {
+      "keysym": "MINUS",
+      "category": "Symbols",
+      "description": "Minus And Underscore",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "MINUS"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_MINUS_AND_UNDERSCORE))"
+    },
+    {
+      "keysym": "LALT",
+      "category": "Modifiers",
+      "description": "Modifier key: Leftalt",
+      "aliases": [
+        "LEFT_ALT"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "LALT",
+        "LEFT_ALT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTALT))"
+    },
+    {
+      "keysym": "LCMD",
+      "category": "Modifiers",
+      "description": "Modifier key: Left Gui",
+      "aliases": [
+        "LEFT_COMMAND",
+        "LEFT_GUI",
+        "LEFT_META",
+        "LEFT_WIN",
+        "LGUI",
+        "LMETA",
+        "LWIN"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "LCMD",
+        "LEFT_COMMAND",
+        "LEFT_GUI",
+        "LEFT_META",
+        "LEFT_WIN",
+        "LGUI",
+        "LMETA",
+        "LWIN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFT_GUI))"
+    },
+    {
+      "keysym": "LCTRL",
+      "category": "Modifiers",
+      "description": "Modifier key: Leftcontrol",
+      "aliases": [
+        "LCTL",
+        "LEFT_CONTROL"
+      ],
+      "deprecated_aliases": [
+        "LCTL"
+      ],
+      "all_names": [
+        "LCTL",
+        "LCTRL",
+        "LEFT_CONTROL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTCONTROL))"
+    },
+    {
+      "keysym": "LSHFT",
+      "category": "Modifiers",
+      "description": "Modifier key: Leftshift",
+      "aliases": [
+        "LEFT_SHIFT",
+        "LSFT",
+        "LSHIFT"
+      ],
+      "deprecated_aliases": [
+        "LSFT"
+      ],
+      "all_names": [
+        "LEFT_SHIFT",
+        "LSFT",
+        "LSHFT",
+        "LSHIFT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTSHIFT))"
+    },
+    {
+      "keysym": "RALT",
+      "category": "Modifiers",
+      "description": "Modifier key: Rightalt",
+      "aliases": [
+        "RIGHT_ALT"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "RALT",
+        "RIGHT_ALT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTALT))"
+    },
+    {
+      "keysym": "RCMD",
+      "category": "Modifiers",
+      "description": "Modifier key: Right Gui",
+      "aliases": [
+        "RGUI",
+        "RIGHT_COMMAND",
+        "RIGHT_GUI",
+        "RIGHT_META",
+        "RIGHT_WIN",
+        "RMETA",
+        "RWIN"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "RCMD",
+        "RGUI",
+        "RIGHT_COMMAND",
+        "RIGHT_GUI",
+        "RIGHT_META",
+        "RIGHT_WIN",
+        "RMETA",
+        "RWIN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHT_GUI))"
+    },
+    {
+      "keysym": "RCTRL",
+      "category": "Modifiers",
+      "description": "Modifier key: Rightcontrol",
+      "aliases": [
+        "RCTL",
+        "RIGHT_CONTROL"
+      ],
+      "deprecated_aliases": [
+        "RCTL"
+      ],
+      "all_names": [
+        "RCTL",
+        "RCTRL",
+        "RIGHT_CONTROL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTCONTROL))"
+    },
+    {
+      "keysym": "RSHFT",
+      "category": "Modifiers",
+      "description": "Modifier key: Rightshift",
+      "aliases": [
+        "RIGHT_SHIFT",
+        "RSFT",
+        "RSHIFT"
+      ],
+      "deprecated_aliases": [
+        "RSFT"
+      ],
+      "all_names": [
+        "RIGHT_SHIFT",
+        "RSFT",
+        "RSHFT",
+        "RSHIFT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTSHIFT))"
+    },
+    {
+      "keysym": "BSPC",
+      "category": "Navigation/editing",
+      "description": "Navigation/editing key: Delete Backspace",
+      "aliases": [
+        "BACKSPACE",
+        "BKSP"
+      ],
+      "deprecated_aliases": [
+        "BKSP"
+      ],
+      "all_names": [
+        "BACKSPACE",
+        "BKSP",
+        "BSPC"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_DELETE_BACKSPACE))"
+    },
+    {
+      "keysym": "DEL",
+      "category": "Navigation/editing",
+      "description": "Navigation/editing key: Delete Forward",
+      "aliases": [
+        "DELETE"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "DEL",
+        "DELETE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_DELETE_FORWARD))"
+    },
+    {
+      "keysym": "END",
+      "category": "Navigation/editing",
+      "description": "Navigation/editing key: End",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "END"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_END))"
+    },
+    {
+      "keysym": "HOME",
+      "category": "Navigation/editing",
+      "description": "Navigation/editing key: Home",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "HOME"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_HOME))"
+    },
+    {
+      "keysym": "INS",
+      "category": "Navigation/editing",
+      "description": "Navigation/editing key: Insert",
+      "aliases": [
+        "INSERT"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "INS",
+        "INSERT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_INSERT))"
+    },
+    {
+      "keysym": "PG_DN",
+      "category": "Navigation/editing",
+      "description": "Navigation/editing key: Pagedown",
+      "aliases": [
+        "PAGE_DOWN",
+        "PGDN"
+      ],
+      "deprecated_aliases": [
+        "PGDN"
+      ],
+      "all_names": [
+        "PAGE_DOWN",
+        "PGDN",
+        "PG_DN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_PAGEDOWN))"
+    },
+    {
+      "keysym": "PG_UP",
+      "category": "Navigation/editing",
+      "description": "Navigation/editing key: Pageup",
+      "aliases": [
+        "PAGE_UP",
+        "PGUP"
+      ],
+      "deprecated_aliases": [
+        "PGUP"
+      ],
+      "all_names": [
+        "PAGE_UP",
+        "PGUP",
+        "PG_UP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_PAGEUP))"
+    },
+    {
+      "keysym": "ESC",
+      "category": "Whitespace/editing",
+      "description": "Escape",
+      "aliases": [
+        "ESCAPE"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "ESC",
+        "ESCAPE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_ESCAPE))"
+    },
+    {
+      "keysym": "RET",
+      "category": "Whitespace/editing",
+      "description": "Return Enter",
+      "aliases": [
+        "ENTER",
+        "RETURN"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "ENTER",
+        "RET",
+        "RETURN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RETURN_ENTER))"
+    },
+    {
+      "keysym": "SPACE",
+      "category": "Whitespace/editing",
+      "description": "Spacebar",
+      "aliases": [
+        "SPC"
+      ],
+      "deprecated_aliases": [
+        "SPC"
+      ],
+      "all_names": [
+        "SPACE",
+        "SPC"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SPACEBAR))"
+    },
+    {
+      "keysym": "TAB",
+      "category": "Whitespace/editing",
+      "description": "Tab",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "TAB"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_TAB))"
+    },
+    {
+      "keysym": "F1",
+      "category": "Function keys",
+      "description": "Function key: F1",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F1"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F1))"
+    },
+    {
+      "keysym": "F10",
+      "category": "Function keys",
+      "description": "Function key: F10",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F10"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F10))"
+    },
+    {
+      "keysym": "F11",
+      "category": "Function keys",
+      "description": "Function key: F11",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F11"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F11))"
+    },
+    {
+      "keysym": "F12",
+      "category": "Function keys",
+      "description": "Function key: F12",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F12"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F12))"
+    },
+    {
+      "keysym": "F13",
+      "category": "Function keys",
+      "description": "Function key: F13",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F13"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F13))"
+    },
+    {
+      "keysym": "F14",
+      "category": "Function keys",
+      "description": "Function key: F14",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F14"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F14))"
+    },
+    {
+      "keysym": "F15",
+      "category": "Function keys",
+      "description": "Function key: F15",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F15"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F15))"
+    },
+    {
+      "keysym": "F16",
+      "category": "Function keys",
+      "description": "Function key: F16",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F16"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F16))"
+    },
+    {
+      "keysym": "F17",
+      "category": "Function keys",
+      "description": "Function key: F17",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F17"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F17))"
+    },
+    {
+      "keysym": "F18",
+      "category": "Function keys",
+      "description": "Function key: F18",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F18"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F18))"
+    },
+    {
+      "keysym": "F19",
+      "category": "Function keys",
+      "description": "Function key: F19",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F19"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F19))"
+    },
+    {
+      "keysym": "F2",
+      "category": "Function keys",
+      "description": "Function key: F2",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F2"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F2))"
+    },
+    {
+      "keysym": "F20",
+      "category": "Function keys",
+      "description": "Function key: F20",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F20"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F20))"
+    },
+    {
+      "keysym": "F21",
+      "category": "Function keys",
+      "description": "Function key: F21",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F21"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F21))"
+    },
+    {
+      "keysym": "F22",
+      "category": "Function keys",
+      "description": "Function key: F22",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F22"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F22))"
+    },
+    {
+      "keysym": "F23",
+      "category": "Function keys",
+      "description": "Function key: F23",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F23"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F23))"
+    },
+    {
+      "keysym": "F24",
+      "category": "Function keys",
+      "description": "Function key: F24",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F24"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F24))"
+    },
+    {
+      "keysym": "F3",
+      "category": "Function keys",
+      "description": "Function key: F3",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F3"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F3))"
+    },
+    {
+      "keysym": "F4",
+      "category": "Function keys",
+      "description": "Function key: F4",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F4"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F4))"
+    },
+    {
+      "keysym": "F5",
+      "category": "Function keys",
+      "description": "Function key: F5",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F5"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F5))"
+    },
+    {
+      "keysym": "F6",
+      "category": "Function keys",
+      "description": "Function key: F6",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F6"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F6))"
+    },
+    {
+      "keysym": "F7",
+      "category": "Function keys",
+      "description": "Function key: F7",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F7"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F7))"
+    },
+    {
+      "keysym": "F8",
+      "category": "Function keys",
+      "description": "Function key: F8",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F8"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F8))"
+    },
+    {
+      "keysym": "F9",
+      "category": "Function keys",
+      "description": "Function key: F9",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "F9"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F9))"
+    },
+    {
+      "keysym": "CLEAR2",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad Num Lock And Clear",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "CLEAR2"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_NUM_LOCK_AND_CLEAR)))"
+    },
+    {
+      "keysym": "KP_ASTERISK",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad Asterisk",
+      "aliases": [
+        "KMLT",
+        "KP_MULTIPLY"
+      ],
+      "deprecated_aliases": [
+        "KMLT"
+      ],
+      "all_names": [
+        "KMLT",
+        "KP_ASTERISK",
+        "KP_MULTIPLY"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_ASTERISK))"
+    },
+    {
+      "keysym": "KP_CLEAR",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad Clear",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_CLEAR"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_CLEAR))"
+    },
+    {
+      "keysym": "KP_COMMA",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad Comma",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_COMMA"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_COMMA))"
+    },
+    {
+      "keysym": "KP_DOT",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad Period And Delete",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_DOT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_PERIOD_AND_DELETE))"
+    },
+    {
+      "keysym": "KP_ENTER",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad Enter",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_ENTER"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_ENTER))"
+    },
+    {
+      "keysym": "KP_EQUAL",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad Equal",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_EQUAL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_EQUAL))"
+    },
+    {
+      "keysym": "KP_EQUAL_AS400",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad Equal Sign",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_EQUAL_AS400"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_EQUAL_SIGN))"
+    },
+    {
+      "keysym": "KP_LPAR",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad Left Parenthesis",
+      "aliases": [
+        "KP_LEFT_PARENTHESIS"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_LEFT_PARENTHESIS",
+        "KP_LPAR"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_LEFT_PARENTHESIS))"
+    },
+    {
+      "keysym": "KP_MINUS",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad Minus",
+      "aliases": [
+        "KMIN",
+        "KP_SUBTRACT"
+      ],
+      "deprecated_aliases": [
+        "KMIN"
+      ],
+      "all_names": [
+        "KMIN",
+        "KP_MINUS",
+        "KP_SUBTRACT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_MINUS))"
+    },
+    {
+      "keysym": "KP_N0",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad 0 And Insert",
+      "aliases": [
+        "KP_NUMBER_0"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_N0",
+        "KP_NUMBER_0"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_0_AND_INSERT))"
+    },
+    {
+      "keysym": "KP_N1",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad 1 And End",
+      "aliases": [
+        "KP_NUMBER_1"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_N1",
+        "KP_NUMBER_1"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_1_AND_END))"
+    },
+    {
+      "keysym": "KP_N2",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad 2 And Down Arrow",
+      "aliases": [
+        "KP_NUMBER_2"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_N2",
+        "KP_NUMBER_2"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_2_AND_DOWN_ARROW))"
+    },
+    {
+      "keysym": "KP_N3",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad 3 And Pagedn",
+      "aliases": [
+        "KP_NUMBER_3"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_N3",
+        "KP_NUMBER_3"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_3_AND_PAGEDN))"
+    },
+    {
+      "keysym": "KP_N4",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad 4 And Left Arrow",
+      "aliases": [
+        "KP_NUMBER_4"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_N4",
+        "KP_NUMBER_4"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_4_AND_LEFT_ARROW))"
+    },
+    {
+      "keysym": "KP_N5",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad 5",
+      "aliases": [
+        "KP_NUMBER_5"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_N5",
+        "KP_NUMBER_5"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_5))"
+    },
+    {
+      "keysym": "KP_N6",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad 6 And Right Arrow",
+      "aliases": [
+        "KP_NUMBER_6"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_N6",
+        "KP_NUMBER_6"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_6_AND_RIGHT_ARROW))"
+    },
+    {
+      "keysym": "KP_N7",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad 7 And Home",
+      "aliases": [
+        "KP_NUMBER_7"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_N7",
+        "KP_NUMBER_7"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_7_AND_HOME))"
+    },
+    {
+      "keysym": "KP_N8",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad 8 And Up Arrow",
+      "aliases": [
+        "KP_NUMBER_8"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_N8",
+        "KP_NUMBER_8"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_8_AND_UP_ARROW))"
+    },
+    {
+      "keysym": "KP_N9",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad 9 And Pageup",
+      "aliases": [
+        "KP_NUMBER_9"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_N9",
+        "KP_NUMBER_9"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_9_AND_PAGEUP))"
+    },
+    {
+      "keysym": "KP_NUM",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad Num Lock And Clear",
+      "aliases": [
+        "KP_NLCK",
+        "KP_NUMLOCK"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_NLCK",
+        "KP_NUM",
+        "KP_NUMLOCK"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_NUM_LOCK_AND_CLEAR))"
+    },
+    {
+      "keysym": "KP_PLUS",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad Plus",
+      "aliases": [
+        "KPLS"
+      ],
+      "deprecated_aliases": [
+        "KPLS"
+      ],
+      "all_names": [
+        "KPLS",
+        "KP_PLUS"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_PLUS))"
+    },
+    {
+      "keysym": "KP_RPAR",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad Right Parenthesis",
+      "aliases": [
+        "KP_RIGHT_PARENTHESIS"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KP_RIGHT_PARENTHESIS",
+        "KP_RPAR"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_RIGHT_PARENTHESIS))"
+    },
+    {
+      "keysym": "KP_SLASH",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad Slash",
+      "aliases": [
+        "KDIV",
+        "KP_DIVIDE"
+      ],
+      "deprecated_aliases": [
+        "KDIV"
+      ],
+      "all_names": [
+        "KDIV",
+        "KP_DIVIDE",
+        "KP_SLASH"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_SLASH))"
+    },
+    {
+      "keysym": "KSPC",
+      "category": "Keypad",
+      "description": "Keypad/numpad key: Keypad Space",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "KSPC"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYPAD_SPACE))"
+    },
+    {
+      "keysym": "C_AC_BACK",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Back",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_BACK"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_BACK))"
+    },
+    {
+      "keysym": "C_AC_BOOKMARKS",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Bookmarks",
+      "aliases": [
+        "C_AC_FAVORITES",
+        "C_AC_FAVOURITES"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_BOOKMARKS",
+        "C_AC_FAVORITES",
+        "C_AC_FAVOURITES"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_BOOKMARKS))"
+    },
+    {
+      "keysym": "C_AC_CANCEL",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Cancel",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_CANCEL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_CANCEL))"
+    },
+    {
+      "keysym": "C_AC_CLOSE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Close",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_CLOSE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_CLOSE))"
+    },
+    {
+      "keysym": "C_AC_COPY",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Copy",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_COPY"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_COPY))"
+    },
+    {
+      "keysym": "C_AC_CUT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Cut",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_CUT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_CUT))"
+    },
+    {
+      "keysym": "C_AC_DEL",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Delete",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_DEL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_DELETE))"
+    },
+    {
+      "keysym": "C_AC_DESKTOP_SHOW_ALL_APPLICATIONS",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Desktop Show All Applications",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_DESKTOP_SHOW_ALL_APPLICATIONS"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_DESKTOP_SHOW_ALL_APPLICATIONS))"
+    },
+    {
+      "keysym": "C_AC_DESKTOP_SHOW_ALL_WINDOWS",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Desktop Show All Windows",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_DESKTOP_SHOW_ALL_WINDOWS"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_DESKTOP_SHOW_ALL_WINDOWS))"
+    },
+    {
+      "keysym": "C_AC_EDIT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Edit",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_EDIT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_EDIT))"
+    },
+    {
+      "keysym": "C_AC_EXIT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Exit",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_EXIT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_EXIT))"
+    },
+    {
+      "keysym": "C_AC_FIND",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Find",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_FIND"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_FIND))"
+    },
+    {
+      "keysym": "C_AC_FORWARD",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Forward",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_FORWARD"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_FORWARD))"
+    },
+    {
+      "keysym": "C_AC_FORWARD_MAIL",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Forward Msg",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_FORWARD_MAIL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_FORWARD_MSG))"
+    },
+    {
+      "keysym": "C_AC_GOTO",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Go To",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_GOTO"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_GO_TO))"
+    },
+    {
+      "keysym": "C_AC_HOME",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Home",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_HOME"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_HOME))"
+    },
+    {
+      "keysym": "C_AC_INS",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Insert Mode",
+      "aliases": [
+        "C_AC_INSERT"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_INS",
+        "C_AC_INSERT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_INSERT_MODE))"
+    },
+    {
+      "keysym": "C_AC_NEW",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac New",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_NEW"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_NEW))"
+    },
+    {
+      "keysym": "C_AC_OPEN",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Open",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_OPEN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_OPEN))"
+    },
+    {
+      "keysym": "C_AC_PASTE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Paste",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_PASTE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_PASTE))"
+    },
+    {
+      "keysym": "C_AC_PRINT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Print",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_PRINT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_PRINT))"
+    },
+    {
+      "keysym": "C_AC_PROPS",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Properties",
+      "aliases": [
+        "C_AC_PROPERTIES"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_PROPERTIES",
+        "C_AC_PROPS"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_PROPERTIES))"
+    },
+    {
+      "keysym": "C_AC_REDO",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Redo Repeat",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_REDO"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_REDO_REPEAT))"
+    },
+    {
+      "keysym": "C_AC_REFRESH",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Refresh",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_REFRESH"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_REFRESH))"
+    },
+    {
+      "keysym": "C_AC_REPLY",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Reply",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_REPLY"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_REPLY))"
+    },
+    {
+      "keysym": "C_AC_SAVE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Save",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_SAVE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_SAVE))"
+    },
+    {
+      "keysym": "C_AC_SCROLL_DOWN",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Scroll Down",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_SCROLL_DOWN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_SCROLL_DOWN))"
+    },
+    {
+      "keysym": "C_AC_SCROLL_UP",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Scroll Up",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_SCROLL_UP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_SCROLL_UP))"
+    },
+    {
+      "keysym": "C_AC_SEARCH",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Search",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_SEARCH"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_SEARCH))"
+    },
+    {
+      "keysym": "C_AC_SEND",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Send",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_SEND"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_SEND))"
+    },
+    {
+      "keysym": "C_AC_STOP",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Stop",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_STOP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_STOP))"
+    },
+    {
+      "keysym": "C_AC_UNDO",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Undo",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_UNDO"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_UNDO))"
+    },
+    {
+      "keysym": "C_AC_VIEW_TOGGLE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac View Toggle",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_VIEW_TOGGLE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_VIEW_TOGGLE))"
+    },
+    {
+      "keysym": "C_AC_ZOOM",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Zoom",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_ZOOM"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_ZOOM))"
+    },
+    {
+      "keysym": "C_AC_ZOOM_IN",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Zoom In",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_ZOOM_IN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_ZOOM_IN))"
+    },
+    {
+      "keysym": "C_AC_ZOOM_OUT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Ac Zoom Out",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_ZOOM_OUT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AC_ZOOM_OUT))"
+    },
+    {
+      "keysym": "C_ALT_AUDIO_INC",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Alternate Audio Increment",
+      "aliases": [
+        "C_ALTERNATE_AUDIO_INCREMENT"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_ALTERNATE_AUDIO_INCREMENT",
+        "C_ALT_AUDIO_INC"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_ALTERNATE_AUDIO_INCREMENT))"
+    },
+    {
+      "keysym": "C_AL_AUDIO",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Audio Browser",
+      "aliases": [
+        "C_AL_AUDIO_BROWSER",
+        "C_AL_MUSIC"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_AUDIO",
+        "C_AL_AUDIO_BROWSER",
+        "C_AL_MUSIC"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_AUDIO_BROWSER))"
+    },
+    {
+      "keysym": "C_AL_AV_CAPTURE_PLAYBACK",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al A V Capture Playback",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_AV_CAPTURE_PLAYBACK"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_A_V_CAPTURE_PLAYBACK))"
+    },
+    {
+      "keysym": "C_AL_CAL",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Calendar Schedule",
+      "aliases": [
+        "C_AL_CALENDAR"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_CAL",
+        "C_AL_CALENDAR"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_CALENDAR_SCHEDULE))"
+    },
+    {
+      "keysym": "C_AL_CALC",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Calculator",
+      "aliases": [
+        "C_AL_CALCULATOR"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_CALC",
+        "C_AL_CALCULATOR"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_CALCULATOR))"
+    },
+    {
+      "keysym": "C_AL_CCC",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Control Configuration",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_CCC"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_CONSUMER_CONTROL_CONFIGURATION))"
+    },
+    {
+      "keysym": "C_AL_CHAT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Network Chat",
+      "aliases": [
+        "C_AL_NETWORK_CHAT"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_CHAT",
+        "C_AL_NETWORK_CHAT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_NETWORK_CHAT))"
+    },
+    {
+      "keysym": "C_AL_CONTACTS",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Contacts Address Book",
+      "aliases": [
+        "C_AL_ADDRESS_BOOK"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_ADDRESS_BOOK",
+        "C_AL_CONTACTS"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_CONTACTS_ADDRESS_BOOK))"
+    },
+    {
+      "keysym": "C_AL_CONTROL_PANEL",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Control Panel",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_CONTROL_PANEL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_CONTROL_PANEL))"
+    },
+    {
+      "keysym": "C_AL_DB",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Database App",
+      "aliases": [
+        "C_AL_DATABASE"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_DATABASE",
+        "C_AL_DB"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_DATABASE_APP))"
+    },
+    {
+      "keysym": "C_AL_DOCS",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Documents",
+      "aliases": [
+        "C_AL_DOCUMENTS"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_DOCS",
+        "C_AL_DOCUMENTS"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_DOCUMENTS))"
+    },
+    {
+      "keysym": "C_AL_FILES",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al File Browser",
+      "aliases": [
+        "C_AL_FILE_BROWSER"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_FILES",
+        "C_AL_FILE_BROWSER"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_FILE_BROWSER))"
+    },
+    {
+      "keysym": "C_AL_FINANCE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Checkbook Finance",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_FINANCE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_CHECKBOOK_FINANCE))"
+    },
+    {
+      "keysym": "C_AL_GRAPHICS_EDITOR",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Graphics Editor",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_GRAPHICS_EDITOR"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_GRAPHICS_EDITOR))"
+    },
+    {
+      "keysym": "C_AL_HELP",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Integrated Help Center",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_HELP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_INTEGRATED_HELP_CENTER))"
+    },
+    {
+      "keysym": "C_AL_IM",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Instant Messaging",
+      "aliases": [
+        "C_AL_INSTANT_MESSAGING"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_IM",
+        "C_AL_INSTANT_MESSAGING"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_INSTANT_MESSAGING))"
+    },
+    {
+      "keysym": "C_AL_IMAGES",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Image Browser",
+      "aliases": [
+        "C_AL_IMAGE_BROWSER"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_IMAGES",
+        "C_AL_IMAGE_BROWSER"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_IMAGE_BROWSER))"
+    },
+    {
+      "keysym": "C_AL_JOURNAL",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Log Journal Timecard",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_JOURNAL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_LOG_JOURNAL_TIMECARD))"
+    },
+    {
+      "keysym": "C_AL_KEYBOARD_LAYOUT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Layout",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_KEYBOARD_LAYOUT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_KEYBOARD_LAYOUT))"
+    },
+    {
+      "keysym": "C_AL_LOCK",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Terminal Lock Screensaver",
+      "aliases": [
+        "C_AL_COFFEE",
+        "C_AL_SCREENSAVER"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_COFFEE",
+        "C_AL_LOCK",
+        "C_AL_SCREENSAVER"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_TERMINAL_LOCK_SCREENSAVER))"
+    },
+    {
+      "keysym": "C_AL_LOGOFF",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Logoff",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_LOGOFF"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_LOGOFF))"
+    },
+    {
+      "keysym": "C_AL_MAIL",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Email Reader",
+      "aliases": [
+        "C_AL_EMAIL"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_EMAIL",
+        "C_AL_MAIL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_EMAIL_READER))"
+    },
+    {
+      "keysym": "C_AL_MOVIES",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Movie Browser",
+      "aliases": [
+        "C_AL_MOVIE_BROWSER"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_MOVIES",
+        "C_AL_MOVIE_BROWSER"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_MOVIE_BROWSER))"
+    },
+    {
+      "keysym": "C_AL_MY_COMPUTER",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Local Machine Browser",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_MY_COMPUTER"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_LOCAL_MACHINE_BROWSER))"
+    },
+    {
+      "keysym": "C_AL_NEWS",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Newsreader",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_NEWS"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_NEWSREADER))"
+    },
+    {
+      "keysym": "C_AL_NEXT_TASK",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Next Task Application",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_NEXT_TASK"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_NEXT_TASK_APPLICATION))"
+    },
+    {
+      "keysym": "C_AL_PRESENTATION",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Presentation App",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_PRESENTATION"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_PRESENTATION_APP))"
+    },
+    {
+      "keysym": "C_AL_PREV_TASK",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Previous Task Application",
+      "aliases": [
+        "C_AL_PREVIOUS_TASK"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_PREVIOUS_TASK",
+        "C_AL_PREV_TASK"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_PREVIOUS_TASK_APPLICATION))"
+    },
+    {
+      "keysym": "C_AL_SCREEN_SAVER",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Screen Saver",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_SCREEN_SAVER"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_SCREEN_SAVER))"
+    },
+    {
+      "keysym": "C_AL_SELECT_TASK",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Select Task Application",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_SELECT_TASK"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_SELECT_TASK_APPLICATION))"
+    },
+    {
+      "keysym": "C_AL_SHEET",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Spreadsheet",
+      "aliases": [
+        "C_AL_SPREADSHEET"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_SHEET",
+        "C_AL_SPREADSHEET"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_SPREADSHEET))"
+    },
+    {
+      "keysym": "C_AL_SPELL",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Spell Check",
+      "aliases": [
+        "C_AL_SPELLCHECK"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_SPELL",
+        "C_AL_SPELLCHECK"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_SPELL_CHECK))"
+    },
+    {
+      "keysym": "C_AL_TASK_MANAGER",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Task Project Manager",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_TASK_MANAGER"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_TASK_PROJECT_MANAGER))"
+    },
+    {
+      "keysym": "C_AL_TEXT_EDITOR",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Text Editor",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_TEXT_EDITOR"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_TEXT_EDITOR))"
+    },
+    {
+      "keysym": "C_AL_TIPS",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Oem Features Tips Tutorial Browser",
+      "aliases": [
+        "C_AL_OEM_FEATURES",
+        "C_AL_TUTORIAL"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_OEM_FEATURES",
+        "C_AL_TIPS",
+        "C_AL_TUTORIAL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_OEM_FEATURES_TIPS_TUTORIAL_BROWSER))"
+    },
+    {
+      "keysym": "C_AL_VOICEMAIL",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Voicemail",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_VOICEMAIL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_VOICEMAIL))"
+    },
+    {
+      "keysym": "C_AL_WORD",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Word Processor",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_WORD"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_WORD_PROCESSOR))"
+    },
+    {
+      "keysym": "C_AL_WWW",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Al Internet Browser",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AL_WWW"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_AL_INTERNET_BROWSER))"
+    },
+    {
+      "keysym": "C_ASPECT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Aspect",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_ASPECT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_ASPECT))"
+    },
+    {
+      "keysym": "C_BASS_BOOST",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Bass Boost",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_BASS_BOOST"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_BASS_BOOST))"
+    },
+    {
+      "keysym": "C_BKLT_TOG",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Display Backlight Toggle",
+      "aliases": [
+        "C_BACKLIGHT_TOGGLE"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_BACKLIGHT_TOGGLE",
+        "C_BKLT_TOG"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_DISPLAY_BACKLIGHT_TOGGLE))"
+    },
+    {
+      "keysym": "C_BLUE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Blue Menu Button",
+      "aliases": [
+        "C_BLUE_BUTTON"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_BLUE",
+        "C_BLUE_BUTTON"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_BLUE_MENU_BUTTON))"
+    },
+    {
+      "keysym": "C_BRI_AUTO",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Display Set Auto Brightness",
+      "aliases": [
+        "C_BRIGHTNESS_AUTO"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_BRIGHTNESS_AUTO",
+        "C_BRI_AUTO"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_DISPLAY_SET_AUTO_BRIGHTNESS))"
+    },
+    {
+      "keysym": "C_BRI_DN",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Display Brightness Decrement",
+      "aliases": [
+        "C_BRIGHTNESS_DEC",
+        "C_BRI_DEC"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_BRIGHTNESS_DEC",
+        "C_BRI_DEC",
+        "C_BRI_DN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_DISPLAY_BRIGHTNESS_DECREMENT))"
+    },
+    {
+      "keysym": "C_BRI_MAX",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Display Set Brightness To Maximum",
+      "aliases": [
+        "C_BRIGHTNESS_MAXIMUM"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_BRIGHTNESS_MAXIMUM",
+        "C_BRI_MAX"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_DISPLAY_SET_BRIGHTNESS_TO_MAXIMUM))"
+    },
+    {
+      "keysym": "C_BRI_MIN",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Display Set Brightness To Minimum",
+      "aliases": [
+        "C_BRIGHTNESS_MINIMUM"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_BRIGHTNESS_MINIMUM",
+        "C_BRI_MIN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_DISPLAY_SET_BRIGHTNESS_TO_MINIMUM))"
+    },
+    {
+      "keysym": "C_BRI_UP",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Display Brightness Increment",
+      "aliases": [
+        "C_BRIGHTNESS_INC",
+        "C_BRI_INC"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_BRIGHTNESS_INC",
+        "C_BRI_INC",
+        "C_BRI_UP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_DISPLAY_BRIGHTNESS_INCREMENT))"
+    },
+    {
+      "keysym": "C_CAPTIONS",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Closed Caption",
+      "aliases": [
+        "C_SUBTITLES"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_CAPTIONS",
+        "C_SUBTITLES"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_CLOSED_CAPTION))"
+    },
+    {
+      "keysym": "C_CHAN_DEC",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Channel Decrement",
+      "aliases": [
+        "C_CHANNEL_DEC"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_CHANNEL_DEC",
+        "C_CHAN_DEC"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_CHANNEL_DECREMENT))"
+    },
+    {
+      "keysym": "C_CHAN_INC",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Channel Increment",
+      "aliases": [
+        "C_CHANNEL_INC"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_CHANNEL_INC",
+        "C_CHAN_INC"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_CHANNEL_INCREMENT))"
+    },
+    {
+      "keysym": "C_CHAN_LAST",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Recall Last",
+      "aliases": [
+        "C_RECALL_LAST"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_CHAN_LAST",
+        "C_RECALL_LAST"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_RECALL_LAST))"
+    },
+    {
+      "keysym": "C_DATA_ON_SCREEN",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Data On Screen",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_DATA_ON_SCREEN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_DATA_ON_SCREEN))"
+    },
+    {
+      "keysym": "C_EJECT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Eject",
+      "aliases": [
+        "M_EJCT"
+      ],
+      "deprecated_aliases": [
+        "M_EJCT"
+      ],
+      "all_names": [
+        "C_EJECT",
+        "M_EJCT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_EJECT))"
+    },
+    {
+      "keysym": "C_FF",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Fast Forward",
+      "aliases": [
+        "C_FAST_FORWARD"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_FAST_FORWARD",
+        "C_FF"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_FAST_FORWARD))"
+    },
+    {
+      "keysym": "C_GREEN",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Green Menu Button",
+      "aliases": [
+        "C_GREEN_BUTTON"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_GREEN",
+        "C_GREEN_BUTTON"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_GREEN_MENU_BUTTON))"
+    },
+    {
+      "keysym": "C_HELP",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Help",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_HELP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_HELP))"
+    },
+    {
+      "keysym": "C_KBIA_ACCEPT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Input Assist Accept",
+      "aliases": [
+        "C_KEYBOARD_INPUT_ASSIST_ACCEPT"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_KBIA_ACCEPT",
+        "C_KEYBOARD_INPUT_ASSIST_ACCEPT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_KEYBOARD_INPUT_ASSIST_ACCEPT))"
+    },
+    {
+      "keysym": "C_KBIA_CANCEL",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Input Assist Cancel",
+      "aliases": [
+        "C_KEYBOARD_INPUT_ASSIST_CANCEL"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_KBIA_CANCEL",
+        "C_KEYBOARD_INPUT_ASSIST_CANCEL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_KEYBOARD_INPUT_ASSIST_CANCEL))"
+    },
+    {
+      "keysym": "C_KBIA_NEXT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Input Assist Next",
+      "aliases": [
+        "C_KEYBOARD_INPUT_ASSIST_NEXT"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_KBIA_NEXT",
+        "C_KEYBOARD_INPUT_ASSIST_NEXT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_KEYBOARD_INPUT_ASSIST_NEXT))"
+    },
+    {
+      "keysym": "C_KBIA_NEXT_GRP",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Input Assist Next Group",
+      "aliases": [
+        "C_KEYBOARD_INPUT_ASSIST_NEXT_GROUP"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_KBIA_NEXT_GRP",
+        "C_KEYBOARD_INPUT_ASSIST_NEXT_GROUP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_KEYBOARD_INPUT_ASSIST_NEXT_GROUP))"
+    },
+    {
+      "keysym": "C_KBIA_PREV",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Input Assist Previous",
+      "aliases": [
+        "C_KEYBOARD_INPUT_ASSIST_PREVIOUS"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_KBIA_PREV",
+        "C_KEYBOARD_INPUT_ASSIST_PREVIOUS"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_KEYBOARD_INPUT_ASSIST_PREVIOUS))"
+    },
+    {
+      "keysym": "C_KBIA_PREV_GRP",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Input Assist Previous Group",
+      "aliases": [
+        "C_KEYBOARD_INPUT_ASSIST_PREVIOUS_GROUP"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_KBIA_PREV_GRP",
+        "C_KEYBOARD_INPUT_ASSIST_PREVIOUS_GROUP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_KEYBOARD_INPUT_ASSIST_PREVIOUS_GROUP))"
+    },
+    {
+      "keysym": "C_MEDIA_CABLE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Cable",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_CABLE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_CABLE))"
+    },
+    {
+      "keysym": "C_MEDIA_CD",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Cd",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_CD"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_CD))"
+    },
+    {
+      "keysym": "C_MEDIA_COMPUTER",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Computer",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_COMPUTER"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_COMPUTER))"
+    },
+    {
+      "keysym": "C_MEDIA_DVD",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Dvd",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_DVD"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_DVD))"
+    },
+    {
+      "keysym": "C_MEDIA_GAMES",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Games",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_GAMES"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_GAMES))"
+    },
+    {
+      "keysym": "C_MEDIA_GUIDE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Program Guide",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_GUIDE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_PROGRAM_GUIDE))"
+    },
+    {
+      "keysym": "C_MEDIA_HOME",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Home",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_HOME"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_HOME))"
+    },
+    {
+      "keysym": "C_MEDIA_MESSAGES",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Messages",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_MESSAGES"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_MESSAGES))"
+    },
+    {
+      "keysym": "C_MEDIA_PHONE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Telephone",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_PHONE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_TELEPHONE))"
+    },
+    {
+      "keysym": "C_MEDIA_SATELLITE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Satellite",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_SATELLITE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_SATELLITE))"
+    },
+    {
+      "keysym": "C_MEDIA_TAPE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Tape",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_TAPE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_TAPE))"
+    },
+    {
+      "keysym": "C_MEDIA_TUNER",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Tuner",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_TUNER"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_TUNER))"
+    },
+    {
+      "keysym": "C_MEDIA_TV",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Tv",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_TV"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_TV))"
+    },
+    {
+      "keysym": "C_MEDIA_VCR",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Vcr",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_VCR"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_VCR))"
+    },
+    {
+      "keysym": "C_MEDIA_VCR_PLUS",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Vcr Plus",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_VCR_PLUS"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_VCR_PLUS))"
+    },
+    {
+      "keysym": "C_MEDIA_VIDEOPHONE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Video Phone",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_VIDEOPHONE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_VIDEO_PHONE))"
+    },
+    {
+      "keysym": "C_MEDIA_WWW",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Media Select Www",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_WWW"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MEDIA_SELECT_WWW))"
+    },
+    {
+      "keysym": "C_MENU",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Menu",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MENU"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MENU))"
+    },
+    {
+      "keysym": "C_MENU_DEC",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Menu Value Decrease",
+      "aliases": [
+        "C_MENU_DECREASE"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MENU_DEC",
+        "C_MENU_DECREASE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MENU_VALUE_DECREASE))"
+    },
+    {
+      "keysym": "C_MENU_DOWN",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Menu Down",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MENU_DOWN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MENU_DOWN))"
+    },
+    {
+      "keysym": "C_MENU_ESC",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Menu Escape",
+      "aliases": [
+        "C_MENU_ESCAPE"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MENU_ESC",
+        "C_MENU_ESCAPE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MENU_ESCAPE))"
+    },
+    {
+      "keysym": "C_MENU_INC",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Menu Value Increase",
+      "aliases": [
+        "C_MENU_INCREASE"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MENU_INC",
+        "C_MENU_INCREASE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MENU_VALUE_INCREASE))"
+    },
+    {
+      "keysym": "C_MENU_LEFT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Menu Left",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MENU_LEFT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MENU_LEFT))"
+    },
+    {
+      "keysym": "C_MENU_PICK",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Menu Pick",
+      "aliases": [
+        "C_MENU_SELECT"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MENU_PICK",
+        "C_MENU_SELECT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MENU_PICK))"
+    },
+    {
+      "keysym": "C_MENU_RIGHT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Menu Right",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MENU_RIGHT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MENU_RIGHT))"
+    },
+    {
+      "keysym": "C_MENU_UP",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Menu Up",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MENU_UP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MENU_UP))"
+    },
+    {
+      "keysym": "C_MODE_STEP",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Mode Step",
+      "aliases": [
+        "C_MEDIA_STEP"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_MEDIA_STEP",
+        "C_MODE_STEP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MODE_STEP))"
+    },
+    {
+      "keysym": "C_MUTE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Mute",
+      "aliases": [
+        "M_MUTE"
+      ],
+      "deprecated_aliases": [
+        "M_MUTE"
+      ],
+      "all_names": [
+        "C_MUTE",
+        "M_MUTE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_MUTE))"
+    },
+    {
+      "keysym": "C_NEXT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Scan Next Track",
+      "aliases": [
+        "M_NEXT"
+      ],
+      "deprecated_aliases": [
+        "M_NEXT"
+      ],
+      "all_names": [
+        "C_NEXT",
+        "M_NEXT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_SCAN_NEXT_TRACK))"
+    },
+    {
+      "keysym": "C_PAUSE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Pause",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_PAUSE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_PAUSE))"
+    },
+    {
+      "keysym": "C_PIP",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Picture In Picture Toggle",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_PIP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_PICTURE_IN_PICTURE_TOGGLE))"
+    },
+    {
+      "keysym": "C_PLAY",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Play",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_PLAY"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_PLAY))"
+    },
+    {
+      "keysym": "C_PP",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Play Pause",
+      "aliases": [
+        "C_PLAY_PAUSE",
+        "M_PLAY"
+      ],
+      "deprecated_aliases": [
+        "M_PLAY"
+      ],
+      "all_names": [
+        "C_PLAY_PAUSE",
+        "C_PP",
+        "M_PLAY"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_PLAY_PAUSE))"
+    },
+    {
+      "keysym": "C_PREV",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Scan Previous Track",
+      "aliases": [
+        "C_PREVIOUS",
+        "M_PREV"
+      ],
+      "deprecated_aliases": [
+        "M_PREV"
+      ],
+      "all_names": [
+        "C_PREV",
+        "C_PREVIOUS",
+        "M_PREV"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_SCAN_PREVIOUS_TRACK))"
+    },
+    {
+      "keysym": "C_PWR",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Power",
+      "aliases": [
+        "C_POWER"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_POWER",
+        "C_PWR"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_POWER))"
+    },
+    {
+      "keysym": "C_QUIT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Quit",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_QUIT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_QUIT))"
+    },
+    {
+      "keysym": "C_REC",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Record",
+      "aliases": [
+        "C_RECORD"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_REC",
+        "C_RECORD"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_RECORD))"
+    },
+    {
+      "keysym": "C_RED",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Red Menu Button",
+      "aliases": [
+        "C_RED_BUTTON"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_RED",
+        "C_RED_BUTTON"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_RED_MENU_BUTTON))"
+    },
+    {
+      "keysym": "C_REPEAT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Repeat",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_REPEAT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_REPEAT))"
+    },
+    {
+      "keysym": "C_RESET",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Reset",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_RESET"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_RESET))"
+    },
+    {
+      "keysym": "C_RW",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Rewind",
+      "aliases": [
+        "C_REWIND"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_REWIND",
+        "C_RW"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_REWIND))"
+    },
+    {
+      "keysym": "C_SHUFFLE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Random Play",
+      "aliases": [
+        "C_RANDOM_PLAY"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_RANDOM_PLAY",
+        "C_SHUFFLE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_RANDOM_PLAY))"
+    },
+    {
+      "keysym": "C_SLEEP",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Sleep",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_SLEEP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_SLEEP))"
+    },
+    {
+      "keysym": "C_SLEEP_MODE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Sleep Mode",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_SLEEP_MODE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_SLEEP_MODE))"
+    },
+    {
+      "keysym": "C_SLOW",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Slow",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_SLOW"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_SLOW))"
+    },
+    {
+      "keysym": "C_SLOW2",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Slow Tracking",
+      "aliases": [
+        "C_SLOW_TRACKING"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_SLOW2",
+        "C_SLOW_TRACKING"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_SLOW_TRACKING))"
+    },
+    {
+      "keysym": "C_SNAPSHOT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Snapshot",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_SNAPSHOT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_SNAPSHOT))"
+    },
+    {
+      "keysym": "C_STOP",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Stop",
+      "aliases": [
+        "M_STOP"
+      ],
+      "deprecated_aliases": [
+        "M_STOP"
+      ],
+      "all_names": [
+        "C_STOP",
+        "M_STOP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_STOP))"
+    },
+    {
+      "keysym": "C_STOP_EJECT",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Stop Eject",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_STOP_EJECT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_STOP_EJECT))"
+    },
+    {
+      "keysym": "C_VOICE_COMMAND",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Voice Command",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_VOICE_COMMAND"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_VOICE_COMMAND))"
+    },
+    {
+      "keysym": "C_VOL_DN",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Volume Decrement",
+      "aliases": [
+        "C_VOLUME_DOWN",
+        "M_VOLD"
+      ],
+      "deprecated_aliases": [
+        "M_VOLD"
+      ],
+      "all_names": [
+        "C_VOLUME_DOWN",
+        "C_VOL_DN",
+        "M_VOLD"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_VOLUME_DECREMENT))"
+    },
+    {
+      "keysym": "C_VOL_UP",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Volume Increment",
+      "aliases": [
+        "C_VOLUME_UP",
+        "M_VOLU"
+      ],
+      "deprecated_aliases": [
+        "M_VOLU"
+      ],
+      "all_names": [
+        "C_VOLUME_UP",
+        "C_VOL_UP",
+        "M_VOLU"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_VOLUME_INCREMENT))"
+    },
+    {
+      "keysym": "C_YELLOW",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: Yellow Menu Button",
+      "aliases": [
+        "C_YELLOW_BUTTON"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_YELLOW",
+        "C_YELLOW_BUTTON"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, HID_USAGE_CONSUMER_YELLOW_MENU_BUTTON))"
+    },
+    {
+      "keysym": "GLOBE",
+      "category": "Consumer/media",
+      "description": "Consumer/media control: (ZMK_HID_USAGE(HID_USAGE_CONSUMER, 0x029D))",
+      "aliases": [
+        "C_AC_NEXT_KEYBOARD_LAYOUT_SELECT"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "C_AC_NEXT_KEYBOARD_LAYOUT_SELECT",
+        "GLOBE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_CONSUMER, 0x029D))"
+    },
+    {
+      "keysym": "SYS_PWR",
+      "category": "System/power",
+      "description": "System control: System Power Down",
+      "aliases": [
+        "SYSTEM_POWER"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "SYSTEM_POWER",
+        "SYS_PWR"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_GD, HID_USAGE_GD_SYSTEM_POWER_DOWN))"
+    },
+    {
+      "keysym": "SYS_SLEEP",
+      "category": "System/power",
+      "description": "System control: System Sleep",
+      "aliases": [
+        "SYSTEM_SLEEP"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "SYSTEM_SLEEP",
+        "SYS_SLEEP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_GD, HID_USAGE_GD_SYSTEM_SLEEP))"
+    },
+    {
+      "keysym": "SYS_WAKE",
+      "category": "System/power",
+      "description": "System control: System Wake Up",
+      "aliases": [
+        "SYSTEM_WAKE_UP"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "SYSTEM_WAKE_UP",
+        "SYS_WAKE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_GD, HID_USAGE_GD_SYSTEM_WAKE_UP))"
+    },
+    {
+      "keysym": "INT1",
+      "category": "International/language",
+      "description": "International1",
+      "aliases": [
+        "INTERNATIONAL_1",
+        "INT_RO"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "INT1",
+        "INTERNATIONAL_1",
+        "INT_RO"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_INTERNATIONAL1))"
+    },
+    {
+      "keysym": "INT2",
+      "category": "International/language",
+      "description": "International2",
+      "aliases": [
+        "INTERNATIONAL_2",
+        "INT_KANA",
+        "INT_KATAKANAHIRAGANA"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "INT2",
+        "INTERNATIONAL_2",
+        "INT_KANA",
+        "INT_KATAKANAHIRAGANA"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_INTERNATIONAL2))"
+    },
+    {
+      "keysym": "INT3",
+      "category": "International/language",
+      "description": "International3",
+      "aliases": [
+        "INTERNATIONAL_3",
+        "INT_YEN"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "INT3",
+        "INTERNATIONAL_3",
+        "INT_YEN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_INTERNATIONAL3))"
+    },
+    {
+      "keysym": "INT4",
+      "category": "International/language",
+      "description": "International4",
+      "aliases": [
+        "INTERNATIONAL_4",
+        "INT_HENKAN"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "INT4",
+        "INTERNATIONAL_4",
+        "INT_HENKAN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_INTERNATIONAL4))"
+    },
+    {
+      "keysym": "INT5",
+      "category": "International/language",
+      "description": "International5",
+      "aliases": [
+        "INTERNATIONAL_5",
+        "INT_MUHENKAN"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "INT5",
+        "INTERNATIONAL_5",
+        "INT_MUHENKAN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_INTERNATIONAL5))"
+    },
+    {
+      "keysym": "INT6",
+      "category": "International/language",
+      "description": "International6",
+      "aliases": [
+        "INTERNATIONAL_6",
+        "INT_KPJPCOMMA"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "INT6",
+        "INTERNATIONAL_6",
+        "INT_KPJPCOMMA"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_INTERNATIONAL6))"
+    },
+    {
+      "keysym": "INT7",
+      "category": "International/language",
+      "description": "International7",
+      "aliases": [
+        "INTERNATIONAL_7"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "INT7",
+        "INTERNATIONAL_7"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_INTERNATIONAL7))"
+    },
+    {
+      "keysym": "INT8",
+      "category": "International/language",
+      "description": "International8",
+      "aliases": [
+        "INTERNATIONAL_8"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "INT8",
+        "INTERNATIONAL_8"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_INTERNATIONAL8))"
+    },
+    {
+      "keysym": "INT9",
+      "category": "International/language",
+      "description": "International9",
+      "aliases": [
+        "INTERNATIONAL_9"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "INT9",
+        "INTERNATIONAL_9"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_INTERNATIONAL9))"
+    },
+    {
+      "keysym": "LANG1",
+      "category": "International/language",
+      "description": "Lang1",
+      "aliases": [
+        "LANGUAGE_1",
+        "LANG_HANGEUL"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "LANG1",
+        "LANGUAGE_1",
+        "LANG_HANGEUL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LANG1))"
+    },
+    {
+      "keysym": "LANG2",
+      "category": "International/language",
+      "description": "Lang2",
+      "aliases": [
+        "LANGUAGE_2",
+        "LANG_HANJA"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "LANG2",
+        "LANGUAGE_2",
+        "LANG_HANJA"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LANG2))"
+    },
+    {
+      "keysym": "LANG3",
+      "category": "International/language",
+      "description": "Lang3",
+      "aliases": [
+        "LANGUAGE_3",
+        "LANG_KATAKANA"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "LANG3",
+        "LANGUAGE_3",
+        "LANG_KATAKANA"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LANG3))"
+    },
+    {
+      "keysym": "LANG4",
+      "category": "International/language",
+      "description": "Lang4",
+      "aliases": [
+        "LANGUAGE_4",
+        "LANG_HIRAGANA"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "LANG4",
+        "LANGUAGE_4",
+        "LANG_HIRAGANA"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LANG4))"
+    },
+    {
+      "keysym": "LANG5",
+      "category": "International/language",
+      "description": "Lang5",
+      "aliases": [
+        "LANGUAGE_5",
+        "LANG_ZENKAKUHANKAKU"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "LANG5",
+        "LANGUAGE_5",
+        "LANG_ZENKAKUHANKAKU"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LANG5))"
+    },
+    {
+      "keysym": "LANG6",
+      "category": "International/language",
+      "description": "Lang6",
+      "aliases": [
+        "LANGUAGE_6"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "LANG6",
+        "LANGUAGE_6"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LANG6))"
+    },
+    {
+      "keysym": "LANG7",
+      "category": "International/language",
+      "description": "Lang7",
+      "aliases": [
+        "LANGUAGE_7"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "LANG7",
+        "LANGUAGE_7"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LANG7))"
+    },
+    {
+      "keysym": "LANG8",
+      "category": "International/language",
+      "description": "Lang8",
+      "aliases": [
+        "LANGUAGE_8"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "LANG8",
+        "LANGUAGE_8"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LANG8))"
+    },
+    {
+      "keysym": "LANG9",
+      "category": "International/language",
+      "description": "Lang9",
+      "aliases": [
+        "LANGUAGE_9"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "LANG9",
+        "LANGUAGE_9"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LANG9))"
+    },
+    {
+      "keysym": "NUBS",
+      "category": "International/language",
+      "description": "Non Us Backslash And Pipe",
+      "aliases": [
+        "NON_US_BACKSLASH",
+        "NON_US_BSLH"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "NON_US_BACKSLASH",
+        "NON_US_BSLH",
+        "NUBS"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_NON_US_BACKSLASH_AND_PIPE))"
+    },
+    {
+      "keysym": "NUHS",
+      "category": "International/language",
+      "description": "Non Us Hash And Tilde",
+      "aliases": [
+        "NON_US_HASH"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "NON_US_HASH",
+        "NUHS"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_NON_US_HASH_AND_TILDE))"
+    },
+    {
+      "keysym": "PIPE2",
+      "category": "International/language",
+      "description": "Non Us Backslash And Pipe",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "PIPE2"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_NON_US_BACKSLASH_AND_PIPE)))"
+    },
+    {
+      "keysym": "TILDE2",
+      "category": "International/language",
+      "description": "Non Us Hash And Tilde",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "TILDE2"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_NON_US_HASH_AND_TILDE)))"
+    },
+    {
+      "keysym": "ALT_ERASE",
+      "category": "Other keyboard keys",
+      "description": "Alternate Erase",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "ALT_ERASE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_ALTERNATE_ERASE))"
+    },
+    {
+      "keysym": "AMPS",
+      "category": "Other keyboard keys",
+      "description": "7 And Ampersand",
+      "aliases": [
+        "AMPERSAND"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "AMPERSAND",
+        "AMPS"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_7_AND_AMPERSAND)))"
+    },
+    {
+      "keysym": "AT",
+      "category": "Other keyboard keys",
+      "description": "2 And At",
+      "aliases": [
+        "ATSN",
+        "AT_SIGN"
+      ],
+      "deprecated_aliases": [
+        "ATSN"
+      ],
+      "all_names": [
+        "AT",
+        "ATSN",
+        "AT_SIGN"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_2_AND_AT)))"
+    },
+    {
+      "keysym": "BSLH",
+      "category": "Other keyboard keys",
+      "description": "Backslash And Pipe",
+      "aliases": [
+        "BACKSLASH"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "BACKSLASH",
+        "BSLH"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_BACKSLASH_AND_PIPE))"
+    },
+    {
+      "keysym": "CAPS",
+      "category": "Other keyboard keys",
+      "description": "Caps Lock",
+      "aliases": [
+        "CAPSLOCK",
+        "CLCK"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "CAPS",
+        "CAPSLOCK",
+        "CLCK"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_CAPS_LOCK))"
+    },
+    {
+      "keysym": "CARET",
+      "category": "Other keyboard keys",
+      "description": "6 And Caret",
+      "aliases": [
+        "CRRT"
+      ],
+      "deprecated_aliases": [
+        "CRRT"
+      ],
+      "all_names": [
+        "CARET",
+        "CRRT"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_6_AND_CARET)))"
+    },
+    {
+      "keysym": "CLEAR",
+      "category": "Other keyboard keys",
+      "description": "Clear",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "CLEAR"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_CLEAR))"
+    },
+    {
+      "keysym": "CLEAR_AGAIN",
+      "category": "Other keyboard keys",
+      "description": "Clear Again",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "CLEAR_AGAIN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_CLEAR_AGAIN))"
+    },
+    {
+      "keysym": "COLON",
+      "category": "Other keyboard keys",
+      "description": "Semicolon And Colon",
+      "aliases": [
+        "COLN"
+      ],
+      "deprecated_aliases": [
+        "COLN"
+      ],
+      "all_names": [
+        "COLN",
+        "COLON"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SEMICOLON_AND_COLON)))"
+    },
+    {
+      "keysym": "CRSEL",
+      "category": "Other keyboard keys",
+      "description": "Crsel Props",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "CRSEL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_CRSEL_PROPS))"
+    },
+    {
+      "keysym": "DLLR",
+      "category": "Other keyboard keys",
+      "description": "4 And Dollar",
+      "aliases": [
+        "DOLLAR"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "DLLR",
+        "DOLLAR"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_4_AND_DOLLAR)))"
+    },
+    {
+      "keysym": "DOWN",
+      "category": "Other keyboard keys",
+      "description": "Downarrow",
+      "aliases": [
+        "DARW",
+        "DOWN_ARROW"
+      ],
+      "deprecated_aliases": [
+        "DARW"
+      ],
+      "all_names": [
+        "DARW",
+        "DOWN",
+        "DOWN_ARROW"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_DOWNARROW))"
+    },
+    {
+      "keysym": "DQT",
+      "category": "Other keyboard keys",
+      "description": "Apostrophe And Quote",
+      "aliases": [
+        "DOUBLE_QUOTES"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "DOUBLE_QUOTES",
+        "DQT"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE)))"
+    },
+    {
+      "keysym": "EXCL",
+      "category": "Other keyboard keys",
+      "description": "1 And Exclamation",
+      "aliases": [
+        "BANG",
+        "EXCLAMATION"
+      ],
+      "deprecated_aliases": [
+        "BANG"
+      ],
+      "all_names": [
+        "BANG",
+        "EXCL",
+        "EXCLAMATION"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_1_AND_EXCLAMATION)))"
+    },
+    {
+      "keysym": "EXSEL",
+      "category": "Other keyboard keys",
+      "description": "Exsel",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "EXSEL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_EXSEL))"
+    },
+    {
+      "keysym": "FSLH",
+      "category": "Other keyboard keys",
+      "description": "Slash And Question Mark",
+      "aliases": [
+        "SLASH"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "FSLH",
+        "SLASH"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SLASH_AND_QUESTION_MARK))"
+    },
+    {
+      "keysym": "GT",
+      "category": "Other keyboard keys",
+      "description": "Period And Greater Than",
+      "aliases": [
+        "GREATER_THAN",
+        "RABT"
+      ],
+      "deprecated_aliases": [
+        "RABT"
+      ],
+      "all_names": [
+        "GREATER_THAN",
+        "GT",
+        "RABT"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_PERIOD_AND_GREATER_THAN)))"
+    },
+    {
+      "keysym": "HASH",
+      "category": "Other keyboard keys",
+      "description": "3 And Hash",
+      "aliases": [
+        "POUND"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "HASH",
+        "POUND"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_3_AND_HASH)))"
+    },
+    {
+      "keysym": "K_APP",
+      "category": "Other keyboard keys",
+      "description": "Application",
+      "aliases": [
+        "GUI",
+        "K_APPLICATION",
+        "K_CMENU",
+        "K_CONTEXT_MENU"
+      ],
+      "deprecated_aliases": [
+        "GUI"
+      ],
+      "all_names": [
+        "GUI",
+        "K_APP",
+        "K_APPLICATION",
+        "K_CMENU",
+        "K_CONTEXT_MENU"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_APPLICATION))"
+    },
+    {
+      "keysym": "K_CANCEL",
+      "category": "Other keyboard keys",
+      "description": "Cancel",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_CANCEL"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_CANCEL))"
+    },
+    {
+      "keysym": "K_COPY",
+      "category": "Other keyboard keys",
+      "description": "Copy",
+      "aliases": [
+        "COPY"
+      ],
+      "deprecated_aliases": [
+        "COPY"
+      ],
+      "all_names": [
+        "COPY",
+        "K_COPY"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_COPY))"
+    },
+    {
+      "keysym": "K_CUT",
+      "category": "Other keyboard keys",
+      "description": "Cut",
+      "aliases": [
+        "CUT"
+      ],
+      "deprecated_aliases": [
+        "CUT"
+      ],
+      "all_names": [
+        "CUT",
+        "K_CUT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_CUT))"
+    },
+    {
+      "keysym": "K_EXEC",
+      "category": "Other keyboard keys",
+      "description": "Execute",
+      "aliases": [
+        "K_EXECUTE"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_EXEC",
+        "K_EXECUTE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_EXECUTE))"
+    },
+    {
+      "keysym": "K_FIND",
+      "category": "Other keyboard keys",
+      "description": "Find",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_FIND"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_FIND))"
+    },
+    {
+      "keysym": "K_HELP",
+      "category": "Other keyboard keys",
+      "description": "Help",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_HELP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_HELP))"
+    },
+    {
+      "keysym": "K_MENU",
+      "category": "Other keyboard keys",
+      "description": "Menu",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_MENU"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_MENU))"
+    },
+    {
+      "keysym": "K_MUTE",
+      "category": "Other keyboard keys",
+      "description": "Mute",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_MUTE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_MUTE))"
+    },
+    {
+      "keysym": "K_PASTE",
+      "category": "Other keyboard keys",
+      "description": "Paste",
+      "aliases": [
+        "PSTE"
+      ],
+      "deprecated_aliases": [
+        "PSTE"
+      ],
+      "all_names": [
+        "K_PASTE",
+        "PSTE"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_PASTE))"
+    },
+    {
+      "keysym": "K_PWR",
+      "category": "Other keyboard keys",
+      "description": "Power",
+      "aliases": [
+        "K_POWER"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_POWER",
+        "K_PWR"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_POWER))"
+    },
+    {
+      "keysym": "K_REDO",
+      "category": "Other keyboard keys",
+      "description": "Again",
+      "aliases": [
+        "K_AGAIN"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_AGAIN",
+        "K_REDO"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_AGAIN))"
+    },
+    {
+      "keysym": "K_SELECT",
+      "category": "Other keyboard keys",
+      "description": "Select",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_SELECT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SELECT))"
+    },
+    {
+      "keysym": "K_STOP",
+      "category": "Other keyboard keys",
+      "description": "Stop",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_STOP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_STOP))"
+    },
+    {
+      "keysym": "K_UNDO",
+      "category": "Other keyboard keys",
+      "description": "Undo",
+      "aliases": [
+        "UNDO"
+      ],
+      "deprecated_aliases": [
+        "UNDO"
+      ],
+      "all_names": [
+        "K_UNDO",
+        "UNDO"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_UNDO))"
+    },
+    {
+      "keysym": "K_VOL_DN",
+      "category": "Other keyboard keys",
+      "description": "Volume Down",
+      "aliases": [
+        "K_VOLUME_DOWN",
+        "VOLD"
+      ],
+      "deprecated_aliases": [
+        "VOLD"
+      ],
+      "all_names": [
+        "K_VOLUME_DOWN",
+        "K_VOL_DN",
+        "VOLD"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_VOLUME_DOWN))"
+    },
+    {
+      "keysym": "K_VOL_UP",
+      "category": "Other keyboard keys",
+      "description": "Volume Up",
+      "aliases": [
+        "K_VOLUME_UP",
+        "VOLU"
+      ],
+      "deprecated_aliases": [
+        "VOLU"
+      ],
+      "all_names": [
+        "K_VOLUME_UP",
+        "K_VOL_UP",
+        "VOLU"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_VOLUME_UP))"
+    },
+    {
+      "keysym": "LBKT",
+      "category": "Other keyboard keys",
+      "description": "Left Bracket And Left Brace",
+      "aliases": [
+        "LEFT_BRACKET"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "LBKT",
+        "LEFT_BRACKET"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE))"
+    },
+    {
+      "keysym": "LBRC",
+      "category": "Other keyboard keys",
+      "description": "Left Bracket And Left Brace",
+      "aliases": [
+        "LCUR",
+        "LEFT_BRACE"
+      ],
+      "deprecated_aliases": [
+        "LCUR"
+      ],
+      "all_names": [
+        "LBRC",
+        "LCUR",
+        "LEFT_BRACE"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE)))"
+    },
+    {
+      "keysym": "LCAPS",
+      "category": "Other keyboard keys",
+      "description": "Locking Caps Lock",
+      "aliases": [
+        "LOCKING_CAPS"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "LCAPS",
+        "LOCKING_CAPS"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LOCKING_CAPS_LOCK))"
+    },
+    {
+      "keysym": "LEFT",
+      "category": "Other keyboard keys",
+      "description": "Leftarrow",
+      "aliases": [
+        "LARW",
+        "LEFT_ARROW"
+      ],
+      "deprecated_aliases": [
+        "LARW"
+      ],
+      "all_names": [
+        "LARW",
+        "LEFT",
+        "LEFT_ARROW"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFTARROW))"
+    },
+    {
+      "keysym": "LNLCK",
+      "category": "Other keyboard keys",
+      "description": "Locking Num Lock",
+      "aliases": [
+        "LOCKING_NUM"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "LNLCK",
+        "LOCKING_NUM"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LOCKING_NUM_LOCK))"
+    },
+    {
+      "keysym": "LPAR",
+      "category": "Other keyboard keys",
+      "description": "9 And Left Parenthesis",
+      "aliases": [
+        "LEFT_PARENTHESIS",
+        "LPRN"
+      ],
+      "deprecated_aliases": [
+        "LPRN"
+      ],
+      "all_names": [
+        "LEFT_PARENTHESIS",
+        "LPAR",
+        "LPRN"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_9_AND_LEFT_PARENTHESIS)))"
+    },
+    {
+      "keysym": "LSLCK",
+      "category": "Other keyboard keys",
+      "description": "Locking Scroll Lock",
+      "aliases": [
+        "LOCKING_SCROLL"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "LOCKING_SCROLL",
+        "LSLCK"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LOCKING_SCROLL_LOCK))"
+    },
+    {
+      "keysym": "LT",
+      "category": "Other keyboard keys",
+      "description": "Comma And Less Than",
+      "aliases": [
+        "LABT",
+        "LESS_THAN"
+      ],
+      "deprecated_aliases": [
+        "LABT"
+      ],
+      "all_names": [
+        "LABT",
+        "LESS_THAN",
+        "LT"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_COMMA_AND_LESS_THAN)))"
+    },
+    {
+      "keysym": "OPER",
+      "category": "Other keyboard keys",
+      "description": "Oper",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "OPER"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_OPER))"
+    },
+    {
+      "keysym": "OUT",
+      "category": "Other keyboard keys",
+      "description": "Out",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "OUT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_OUT))"
+    },
+    {
+      "keysym": "PAUSE_BREAK",
+      "category": "Other keyboard keys",
+      "description": "Pause",
+      "aliases": [
+        "PAUS"
+      ],
+      "deprecated_aliases": [
+        "PAUS"
+      ],
+      "all_names": [
+        "PAUS",
+        "PAUSE_BREAK"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_PAUSE))"
+    },
+    {
+      "keysym": "PIPE",
+      "category": "Other keyboard keys",
+      "description": "Backslash And Pipe",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "PIPE"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_BACKSLASH_AND_PIPE)))"
+    },
+    {
+      "keysym": "PLUS",
+      "category": "Other keyboard keys",
+      "description": "Equal And Plus",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "PLUS"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_EQUAL_AND_PLUS)))"
+    },
+    {
+      "keysym": "PRCNT",
+      "category": "Other keyboard keys",
+      "description": "5 And Percent",
+      "aliases": [
+        "PERCENT",
+        "PRCT"
+      ],
+      "deprecated_aliases": [
+        "PRCT"
+      ],
+      "all_names": [
+        "PERCENT",
+        "PRCNT",
+        "PRCT"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_5_AND_PERCENT)))"
+    },
+    {
+      "keysym": "PRIOR",
+      "category": "Other keyboard keys",
+      "description": "Prior",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "PRIOR"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_PRIOR))"
+    },
+    {
+      "keysym": "PSCRN",
+      "category": "Other keyboard keys",
+      "description": "Printscreen",
+      "aliases": [
+        "PRINTSCREEN",
+        "PRSC"
+      ],
+      "deprecated_aliases": [
+        "PRSC"
+      ],
+      "all_names": [
+        "PRINTSCREEN",
+        "PRSC",
+        "PSCRN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_PRINTSCREEN))"
+    },
+    {
+      "keysym": "QMARK",
+      "category": "Other keyboard keys",
+      "description": "Slash And Question Mark",
+      "aliases": [
+        "QUESTION"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "QMARK",
+        "QUESTION"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SLASH_AND_QUESTION_MARK)))"
+    },
+    {
+      "keysym": "RBKT",
+      "category": "Other keyboard keys",
+      "description": "Right Bracket And Right Brace",
+      "aliases": [
+        "RIGHT_BRACKET"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "RBKT",
+        "RIGHT_BRACKET"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET_AND_RIGHT_BRACE))"
+    },
+    {
+      "keysym": "RBRC",
+      "category": "Other keyboard keys",
+      "description": "Right Bracket And Right Brace",
+      "aliases": [
+        "RCUR",
+        "RIGHT_BRACE"
+      ],
+      "deprecated_aliases": [
+        "RCUR"
+      ],
+      "all_names": [
+        "RBRC",
+        "RCUR",
+        "RIGHT_BRACE"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET_AND_RIGHT_BRACE)))"
+    },
+    {
+      "keysym": "RET2",
+      "category": "Other keyboard keys",
+      "description": "Return",
+      "aliases": [
+        "RETURN2"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "RET2",
+        "RETURN2"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RETURN))"
+    },
+    {
+      "keysym": "RIGHT",
+      "category": "Other keyboard keys",
+      "description": "Rightarrow",
+      "aliases": [
+        "RARW",
+        "RIGHT_ARROW"
+      ],
+      "deprecated_aliases": [
+        "RARW"
+      ],
+      "all_names": [
+        "RARW",
+        "RIGHT",
+        "RIGHT_ARROW"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHTARROW))"
+    },
+    {
+      "keysym": "RPAR",
+      "category": "Other keyboard keys",
+      "description": "0 And Right Parenthesis",
+      "aliases": [
+        "RIGHT_PARENTHESIS",
+        "RPRN"
+      ],
+      "deprecated_aliases": [
+        "RPRN"
+      ],
+      "all_names": [
+        "RIGHT_PARENTHESIS",
+        "RPAR",
+        "RPRN"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_0_AND_RIGHT_PARENTHESIS)))"
+    },
+    {
+      "keysym": "SEMI",
+      "category": "Other keyboard keys",
+      "description": "Semicolon And Colon",
+      "aliases": [
+        "SCLN",
+        "SEMICOLON"
+      ],
+      "deprecated_aliases": [
+        "SCLN"
+      ],
+      "all_names": [
+        "SCLN",
+        "SEMI",
+        "SEMICOLON"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SEMICOLON_AND_COLON))"
+    },
+    {
+      "keysym": "SEPARATOR",
+      "category": "Other keyboard keys",
+      "description": "Separator",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "SEPARATOR"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SEPARATOR))"
+    },
+    {
+      "keysym": "SLCK",
+      "category": "Other keyboard keys",
+      "description": "Scroll Lock",
+      "aliases": [
+        "SCLK",
+        "SCROLLLOCK"
+      ],
+      "deprecated_aliases": [
+        "SCLK"
+      ],
+      "all_names": [
+        "SCLK",
+        "SCROLLLOCK",
+        "SLCK"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SCROLL_LOCK))"
+    },
+    {
+      "keysym": "SQT",
+      "category": "Other keyboard keys",
+      "description": "Apostrophe And Quote",
+      "aliases": [
+        "APOS",
+        "APOSTROPHE",
+        "QUOT",
+        "SINGLE_QUOTE"
+      ],
+      "deprecated_aliases": [
+        "QUOT"
+      ],
+      "all_names": [
+        "APOS",
+        "APOSTROPHE",
+        "QUOT",
+        "SINGLE_QUOTE",
+        "SQT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE))"
+    },
+    {
+      "keysym": "STAR",
+      "category": "Other keyboard keys",
+      "description": "8 And Asterisk",
+      "aliases": [
+        "ASTERISK",
+        "ASTRK"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "ASTERISK",
+        "ASTRK",
+        "STAR"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_8_AND_ASTERISK)))"
+    },
+    {
+      "keysym": "SYSREQ",
+      "category": "Other keyboard keys",
+      "description": "Sysreq Attention",
+      "aliases": [
+        "ATTENTION"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "ATTENTION",
+        "SYSREQ"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SYSREQ_ATTENTION))"
+    },
+    {
+      "keysym": "TILDE",
+      "category": "Other keyboard keys",
+      "description": "Grave Accent And Tilde",
+      "aliases": [
+        "TILD"
+      ],
+      "deprecated_aliases": [
+        "TILD"
+      ],
+      "all_names": [
+        "TILD",
+        "TILDE"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE)))"
+    },
+    {
+      "keysym": "UNDER",
+      "category": "Other keyboard keys",
+      "description": "Minus And Underscore",
+      "aliases": [
+        "UNDERSCORE"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "UNDER",
+        "UNDERSCORE"
+      ],
+      "expression": "(LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_MINUS_AND_UNDERSCORE)))"
+    },
+    {
+      "keysym": "UP",
+      "category": "Other keyboard keys",
+      "description": "Uparrow",
+      "aliases": [
+        "UARW",
+        "UP_ARROW"
+      ],
+      "deprecated_aliases": [
+        "UARW"
+      ],
+      "all_names": [
+        "UARW",
+        "UP",
+        "UP_ARROW"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_UPARROW))"
+    },
+    {
+      "keysym": "CURU",
+      "category": "Other",
+      "description": "Currency Unit",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "CURU"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_CURRENCY_UNIT))"
+    },
+    {
+      "keysym": "K_BACK",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF1))",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_BACK"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF1))"
+    },
+    {
+      "keysym": "K_CALC",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xFB))",
+      "aliases": [
+        "K_CALCULATOR"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_CALC",
+        "K_CALCULATOR"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xFB))"
+    },
+    {
+      "keysym": "K_EDIT",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF7))",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_EDIT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF7))"
+    },
+    {
+      "keysym": "K_EJECT",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xEC))",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_EJECT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xEC))"
+    },
+    {
+      "keysym": "K_FIND2",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF4))",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_FIND2"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF4))"
+    },
+    {
+      "keysym": "K_FORWARD",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF2))",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_FORWARD"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF2))"
+    },
+    {
+      "keysym": "K_LOCK",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF9))",
+      "aliases": [
+        "K_COFFEE",
+        "K_SCREENSAVER"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_COFFEE",
+        "K_LOCK",
+        "K_SCREENSAVER"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF9))"
+    },
+    {
+      "keysym": "K_MUTE2",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xEF))",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_MUTE2"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xEF))"
+    },
+    {
+      "keysym": "K_NEXT",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xEB))",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_NEXT"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xEB))"
+    },
+    {
+      "keysym": "K_PP",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xE8))",
+      "aliases": [
+        "K_PLAY_PAUSE"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_PLAY_PAUSE",
+        "K_PP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xE8))"
+    },
+    {
+      "keysym": "K_PREV",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xEA))",
+      "aliases": [
+        "K_PREVIOUS"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_PREV",
+        "K_PREVIOUS"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xEA))"
+    },
+    {
+      "keysym": "K_REFRESH",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xFA))",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_REFRESH"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xFA))"
+    },
+    {
+      "keysym": "K_SCROLL_DOWN",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF6))",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_SCROLL_DOWN"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF6))"
+    },
+    {
+      "keysym": "K_SCROLL_UP",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF5))",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_SCROLL_UP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF5))"
+    },
+    {
+      "keysym": "K_SLEEP",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF8))",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_SLEEP"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF8))"
+    },
+    {
+      "keysym": "K_STOP2",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xE9))",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_STOP2"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xE9))"
+    },
+    {
+      "keysym": "K_STOP3",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF3))",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_STOP3"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF3))"
+    },
+    {
+      "keysym": "K_VOL_DN2",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xEE))",
+      "aliases": [
+        "K_VOLUME_DOWN2"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_VOLUME_DOWN2",
+        "K_VOL_DN2"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xEE))"
+    },
+    {
+      "keysym": "K_VOL_UP2",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xED))",
+      "aliases": [
+        "K_VOLUME_UP2"
+      ],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_VOLUME_UP2",
+        "K_VOL_UP2"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xED))"
+    },
+    {
+      "keysym": "K_WWW",
+      "category": "Other",
+      "description": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF0))",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "all_names": [
+        "K_WWW"
+      ],
+      "expression": "(ZMK_HID_USAGE(HID_USAGE_KEY, 0xF0))"
+    }
+  ]
+}

@@ -4,9 +4,8 @@
 from __future__ import annotations
 
 import argparse
-import glob
 import html
-import os
+import json
 import re
 import time
 from pathlib import Path
@@ -14,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 KEYMAP = ROOT / "config" / "urchin.keymap"
 OUTPUT = ROOT / "docs" / "keymap.html"
-KEYS_HEADER_GLOB = "/nix/store/*urchin-firmware-west-deps/zmk/app/include/dt-bindings/zmk/keys.h"
+KEYSYMS_CATALOG = ROOT / "docs" / "zmk-keysyms.json"
 
 DISPLAY = {
     "LCTRL": "Ctrl",
@@ -212,71 +211,11 @@ def render_layer(layer: int, keys: list[str]) -> str:
 """
 
 
-def keys_header_path() -> Path | None:
-    env_path = os.environ.get("ZMK_KEYS_H")
-    if env_path:
-        path = Path(env_path)
-        return path if path.exists() else None
-
-    paths = [Path(path) for path in glob.glob(KEYS_HEADER_GLOB)]
-    paths = [path for path in paths if path.exists()]
-    if not paths:
-        return None
-    return max(paths, key=lambda path: path.stat().st_mtime)
-
-
-def parse_keysyms() -> list[dict[str, object]]:
-    path = keys_header_path()
-    if path is None:
+def load_keysyms() -> list[dict[str, object]]:
+    if not KEYSYMS_CATALOG.exists():
         return []
-
-    lines = path.read_text().splitlines()
-    logical_lines: list[str] = []
-    current = ""
-    for line in lines:
-        stripped = line.rstrip()
-        if stripped.endswith("\\"):
-            current += stripped[:-1] + " "
-            continue
-        logical_lines.append(current + stripped)
-        current = ""
-
-    defines: dict[str, str] = {}
-    deprecated: set[str] = set()
-    for line in logical_lines:
-        match = re.match(r"#define\s+([A-Z][A-Z0-9_]*)\s+(.+)$", line)
-        if not match:
-            continue
-        name, value = match.groups()
-        value = value.split("//", 1)[0].strip()
-        if not value or "(" not in value:
-            continue
-        defines[name] = value
-        if "DEPRECATED" in line:
-            deprecated.add(name)
-
-    def resolve(name: str, seen: set[str] | None = None) -> str:
-        seen = seen or set()
-        value = defines[name]
-        alias = re.fullmatch(r"\(?([A-Z][A-Z0-9_]*)\)?", value)
-        if alias and alias.group(1) in defines and alias.group(1) not in seen:
-            return resolve(alias.group(1), seen | {name})
-        return re.sub(r"\s+", " ", value)
-
-    groups: dict[str, list[str]] = {}
-    for name in defines:
-        groups.setdefault(resolve(name), []).append(name)
-
-    keysyms: list[dict[str, object]] = []
-    for value, names in groups.items():
-        preferred = [name for name in names if name not in deprecated]
-        if not preferred:
-            preferred = names
-        canonical = min(preferred, key=lambda name: (len(name), name))
-        aliases = sorted(name for name in names if name != canonical)
-        keysyms.append({"canonical": canonical, "aliases": aliases, "names": set(names), "value": value})
-
-    return sorted(keysyms, key=lambda item: str(item["canonical"]))
+    catalog = json.loads(KEYSYMS_CATALOG.read_text())
+    return catalog["keysyms"]
 
 
 def render_missing_keysyms(used: set[str], keysyms: list[dict[str, object]]) -> str:
@@ -284,22 +223,59 @@ def render_missing_keysyms(used: set[str], keysyms: list[dict[str, object]]) -> 
         return """
   <section>
     <h2>Missing ZMK keysyms</h2>
-    <p>Could not find ZMK <code>keys.h</code>. Build firmware once or set <code>ZMK_KEYS_H</code> to render this section.</p>
+    <p>Could not find <code>docs/zmk-keysyms.json</code>. Run <code>python3 scripts/update_keysyms_catalog.py</code> to create it.</p>
   </section>
 """
 
-    missing = [item for item in keysyms if not (item["names"] & used)]
-    items = "\n".join(
-        f"      <li><code>{html.escape(str(item['canonical']))}</code></li>" for item in missing
+    missing = [item for item in keysyms if not (set(item["all_names"]) & used)]
+
+    def alias_cell(item: dict[str, object]) -> str:
+        aliases = item["aliases"]
+        if not aliases:
+            return ""
+        return ", ".join(f"<code>{html.escape(alias)}</code>" for alias in aliases)
+
+    def missing_row(item: dict[str, object]) -> str:
+        return "\n".join(
+            [
+                "      <tr>",
+                f"        <td><code>{html.escape(str(item['keysym']))}</code></td>",
+                f"        <td>{html.escape(str(item['description']))}</td>",
+                f"        <td>{alias_cell(item)}</td>",
+                "      </tr>",
+            ]
+        )
+
+    grouped: dict[str, list[dict[str, object]]] = {}
+    for item in missing:
+        grouped.setdefault(str(item["category"]), []).append(item)
+
+    rows = "\n".join(
+        "\n".join(
+            [
+                f'      <tr class="category"><th colspan="3">{html.escape(category)} ({len(items)})</th></tr>',
+                *[missing_row(item) for item in items],
+            ]
+        )
+        for category, items in grouped.items()
     )
     return f"""
   <section>
     <h2>Missing ZMK keysyms</h2>
-    <p>Deduped by resolved HID expression. If any alias for a keysym is used in the keymap, that keysym is considered present.</p>
+    <p>Loaded from tracked <code>docs/zmk-keysyms.json</code>. If any alias for a keysym is used in the keymap, that keysym is considered present.</p>
     <p>Used {len(keysyms) - len(missing)} of {len(keysyms)} deduped keysyms; missing {len(missing)}.</p>
-    <ul class="missing-keysyms">
-{items}
-    </ul>
+    <table class="missing-keysyms">
+      <thead>
+        <tr>
+          <th>Keysym</th>
+          <th>Meaning</th>
+          <th>Aliases</th>
+        </tr>
+      </thead>
+      <tbody>
+{rows}
+      </tbody>
+    </table>
   </section>
 """
 
@@ -335,8 +311,10 @@ def render_html(
     .combo-map td {{ background: #f7f7f7; }}
     .combo-map td.active {{ background: #ffd166; border-color: #9a6700; }}
     .combo-map td.active sub {{ color: #222; font-weight: 700; }}
-    .missing-keysyms {{ columns: 4 12rem; }}
-    .missing-keysyms li {{ break-inside: avoid; }}
+    .missing-keysyms {{ width: 100%; table-layout: fixed; }}
+    .missing-keysyms th, .missing-keysyms td {{ height: auto; min-width: 0; text-align: left; vertical-align: top; padding: 0.4rem 0.6rem; overflow-wrap: anywhere; }}
+    .missing-keysyms th {{ background: #eee; }}
+    .missing-keysyms tr.category th {{ background: #d9e8ff; font-size: 1.05rem; padding-top: 0.7rem; padding-bottom: 0.7rem; }}
     code {{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }}
   </style>
 </head>
@@ -371,7 +349,7 @@ def render() -> None:
     layers = parse_layers(text)
     combos = parse_combos(text)
     used = keymap_keysyms(text)
-    missing_keysyms_html = render_missing_keysyms(used, parse_keysyms())
+    missing_keysyms_html = render_missing_keysyms(used, load_keysyms())
     OUTPUT.write_text(render_html(layers, combos, missing_keysyms_html))
     print(f"wrote {OUTPUT.relative_to(ROOT)}")
 
