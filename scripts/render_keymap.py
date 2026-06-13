@@ -72,6 +72,12 @@ def token_display(tokens: list[str], index: int) -> tuple[str, int]:
         mod = DISPLAY.get(tokens[index + 1], tokens[index + 1])
         key = DISPLAY.get(tokens[index + 2], tokens[index + 2])
         return f"{key}\nhold {mod}", index + 3
+    if token == "&mt_none":
+        mod = DISPLAY.get(tokens[index + 1], tokens[index + 1])
+        return f"--\nhold {mod}", index + 3
+    if token == "&mt_bootloader":
+        mod = DISPLAY.get(tokens[index + 1], tokens[index + 1])
+        return f"Bootload\nhold {mod}", index + 3
     if token == "&bootloader":
         return "Bootload", index + 1
     if token == "&none":
@@ -98,6 +104,9 @@ def keymap_keysyms(text: str) -> set[str]:
         elif token == "&mt" and index + 2 < len(tokens):
             used.add(tokens[index + 1])
             used.add(tokens[index + 2])
+            index += 3
+        elif token in {"&mt_none", "&mt_bootloader"} and index + 2 < len(tokens):
+            used.add(tokens[index + 1])
             index += 3
         else:
             index += 1
