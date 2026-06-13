@@ -160,6 +160,7 @@ def render_html(layers: list[tuple[int, list[str]]], combos: list[tuple[str, str
   {layer_html}
   <section>
     <h2>Combos</h2>
+    <p>Combos are based on finger position and apply on all layers unless a combo explicitly restricts layers.</p>
     <ul>
 {combo_items}
     </ul>

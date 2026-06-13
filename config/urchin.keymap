@@ -4,6 +4,7 @@
 / {
   combos {
     compatible = "zmk,combos";
+    // Finger-position combos intentionally apply on all layers.
 
     combo_left_return {
         timeout-ms = <50>;

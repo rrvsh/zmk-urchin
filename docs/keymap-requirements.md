@@ -13,6 +13,7 @@ These are current working requirements and preferences for redesigning the Urchi
 - `Enter`: middle + ring fingers.
 - `Esc`: all four home-row fingers.
 - Prefer keeping these as combos rather than dedicated thumb keys if practical.
+- Combos are based on finger position and should apply on all layers, not only the base layer.
 
 ## Home-row mods
 
