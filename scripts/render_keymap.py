@@ -43,10 +43,16 @@ DISPLAY = {
     "N0": "0",
 }
 
-POSITION_NAMES = {
-    10: "A", 11: "S", 12: "D", 13: "F",
-    16: "J", 17: "K", 18: "L", 19: ";",
-}
+PHYSICAL_ROWS = [
+    list(range(0, 5)),
+    list(range(10, 15)),
+    list(range(20, 25)),
+    list(range(5, 10)),
+    list(range(15, 20)),
+    list(range(25, 30)),
+    [30, 31],
+    [32, 33],
+]
 
 
 def token_display(tokens: list[str], index: int) -> tuple[str, int]:
@@ -84,20 +90,24 @@ def parse_layers(text: str) -> list[tuple[int, list[str]]]:
     return layers
 
 
-def parse_combos(text: str) -> list[tuple[str, str]]:
-    combos: list[tuple[str, str]] = []
-    pattern = re.compile(r"combo_[\w_]+\s*\{(.*?)\};", re.S)
+def parse_combos(text: str) -> list[dict[str, object]]:
+    combos: list[dict[str, object]] = []
+    pattern = re.compile(r"(combo_[\w_]+)\s*\{(.*?)\};", re.S)
     for match in pattern.finditer(text):
-        block = match.group(1)
+        name = match.group(1).removeprefix("combo_").replace("_", " ").title()
+        block = match.group(2)
         positions_match = re.search(r"key-positions\s*=\s*<([^>]+)>;", block)
         binding_match = re.search(r"bindings\s*=\s*<([^>]+)>;", block)
+        layers_match = re.search(r"layers\s*=\s*<([^>]+)>;", block)
         if not positions_match or not binding_match:
             continue
         positions = [int(pos) for pos in positions_match.group(1).split()]
         binding_tokens = binding_match.group(1).split()
         binding, _ = token_display(binding_tokens, 0)
-        keys = " + ".join(POSITION_NAMES.get(pos, str(pos)) for pos in positions)
-        combos.append((keys, binding))
+        layers = "all layers"
+        if layers_match:
+            layers = ", ".join(f"Layer {layer}" for layer in layers_match.group(1).split())
+        combos.append({"name": name, "positions": positions, "binding": binding, "layers": layers})
     return combos
 
 
@@ -107,6 +117,40 @@ def cell(label: str, index: int) -> str:
 
 def cells(keys: list[str], positions: list[int], layer: int) -> str:
     return "".join(cell(keys[position], layer * 34 + position) for position in positions)
+
+
+def combo_cells(row: list[int], active: set[int]) -> str:
+    return "".join(
+        f'<td class="{"active" if position in active else ""}"><sub>{position}</sub></td>' for position in row
+    )
+
+
+def render_combo(combo: dict[str, object]) -> str:
+    active = set(combo["positions"])
+    return f"""
+    <article class="combo">
+      <h3>{html.escape(str(combo["name"]))} → {html.escape(str(combo["binding"]))}</h3>
+      <p>Active on: {html.escape(str(combo["layers"]))}</p>
+      <div class="keyboard combo-map">
+        <div class="side left-side">
+          <table>
+            <tr>{combo_cells(PHYSICAL_ROWS[0], active)}</tr>
+            <tr>{combo_cells(PHYSICAL_ROWS[1], active)}</tr>
+            <tr>{combo_cells(PHYSICAL_ROWS[2], active)}</tr>
+          </table>
+          <table class="thumbs"><tr>{combo_cells(PHYSICAL_ROWS[6], active)}</tr></table>
+        </div>
+        <div class="side right-side">
+          <table>
+            <tr>{combo_cells(PHYSICAL_ROWS[3], active)}</tr>
+            <tr>{combo_cells(PHYSICAL_ROWS[4], active)}</tr>
+            <tr>{combo_cells(PHYSICAL_ROWS[5], active)}</tr>
+          </table>
+          <table class="thumbs"><tr>{combo_cells(PHYSICAL_ROWS[7], active)}</tr></table>
+        </div>
+      </div>
+    </article>
+"""
 
 
 def render_layer(layer: int, keys: list[str]) -> str:
@@ -135,10 +179,8 @@ def render_layer(layer: int, keys: list[str]) -> str:
 """
 
 
-def render_html(layers: list[tuple[int, list[str]]], combos: list[tuple[str, str]]) -> str:
-    combo_items = "\n".join(
-        f"      <li><code>{html.escape(keys)}</code> → {html.escape(binding)}</li>" for keys, binding in combos
-    )
+def render_html(layers: list[tuple[int, list[str]]], combos: list[dict[str, object]]) -> str:
+    combo_items = "\n".join(render_combo(combo) for combo in combos)
     layer_html = "\n".join(render_layer(layer, keys) for layer, keys in layers)
     return f"""<!doctype html>
 <html lang="en">
@@ -156,6 +198,12 @@ def render_html(layers: list[tuple[int, list[str]]], combos: list[tuple[str, str
     table {{ border-collapse: collapse; }}
     td {{ border: 1px solid #666; min-width: 4.5rem; height: 2.5rem; text-align: center; padding: 0.25rem; position: relative; }}
     td sub {{ position: absolute; right: 0.25rem; bottom: 0.15rem; color: #666; font-size: 0.7rem; }}
+    .combo {{ margin: 1.5rem 0; }}
+    .combo h3 {{ margin-bottom: 0.25rem; }}
+    .combo p {{ margin-top: 0; }}
+    .combo-map td {{ background: #f7f7f7; }}
+    .combo-map td.active {{ background: #ffd166; border-color: #9a6700; }}
+    .combo-map td.active sub {{ color: #222; font-weight: 700; }}
     code {{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }}
   </style>
 </head>
@@ -165,10 +213,8 @@ def render_html(layers: list[tuple[int, list[str]]], combos: list[tuple[str, str
   {layer_html}
   <section>
     <h2>Combos</h2>
-    <p>Combos are based on finger position and apply on all layers unless a combo explicitly restricts layers.</p>
-    <ul>
+    <p>Combos are based on physical finger position. Highlighted boxes show the physical positions used by each combo.</p>
 {combo_items}
-    </ul>
   </section>
 </body>
 </html>

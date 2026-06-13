@@ -14,6 +14,12 @@
     table { border-collapse: collapse; }
     td { border: 1px solid #666; min-width: 4.5rem; height: 2.5rem; text-align: center; padding: 0.25rem; position: relative; }
     td sub { position: absolute; right: 0.25rem; bottom: 0.15rem; color: #666; font-size: 0.7rem; }
+    .combo { margin: 1.5rem 0; }
+    .combo h3 { margin-bottom: 0.25rem; }
+    .combo p { margin-top: 0; }
+    .combo-map td { background: #f7f7f7; }
+    .combo-map td.active { background: #ffd166; border-color: #9a6700; }
+    .combo-map td.active sub { color: #222; font-weight: 700; }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   </style>
 </head>
@@ -114,13 +120,103 @@
 
   <section>
     <h2>Combos</h2>
-    <p>Combos are based on finger position and apply on all layers unless a combo explicitly restricts layers.</p>
-    <ul>
-      <li><code>S + D</code> → Enter</li>
-      <li><code>A + S + D + F</code> → Esc</li>
-      <li><code>K + L</code> → Enter</li>
-      <li><code>J + K + L + ;</code> → Esc</li>
-    </ul>
+    <p>Combos are based on physical finger position. Highlighted boxes show the physical positions used by each combo.</p>
+
+    <article class="combo">
+      <h3>Left Return → Enter</h3>
+      <p>Active on: all layers</p>
+      <div class="keyboard combo-map">
+        <div class="side left-side">
+          <table>
+            <tr><td class=""><sub>0</sub></td><td class=""><sub>1</sub></td><td class=""><sub>2</sub></td><td class=""><sub>3</sub></td><td class=""><sub>4</sub></td></tr>
+            <tr><td class=""><sub>10</sub></td><td class="active"><sub>11</sub></td><td class="active"><sub>12</sub></td><td class=""><sub>13</sub></td><td class=""><sub>14</sub></td></tr>
+            <tr><td class=""><sub>20</sub></td><td class=""><sub>21</sub></td><td class=""><sub>22</sub></td><td class=""><sub>23</sub></td><td class=""><sub>24</sub></td></tr>
+          </table>
+          <table class="thumbs"><tr><td class=""><sub>30</sub></td><td class=""><sub>31</sub></td></tr></table>
+        </div>
+        <div class="side right-side">
+          <table>
+            <tr><td class=""><sub>5</sub></td><td class=""><sub>6</sub></td><td class=""><sub>7</sub></td><td class=""><sub>8</sub></td><td class=""><sub>9</sub></td></tr>
+            <tr><td class=""><sub>15</sub></td><td class=""><sub>16</sub></td><td class=""><sub>17</sub></td><td class=""><sub>18</sub></td><td class=""><sub>19</sub></td></tr>
+            <tr><td class=""><sub>25</sub></td><td class=""><sub>26</sub></td><td class=""><sub>27</sub></td><td class=""><sub>28</sub></td><td class=""><sub>29</sub></td></tr>
+          </table>
+          <table class="thumbs"><tr><td class=""><sub>32</sub></td><td class=""><sub>33</sub></td></tr></table>
+        </div>
+      </div>
+    </article>
+
+
+    <article class="combo">
+      <h3>Left Esc → Esc</h3>
+      <p>Active on: all layers</p>
+      <div class="keyboard combo-map">
+        <div class="side left-side">
+          <table>
+            <tr><td class=""><sub>0</sub></td><td class=""><sub>1</sub></td><td class=""><sub>2</sub></td><td class=""><sub>3</sub></td><td class=""><sub>4</sub></td></tr>
+            <tr><td class="active"><sub>10</sub></td><td class="active"><sub>11</sub></td><td class="active"><sub>12</sub></td><td class="active"><sub>13</sub></td><td class=""><sub>14</sub></td></tr>
+            <tr><td class=""><sub>20</sub></td><td class=""><sub>21</sub></td><td class=""><sub>22</sub></td><td class=""><sub>23</sub></td><td class=""><sub>24</sub></td></tr>
+          </table>
+          <table class="thumbs"><tr><td class=""><sub>30</sub></td><td class=""><sub>31</sub></td></tr></table>
+        </div>
+        <div class="side right-side">
+          <table>
+            <tr><td class=""><sub>5</sub></td><td class=""><sub>6</sub></td><td class=""><sub>7</sub></td><td class=""><sub>8</sub></td><td class=""><sub>9</sub></td></tr>
+            <tr><td class=""><sub>15</sub></td><td class=""><sub>16</sub></td><td class=""><sub>17</sub></td><td class=""><sub>18</sub></td><td class=""><sub>19</sub></td></tr>
+            <tr><td class=""><sub>25</sub></td><td class=""><sub>26</sub></td><td class=""><sub>27</sub></td><td class=""><sub>28</sub></td><td class=""><sub>29</sub></td></tr>
+          </table>
+          <table class="thumbs"><tr><td class=""><sub>32</sub></td><td class=""><sub>33</sub></td></tr></table>
+        </div>
+      </div>
+    </article>
+
+
+    <article class="combo">
+      <h3>Right Return → Enter</h3>
+      <p>Active on: all layers</p>
+      <div class="keyboard combo-map">
+        <div class="side left-side">
+          <table>
+            <tr><td class=""><sub>0</sub></td><td class=""><sub>1</sub></td><td class=""><sub>2</sub></td><td class=""><sub>3</sub></td><td class=""><sub>4</sub></td></tr>
+            <tr><td class=""><sub>10</sub></td><td class=""><sub>11</sub></td><td class=""><sub>12</sub></td><td class=""><sub>13</sub></td><td class=""><sub>14</sub></td></tr>
+            <tr><td class=""><sub>20</sub></td><td class=""><sub>21</sub></td><td class=""><sub>22</sub></td><td class=""><sub>23</sub></td><td class=""><sub>24</sub></td></tr>
+          </table>
+          <table class="thumbs"><tr><td class=""><sub>30</sub></td><td class=""><sub>31</sub></td></tr></table>
+        </div>
+        <div class="side right-side">
+          <table>
+            <tr><td class=""><sub>5</sub></td><td class=""><sub>6</sub></td><td class=""><sub>7</sub></td><td class=""><sub>8</sub></td><td class=""><sub>9</sub></td></tr>
+            <tr><td class=""><sub>15</sub></td><td class=""><sub>16</sub></td><td class="active"><sub>17</sub></td><td class="active"><sub>18</sub></td><td class=""><sub>19</sub></td></tr>
+            <tr><td class=""><sub>25</sub></td><td class=""><sub>26</sub></td><td class=""><sub>27</sub></td><td class=""><sub>28</sub></td><td class=""><sub>29</sub></td></tr>
+          </table>
+          <table class="thumbs"><tr><td class=""><sub>32</sub></td><td class=""><sub>33</sub></td></tr></table>
+        </div>
+      </div>
+    </article>
+
+
+    <article class="combo">
+      <h3>Right Esc → Esc</h3>
+      <p>Active on: all layers</p>
+      <div class="keyboard combo-map">
+        <div class="side left-side">
+          <table>
+            <tr><td class=""><sub>0</sub></td><td class=""><sub>1</sub></td><td class=""><sub>2</sub></td><td class=""><sub>3</sub></td><td class=""><sub>4</sub></td></tr>
+            <tr><td class=""><sub>10</sub></td><td class=""><sub>11</sub></td><td class=""><sub>12</sub></td><td class=""><sub>13</sub></td><td class=""><sub>14</sub></td></tr>
+            <tr><td class=""><sub>20</sub></td><td class=""><sub>21</sub></td><td class=""><sub>22</sub></td><td class=""><sub>23</sub></td><td class=""><sub>24</sub></td></tr>
+          </table>
+          <table class="thumbs"><tr><td class=""><sub>30</sub></td><td class=""><sub>31</sub></td></tr></table>
+        </div>
+        <div class="side right-side">
+          <table>
+            <tr><td class=""><sub>5</sub></td><td class=""><sub>6</sub></td><td class=""><sub>7</sub></td><td class=""><sub>8</sub></td><td class=""><sub>9</sub></td></tr>
+            <tr><td class=""><sub>15</sub></td><td class="active"><sub>16</sub></td><td class="active"><sub>17</sub></td><td class="active"><sub>18</sub></td><td class="active"><sub>19</sub></td></tr>
+            <tr><td class=""><sub>25</sub></td><td class=""><sub>26</sub></td><td class=""><sub>27</sub></td><td class=""><sub>28</sub></td><td class=""><sub>29</sub></td></tr>
+          </table>
+          <table class="thumbs"><tr><td class=""><sub>32</sub></td><td class=""><sub>33</sub></td></tr></table>
+        </div>
+      </div>
+    </article>
+
   </section>
 </body>
 </html>
