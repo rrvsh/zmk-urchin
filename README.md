@@ -61,7 +61,7 @@ Push or run the workflow manually. The workflow installs Nix and runs `nix devel
 - `urchin_right nice_view_adapter nice_view_gem` on `nice_nano_v2`
 - `settings_reset` on `nice_nano_v2`
 
-Download the `firmware` artifact from the workflow run and flash the `.uf2` files by putting the matching controller into bootloader mode and copying the `.uf2` to the mounted drive.
+Download the `firmware` artifact from the workflow run and flash the `.uf2` files by putting the matching controller into bootloader mode and copying the `.uf2` to the mounted drive. See [docs/flashing.md](docs/flashing.md) for prerequisites, normal flashing, `just flash`, and settings-reset procedures.
 
 ## Local west build sketch
 

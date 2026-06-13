@@ -144,9 +144,10 @@ Artifacts are normally under `build/<name>/zephyr/zmk.uf2`.
 
 ## Flashing workflow
 
+- Read `docs/flashing.md` for the exhaustive project-specific procedure.
 - Put a nice!nano v2 into bootloader mode, usually by double-tapping reset.
-- Copy the matching `.uf2` to the mounted UF2 volume.
-- Flash both halves after a keymap change.
+- Copy the matching `.uf2` to the mounted UF2 volume, or use `just flash left` / `just flash right` when udisks/automounting is available.
+- Flash both halves after config/display/split/ZMK changes; keymap-only changes usually need only the left/central half.
 - Use `settings_reset` on both controllers when Bluetooth pairing/settings are stale, then reflash left and right firmware.
 
 ## Nix flakes and zmk-nix
