@@ -109,7 +109,7 @@ def token_display(tokens: list[str], index: int) -> tuple[str, int]:
         key = tokens[index + 1]
         return key_display(key), index + 2
     if token == "&mo":
-        return f"hold L{tokens[index + 1]}", index + 2
+        return f"--\nhold L{tokens[index + 1]}", index + 2
     if token == "&lt":
         layer = tokens[index + 1]
         key = key_display(tokens[index + 2])
