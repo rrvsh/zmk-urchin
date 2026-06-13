@@ -24,6 +24,10 @@ build-settings-reset:
 render-keymap:
     python3 scripts/render_keymap.py
 
+# Watch the keymap and update the rendered HTML whenever it changes.
+watch-keymap:
+    python3 scripts/render_keymap.py --watch
+
 # Update ZMK west dependency revisions and zephyrDepsHash.
 update:
     nix run .#update

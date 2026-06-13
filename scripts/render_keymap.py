@@ -3,8 +3,10 @@
 
 from __future__ import annotations
 
+import argparse
 import html
 import re
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -108,20 +110,22 @@ def render_layer(layer: int, keys: list[str]) -> str:
 <section>
   <h2>Layer {layer}</h2>
   <div class="keyboard">
-    <table class="half left">
-      <tr>{cells(keys[0:5])}</tr>
-      <tr>{cells(keys[10:15])}</tr>
-      <tr>{cells(keys[20:25])}</tr>
-    </table>
-    <table class="half right">
-      <tr>{cells(keys[5:10])}</tr>
-      <tr>{cells(keys[15:20])}</tr>
-      <tr>{cells(keys[25:30])}</tr>
-    </table>
-  </div>
-  <div class="thumbs">
-    <table><tr>{cells(keys[30:32])}</tr></table>
-    <table><tr>{cells(keys[32:34])}</tr></table>
+    <div class="side left-side">
+      <table class="half left">
+        <tr>{cells(keys[0:5])}</tr>
+        <tr>{cells(keys[10:15])}</tr>
+        <tr>{cells(keys[20:25])}</tr>
+      </table>
+      <table class="thumbs left-thumbs"><tr>{cells(keys[30:32])}</tr></table>
+    </div>
+    <div class="side right-side">
+      <table class="half right">
+        <tr>{cells(keys[5:10])}</tr>
+        <tr>{cells(keys[15:20])}</tr>
+        <tr>{cells(keys[25:30])}</tr>
+      </table>
+      <table class="thumbs right-thumbs"><tr>{cells(keys[32:34])}</tr></table>
+    </div>
   </div>
 </section>
 """
@@ -140,8 +144,11 @@ def render_html(layers: list[tuple[int, list[str]]], combos: list[tuple[str, str
   <style>
     body {{ font-family: system-ui, sans-serif; margin: 2rem; }}
     section {{ margin-bottom: 2rem; }}
-    .keyboard, .thumbs {{ display: flex; gap: 3rem; align-items: flex-start; }}
-    .thumbs {{ margin-top: 1rem; margin-left: 18rem; gap: 1rem; }}
+    .keyboard {{ display: flex; gap: 3rem; align-items: flex-start; }}
+    .side {{ display: flex; flex-direction: column; }}
+    .left-side {{ align-items: flex-end; }}
+    .right-side {{ align-items: flex-start; }}
+    .thumbs {{ margin-top: 1rem; }}
     table {{ border-collapse: collapse; }}
     td {{ border: 1px solid #666; min-width: 4.5rem; height: 2.5rem; text-align: center; padding: 0.25rem; }}
     code {{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }}
@@ -162,12 +169,35 @@ def render_html(layers: list[tuple[int, list[str]]], combos: list[tuple[str, str
 """
 
 
-def main() -> None:
+def render() -> None:
     text = KEYMAP.read_text()
     layers = parse_layers(text)
     combos = parse_combos(text)
     OUTPUT.write_text(render_html(layers, combos))
     print(f"wrote {OUTPUT.relative_to(ROOT)}")
+
+
+def watch(interval: float) -> None:
+    last_mtime = 0.0
+    print(f"watching {KEYMAP.relative_to(ROOT)}")
+    while True:
+        mtime = KEYMAP.stat().st_mtime
+        if mtime != last_mtime:
+            render()
+            last_mtime = mtime
+        time.sleep(interval)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--watch", action="store_true", help="rerender whenever config/urchin.keymap changes")
+    parser.add_argument("--interval", type=float, default=0.5, help="watch polling interval in seconds")
+    args = parser.parse_args()
+
+    if args.watch:
+        watch(args.interval)
+    else:
+        render()
 
 
 if __name__ == "__main__":
