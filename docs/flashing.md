@@ -103,8 +103,9 @@ Urchin is a wireless split keyboard:
 Practical rules:
 
 - Initial install: flash both halves.
-- Keymap-only change: flashing the left/central half is often enough.
+- Keymap-only change: flash the left/central half only; the central owns keymap processing for both halves.
 - Config, display, split, module, or ZMK version change: flash both halves.
+- Flash the right/peripheral half only when right-side firmware itself changed or when doing a full refresh/reset.
 - When unsure: flash both halves.
 
 ## Persistent settings and settings reset
