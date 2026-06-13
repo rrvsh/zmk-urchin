@@ -80,8 +80,8 @@
     </div>
     <div class="side right-side">
       <table class="half right">
-        <tr><td><span class="label"><span>--</span><span>hold Shift</span></span><sub>39</sub></td><td><span class="label"><span>--</span><span>hold Ctrl</span></span><sub>40</sub></td><td><span class="label"><span>--</span></span><sub>41</sub></td><td><span class="label"><span>--</span></span><sub>42</sub></td><td><span class="label"><span>--</span></span><sub>43</sub></td></tr>
-        <tr><td><span class="label"><span>LEFT</span><span>hold Opt</span></span><sub>49</sub></td><td><span class="label"><span>DOWN</span></span><sub>50</sub></td><td><span class="label"><span>UP</span></span><sub>51</sub></td><td><span class="label"><span>RIGHT</span></span><sub>52</sub></td><td><span class="label"><span>--</span></span><sub>53</sub></td></tr>
+        <tr><td><span class="label"><span>Home</span><span>hold Shift</span></span><sub>39</sub></td><td><span class="label"><span>PgDn</span><span>hold Ctrl</span></span><sub>40</sub></td><td><span class="label"><span>PgUp</span></span><sub>41</sub></td><td><span class="label"><span>End</span></span><sub>42</sub></td><td><span class="label"><span>Del</span></span><sub>43</sub></td></tr>
+        <tr><td><span class="label"><span>LEFT</span><span>hold Opt</span></span><sub>49</sub></td><td><span class="label"><span>DOWN</span></span><sub>50</sub></td><td><span class="label"><span>UP</span></span><sub>51</sub></td><td><span class="label"><span>RIGHT</span></span><sub>52</sub></td><td><span class="label"><span>Ins</span></span><sub>53</sub></td></tr>
         <tr><td><span class="label"><span>--</span><span>hold Cmd</span></span><sub>59</sub></td><td><span class="label"><span>--</span></span><sub>60</sub></td><td><span class="label"><span>[</span></span><sub>61</sub></td><td><span class="label"><span>]</span></span><sub>62</sub></td><td><span class="label"><span>--</span></span><sub>63</sub></td></tr>
       </table>
       <table class="thumbs right-thumbs"><tr><td><span class="label"><span>--</span></span><sub>66</sub></td><td><span class="label"><span>hold L3</span></span><sub>67</sub></td></tr></table>
@@ -119,8 +119,8 @@
     <div class="side left-side">
       <table class="half left">
         <tr><td><span class="label"><span>--</span></span><sub>102</sub></td><td><span class="label"><span>--</span></span><sub>103</sub></td><td><span class="label"><span>--</span></span><sub>104</sub></td><td><span class="label"><span>--</span><span>hold Ctrl</span></span><sub>105</sub></td><td><span class="label"><span>Bootload</span><span>hold Shift</span></span><sub>106</sub></td></tr>
-        <tr><td><span class="label"><span>--</span></span><sub>112</sub></td><td><span class="label"><span>--</span></span><sub>113</sub></td><td><span class="label"><span>--</span></span><sub>114</sub></td><td><span class="label"><span>--</span></span><sub>115</sub></td><td><span class="label"><span>--</span><span>hold Opt</span></span><sub>116</sub></td></tr>
-        <tr><td><span class="label"><span>--</span></span><sub>122</sub></td><td><span class="label"><span>--</span></span><sub>123</sub></td><td><span class="label"><span>--</span></span><sub>124</sub></td><td><span class="label"><span>--</span></span><sub>125</sub></td><td><span class="label"><span>--</span><span>hold Cmd</span></span><sub>126</sub></td></tr>
+        <tr><td><span class="label"><span>F1</span></span><sub>112</sub></td><td><span class="label"><span>F2</span></span><sub>113</sub></td><td><span class="label"><span>F3</span></span><sub>114</sub></td><td><span class="label"><span>F4</span></span><sub>115</sub></td><td><span class="label"><span>--</span><span>hold Opt</span></span><sub>116</sub></td></tr>
+        <tr><td><span class="label"><span>F6</span></span><sub>122</sub></td><td><span class="label"><span>F7</span></span><sub>123</sub></td><td><span class="label"><span>F8</span></span><sub>124</sub></td><td><span class="label"><span>F9</span></span><sub>125</sub></td><td><span class="label"><span>--</span><span>hold Cmd</span></span><sub>126</sub></td></tr>
       </table>
       <table class="thumbs left-thumbs"><tr><td><span class="label"><span>--</span></span><sub>132</sub></td><td><span class="label"><span>--</span></span><sub>133</sub></td></tr></table>
     </div>
@@ -239,7 +239,7 @@
   <section>
     <h2>Missing ZMK keysyms</h2>
     <p>Loaded from tracked <code>docs/zmk-keysyms.json</code>. If any alias for a keysym is used in the keymap, that keysym is considered present.</p>
-    <p>Used 64 of 373 deduped keysyms; missing 309.</p>
+    <p>Used 78 of 373 deduped keysyms; missing 295.</p>
     <table class="missing-keysyms">
       <thead>
         <tr>
@@ -249,43 +249,7 @@
         </tr>
       </thead>
       <tbody>
-      <tr class="category"><th colspan="3">Navigation/editing (6)</th></tr>
-      <tr>
-        <td><code>DEL</code></td>
-        <td>Navigation/editing key: Delete Forward</td>
-        <td><code>DELETE</code></td>
-      </tr>
-      <tr>
-        <td><code>END</code></td>
-        <td>Navigation/editing key: End</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code>HOME</code></td>
-        <td>Navigation/editing key: Home</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code>INS</code></td>
-        <td>Navigation/editing key: Insert</td>
-        <td><code>INSERT</code></td>
-      </tr>
-      <tr>
-        <td><code>PG_DN</code></td>
-        <td>Navigation/editing key: Pagedown</td>
-        <td><code>PAGE_DOWN</code>, <code>PGDN</code></td>
-      </tr>
-      <tr>
-        <td><code>PG_UP</code></td>
-        <td>Navigation/editing key: Pageup</td>
-        <td><code>PAGE_UP</code>, <code>PGUP</code></td>
-      </tr>
-      <tr class="category"><th colspan="3">Function keys (24)</th></tr>
-      <tr>
-        <td><code>F1</code></td>
-        <td>Function key: F1</td>
-        <td></td>
-      </tr>
+      <tr class="category"><th colspan="3">Function keys (16)</th></tr>
       <tr>
         <td><code>F10</code></td>
         <td>Function key: F10</td>
@@ -337,11 +301,6 @@
         <td></td>
       </tr>
       <tr>
-        <td><code>F2</code></td>
-        <td>Function key: F2</td>
-        <td></td>
-      </tr>
-      <tr>
         <td><code>F20</code></td>
         <td>Function key: F20</td>
         <td></td>
@@ -367,38 +326,8 @@
         <td></td>
       </tr>
       <tr>
-        <td><code>F3</code></td>
-        <td>Function key: F3</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code>F4</code></td>
-        <td>Function key: F4</td>
-        <td></td>
-      </tr>
-      <tr>
         <td><code>F5</code></td>
         <td>Function key: F5</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code>F6</code></td>
-        <td>Function key: F6</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code>F7</code></td>
-        <td>Function key: F7</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code>F8</code></td>
-        <td>Function key: F8</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code>F9</code></td>
-        <td>Function key: F9</td>
         <td></td>
       </tr>
       <tr class="category"><th colspan="3">Keypad (25)</th></tr>
