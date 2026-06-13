@@ -24,9 +24,17 @@ build-settings-reset:
 update:
     nix run .#update
 
-# Flash split firmware. Pass optional part names, e.g. `just flash left`.
+# Flash split firmware. Defaults to building firmware and flashing the left/central half.
+# Pass explicit part names to flash other halves, e.g. `just flash right`.
 flash *parts:
-    nix run .#flash -- {{parts}}
+    #!/usr/bin/env bash
+    set -euo pipefail
+    if [ -z "{{parts}}" ]; then
+      nix build .#firmware
+      nix run .#flash -- left
+    else
+      nix run .#flash -- {{parts}}
+    fi
 
 # Remove local Nix build result symlinks.
 clean:

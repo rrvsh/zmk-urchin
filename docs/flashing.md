@@ -68,11 +68,13 @@ The nice!nano v2 uses an nRF52 UF2 bootloader. In bootloader mode it appears as 
 The repo exposes zmk-nix's flash helper:
 
 ```sh
-just flash left
+just flash
 just flash right
 ```
 
-`just flash` without arguments tries to flash all known split parts.
+`just flash` without arguments builds the split firmware and flashes the left/central half. This is the normal iteration command for keymap-only changes.
+
+Pass an explicit part name when needed, for example `just flash right` for right/peripheral firmware changes.
 
 The helper waits for an `nRF UF2` block device, tries to mount it with `udisksctl`, and copies the correct firmware. If it cannot detect or mount the device, use manual flashing.
 
