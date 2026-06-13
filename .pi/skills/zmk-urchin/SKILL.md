@@ -32,7 +32,7 @@ ZMK builds firmware using Zephyr and West.
 - Boards are MCU boards or onboard-MCU keyboards. Here the board is `nice_nano_v2`.
 - Shields are keyboard PCBs or add-ons. Here the keyboard halves and displays are shields passed via `-DSHIELD`.
 - User config is found through `-DZMK_CONFIG=/absolute/path/to/config` and contains `.conf`, `.keymap`, `build.yaml`, `west.yml`, and optional metadata.
-- External modules can provide out-of-tree shields, boards, display code, and behaviors. They are declared in `west.yml`; local builds may also need `-DZMK_EXTRA_MODULES` pointing at the workspace/module root.
+- External modules can provide out-of-tree shields, boards, display code, and behaviors. They are declared in `west.yml`; because West checks them out as Zephyr modules, do not pass the whole workspace as `ZMK_EXTRA_MODULES`.
 - Split keyboards must build and flash each half independently. Left/central usually owns USB, BLE profile management, and ZMK Studio.
 
 ## Keymap editing rules
@@ -90,9 +90,8 @@ Build left/central with Studio:
 
 ```bash
 west build -s zmk/app -d build/left -b nice_nano_v2 -S studio-rpc-usb-uart -- \
-  -DSHIELD=urchin_left -DSHIELD=nice_view_adapter -DSHIELD=nice_view_gem \
+  -DSHIELD="urchin_left nice_view_adapter nice_view_gem" \
   -DZMK_CONFIG="$BASE_DIR/config" \
-  -DZMK_EXTRA_MODULES="$BASE_DIR" \
   -DCONFIG_ZMK_STUDIO=y
 ```
 
@@ -100,9 +99,8 @@ Build right:
 
 ```bash
 west build -s zmk/app -d build/right -b nice_nano_v2 -- \
-  -DSHIELD=urchin_right -DSHIELD=nice_view_adapter -DSHIELD=nice_view_gem \
-  -DZMK_CONFIG="$BASE_DIR/config" \
-  -DZMK_EXTRA_MODULES="$BASE_DIR"
+  -DSHIELD="urchin_right nice_view_adapter nice_view_gem" \
+  -DZMK_CONFIG="$BASE_DIR/config"
 ```
 
 Build settings reset:

@@ -43,14 +43,12 @@ west init -l config
 west update --fetch-opt=--filter=tree:0
 west zephyr-export
 west build -s zmk/app -d build/left -b nice_nano_v2 -S studio-rpc-usb-uart -- \
-  -DSHIELD=urchin_left -DSHIELD=nice_view_adapter -DSHIELD=nice_view_gem \
+  -DSHIELD="urchin_left nice_view_adapter nice_view_gem" \
   -DZMK_CONFIG="$BASE_DIR/config" \
-  -DZMK_EXTRA_MODULES="$BASE_DIR" \
   -DCONFIG_ZMK_STUDIO=y
 west build -s zmk/app -d build/right -b nice_nano_v2 -- \
-  -DSHIELD=urchin_right -DSHIELD=nice_view_adapter -DSHIELD=nice_view_gem \
-  -DZMK_CONFIG="$BASE_DIR/config" \
-  -DZMK_EXTRA_MODULES="$BASE_DIR"
+  -DSHIELD="urchin_right nice_view_adapter nice_view_gem" \
+  -DZMK_CONFIG="$BASE_DIR/config"
 ```
 
 ## Nix note
