@@ -41,6 +41,26 @@ Requirements / open questions for gaming:
 - Switching away from `WASD` is acceptable.
 - A dedicated gaming layer may be useful.
 
+## Communication convention
+
+When discussing keymap edits, use global key indices from the rendered HTML.
+
+- Each physical layer has 34 positions.
+- Global key index formula: `global = layer * 34 + physical_position`.
+- Layer 0 uses indices `0` through `33`.
+- Layer 1 uses indices `34` through `67`.
+- Layer 2 uses indices `68` through `101`.
+- Layer 3 uses indices `102` through `135`.
+
+Examples:
+
+- `31` is layer 0, physical position 31: left thumb right.
+- `67` is layer 1, physical position 33: right thumb right.
+- `106` is layer 3, physical position 4: left top row inner key.
+- `107` is layer 3, physical position 5: right top row inner key.
+
+Combos are the exception: ZMK combos use physical key positions, not global layer indices. For combos, use physical positions such as `11 + 12` for left middle + ring.
+
 ## Current open design problem
 
 Find a layout that preserves:
