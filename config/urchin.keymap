@@ -67,7 +67,7 @@
 
 		layer_1 {
 			bindings = <
-        &kp GRAVE  &kp MINUS  &kp EQUAL  &mt LCTRL BSLH &mt LSHIFT SQT &mt RSHIFT HOME &mt RCTRL PG_DN &kp PG_UP  &kp END    &kp DEL
+        &kp GRAVE  &kp SQT    &kp EQUAL  &mt LCTRL MINUS &mt LSHIFT BSLH &mt RSHIFT HOME &mt RCTRL PG_DN &kp PG_UP  &kp END    &kp DEL
         &kp N1     &kp N2     &kp N3     &kp N4     &mt LALT N5 &mt RALT LEFT &kp DOWN   &kp UP     &kp RIGHT  &kp INS
         &kp N6     &kp N7     &kp N8     &kp N9     &mt LGUI N0 &mt_none RGUI 0 &none      &kp LBKT   &kp RBKT   &none
                                         &none      &none      &none      &mo 3
