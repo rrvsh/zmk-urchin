@@ -17,12 +17,45 @@ Hardware/configuration in this repo:
 - `config/urchin.conf`: Kconfig options for Bluetooth, sleep, display, and nice-view-gem.
 - `config/urchin.keymap`: layers, home-row mods, combos, and thumb keys.
 - `config/urchin.json`: physical layout metadata for visual tools/ZMK Studio.
-- `.github/workflows/build-zmk.yaml`: GitHub Actions firmware build.
+- `flake.nix`: Nix/zmk-nix firmware packages and development shell.
+- `Justfile`: build, update, flash, and cleanup commands.
+- `.github/workflows/build-zmk.yaml`: GitHub Actions wrapper that runs the Just/Nix build.
 - `.pi/skills/zmk-urchin/SKILL.md`: local Pi skill for working on this repo.
+
+## Nix and Just build
+
+Enter the development shell:
+
+```sh
+nix develop
+```
+
+Build all firmware into the `result` symlink:
+
+```sh
+just build
+```
+
+Useful tasks:
+
+```sh
+just build            # build all .uf2 files
+just build-firmware   # build only left/right Urchin firmware
+just build-settings-reset
+just update           # update West deps and zephyrDepsHash
+just flash left       # flash via zmk-nix helper
+just clean            # remove result symlinks
+```
+
+Current output files:
+
+- `urchin_left-nice_view_adapter-nice_view_gem-nice_nano_v2-zmk.uf2`
+- `urchin_right-nice_view_adapter-nice_view_gem-nice_nano_v2-zmk.uf2`
+- `settings_reset-nice_nano_v2-zmk.uf2`
 
 ## GitHub Actions build
 
-Push or run the workflow manually. It builds artifacts for:
+Push or run the workflow manually. The workflow installs Nix and runs `nix develop --command just build`. It builds artifacts for:
 
 - `urchin_left nice_view_adapter nice_view_gem` on `nice_nano_v2`
 - `urchin_right nice_view_adapter nice_view_gem` on `nice_nano_v2`
@@ -32,7 +65,7 @@ Download the `firmware` artifact from the workflow run and flash the `.uf2` file
 
 ## Local west build sketch
 
-The workflow is the canonical build path. For local source builds, initialize a West workspace from this config and build each side separately:
+The Nix/Just flow is the canonical build path. For manual source builds without Nix, initialize a West workspace from this config and build each side separately:
 
 ```sh
 BASE_DIR=/tmp/zmk-urchin-build
@@ -53,4 +86,6 @@ west build -s zmk/app -d build/right -b nice_nano_v2 -- \
 
 ## Nix note
 
-`zmk-nix` is the main Nix flake ecosystem project for ZMK firmware builds. This repo intentionally keeps the GitHub Actions/West workflow as the source of truth for now. If adding a flake later, use `github:lilyinstarlight/zmk-nix`, `buildSplitKeyboard`, `board = "nice_nano_v2"`, `shield = "urchin_%PART% nice_view_adapter nice_view_gem"`, and set/update `zephyrDepsHash` with `nix run .#update`.
+This repo uses `github:lilyinstarlight/zmk-nix` with `buildSplitKeyboard` for the Urchin halves and `buildKeyboard` for `settings_reset`. `zephyrDepsHash` pins the resolved West dependency tree. If `config/west.yml` changes, run `just update` or temporarily use a fake hash and rebuild to get the expected hash.
+
+The Nix build currently enables `CONFIG_NEWLIB_LIBC=y` and suppresses implicit function declaration diagnostics to keep `nice-view-gem v0.3.0` building with nixpkgs' newer `arm-none-eabi-gcc`. If nice-view-gem becomes too expensive to maintain, remove `nice_view_adapter nice_view_gem` from the shield strings and remove the display-specific Kconfig options while keeping `config/urchin.keymap` intact.
