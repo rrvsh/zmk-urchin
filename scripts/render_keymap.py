@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 import argparse
+import glob
 import html
+import os
 import re
 import time
 from pathlib import Path
@@ -12,6 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 KEYMAP = ROOT / "config" / "urchin.keymap"
 OUTPUT = ROOT / "docs" / "keymap.html"
+KEYS_HEADER_GLOB = "/nix/store/*urchin-firmware-west-deps/zmk/app/include/dt-bindings/zmk/keys.h"
 
 DISPLAY = {
     "LCTRL": "Ctrl",
@@ -79,6 +82,27 @@ def token_display(tokens: list[str], index: int) -> tuple[str, int]:
     if token in {"&tog", "&to", "&sl"}:
         return f"{token[1:].upper()} {tokens[index + 1]}", index + 2
     return token, index + 1
+
+
+def keymap_keysyms(text: str) -> set[str]:
+    tokens = text.replace("<", " < ").replace(">", " > ").split()
+    used: set[str] = set()
+    index = 0
+    while index < len(tokens):
+        token = tokens[index]
+        if token == "&kp" and index + 1 < len(tokens):
+            used.add(tokens[index + 1])
+            index += 2
+        elif token == "&lt" and index + 2 < len(tokens):
+            used.add(tokens[index + 2])
+            index += 3
+        elif token == "&mt" and index + 2 < len(tokens):
+            used.add(tokens[index + 1])
+            used.add(tokens[index + 2])
+            index += 3
+        else:
+            index += 1
+    return used
 
 
 def parse_layers(text: str) -> list[tuple[int, list[str]]]:
@@ -188,7 +212,103 @@ def render_layer(layer: int, keys: list[str]) -> str:
 """
 
 
-def render_html(layers: list[tuple[int, list[str]]], combos: list[dict[str, object]]) -> str:
+def keys_header_path() -> Path | None:
+    env_path = os.environ.get("ZMK_KEYS_H")
+    if env_path:
+        path = Path(env_path)
+        return path if path.exists() else None
+
+    paths = [Path(path) for path in glob.glob(KEYS_HEADER_GLOB)]
+    paths = [path for path in paths if path.exists()]
+    if not paths:
+        return None
+    return max(paths, key=lambda path: path.stat().st_mtime)
+
+
+def parse_keysyms() -> list[dict[str, object]]:
+    path = keys_header_path()
+    if path is None:
+        return []
+
+    lines = path.read_text().splitlines()
+    logical_lines: list[str] = []
+    current = ""
+    for line in lines:
+        stripped = line.rstrip()
+        if stripped.endswith("\\"):
+            current += stripped[:-1] + " "
+            continue
+        logical_lines.append(current + stripped)
+        current = ""
+
+    defines: dict[str, str] = {}
+    deprecated: set[str] = set()
+    for line in logical_lines:
+        match = re.match(r"#define\s+([A-Z][A-Z0-9_]*)\s+(.+)$", line)
+        if not match:
+            continue
+        name, value = match.groups()
+        value = value.split("//", 1)[0].strip()
+        if not value or "(" not in value:
+            continue
+        defines[name] = value
+        if "DEPRECATED" in line:
+            deprecated.add(name)
+
+    def resolve(name: str, seen: set[str] | None = None) -> str:
+        seen = seen or set()
+        value = defines[name]
+        alias = re.fullmatch(r"\(?([A-Z][A-Z0-9_]*)\)?", value)
+        if alias and alias.group(1) in defines and alias.group(1) not in seen:
+            return resolve(alias.group(1), seen | {name})
+        return re.sub(r"\s+", " ", value)
+
+    groups: dict[str, list[str]] = {}
+    for name in defines:
+        groups.setdefault(resolve(name), []).append(name)
+
+    keysyms: list[dict[str, object]] = []
+    for value, names in groups.items():
+        preferred = [name for name in names if name not in deprecated]
+        if not preferred:
+            preferred = names
+        canonical = min(preferred, key=lambda name: (len(name), name))
+        aliases = sorted(name for name in names if name != canonical)
+        keysyms.append({"canonical": canonical, "aliases": aliases, "names": set(names), "value": value})
+
+    return sorted(keysyms, key=lambda item: str(item["canonical"]))
+
+
+def render_missing_keysyms(used: set[str], keysyms: list[dict[str, object]]) -> str:
+    if not keysyms:
+        return """
+  <section>
+    <h2>Missing ZMK keysyms</h2>
+    <p>Could not find ZMK <code>keys.h</code>. Build firmware once or set <code>ZMK_KEYS_H</code> to render this section.</p>
+  </section>
+"""
+
+    missing = [item for item in keysyms if not (item["names"] & used)]
+    items = "\n".join(
+        f"      <li><code>{html.escape(str(item['canonical']))}</code></li>" for item in missing
+    )
+    return f"""
+  <section>
+    <h2>Missing ZMK keysyms</h2>
+    <p>Deduped by resolved HID expression. If any alias for a keysym is used in the keymap, that keysym is considered present.</p>
+    <p>Used {len(keysyms) - len(missing)} of {len(keysyms)} deduped keysyms; missing {len(missing)}.</p>
+    <ul class="missing-keysyms">
+{items}
+    </ul>
+  </section>
+"""
+
+
+def render_html(
+    layers: list[tuple[int, list[str]]],
+    combos: list[dict[str, object]],
+    missing_keysyms_html: str,
+) -> str:
     combo_items = "\n".join(render_combo(combo) for combo in combos)
     layer_html = "\n".join(render_layer(layer, keys) for layer, keys in layers)
     return f"""<!doctype html>
@@ -215,6 +335,8 @@ def render_html(layers: list[tuple[int, list[str]]], combos: list[dict[str, obje
     .combo-map td {{ background: #f7f7f7; }}
     .combo-map td.active {{ background: #ffd166; border-color: #9a6700; }}
     .combo-map td.active sub {{ color: #222; font-weight: 700; }}
+    .missing-keysyms {{ columns: 4 12rem; }}
+    .missing-keysyms li {{ break-inside: avoid; }}
     code {{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }}
   </style>
 </head>
@@ -238,6 +360,7 @@ def render_html(layers: list[tuple[int, list[str]]], combos: list[dict[str, obje
     <p>Combos are based on physical finger position. Highlighted boxes show the physical positions used by each combo.</p>
 {combo_items}
   </section>
+{missing_keysyms_html}
 </body>
 </html>
 """
@@ -247,7 +370,9 @@ def render() -> None:
     text = KEYMAP.read_text()
     layers = parse_layers(text)
     combos = parse_combos(text)
-    OUTPUT.write_text(render_html(layers, combos))
+    used = keymap_keysyms(text)
+    missing_keysyms_html = render_missing_keysyms(used, parse_keysyms())
+    OUTPUT.write_text(render_html(layers, combos, missing_keysyms_html))
     print(f"wrote {OUTPUT.relative_to(ROOT)}")
 
 
