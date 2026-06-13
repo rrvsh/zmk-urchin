@@ -61,7 +61,7 @@
         &kp Q      &kp W      &kp E      &mt LCTRL R &mt LSHIFT T &mt RSHIFT Y &mt RCTRL U &kp I      &kp O      &kp P
         &kp A      &kp S      &kp D      &kp F      &mt LALT G  &mt RALT H  &kp J      &kp K      &kp L      &kp SEMICOLON
         &kp Z      &kp X      &kp C      &kp V      &mt LGUI B  &mt RGUI N  &kp M      &kp COMMA  &kp DOT    &kp SLASH
-                                        &lt 1 ESC  &kp SPACE   &kp BACKSPACE &mo 2
+                                        &lt 1 ESC  &kp SPACE   &kp BACKSPACE &mo 1
 			>;
 		};
 
@@ -70,20 +70,11 @@
         &kp GRAVE  &kp SQT    &kp EQUAL  &mt LCTRL MINUS &mt LSHIFT BSLH &mt RSHIFT HOME &mt RCTRL PG_DN &kp PG_UP  &kp END    &kp DEL
         &kp N1     &kp N2     &kp N3     &kp N4     &mt LALT N5 &mt RALT LEFT &kp DOWN   &kp UP     &kp RIGHT  &kp INS
         &kp N6     &kp N7     &kp N8     &kp N9     &mt LGUI N0 &mt_none RGUI 0 &none      &kp LBKT   &kp RBKT   &none
-                                        &none      &none      &none      &mo 3
+                                        &mo 2      &kp LSHIFT &none      &mo 2
 			>;
 		};
 
 		layer_2 {
-			bindings = <
-        &none      &none      &none      &mt_none LCTRL 0 &mt_none LSHIFT 0 &mt_none RSHIFT 0 &mt_none RCTRL 0 &none      &none      &none
-        &none      &none      &none      &none      &mt_none LALT 0 &mt_none RALT 0 &none      &none      &none      &none
-        &none      &none      &none      &none      &mt_none LGUI 0 &mt_none RGUI 0 &none      &none      &none      &none
-                                        &mo 3      &none      &none      &none
-			>;
-		};
-
-		layer_3 {
 			bindings = <
         &none      &none      &none      &mt_none LCTRL 0 &mt_bootloader LSHIFT 0 &mt_bootloader RSHIFT 0 &mt_none RCTRL 0 &none      &none      &none
         &kp F1     &kp F2     &kp F3     &kp F4     &mt_none LALT 0 &mt_none RALT 0 &none      &none      &none      &none
