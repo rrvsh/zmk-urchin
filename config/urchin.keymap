@@ -39,6 +39,18 @@
         key-positions = <17 18>;
         bindings = <&kp RETURN>;
     };
+
+    combo_left_tab {
+        timeout-ms = <50>;
+        key-positions = <12 13>;
+        bindings = <&kp TAB>;
+    };
+
+    combo_right_tab {
+        timeout-ms = <50>;
+        key-positions = <16 17>;
+        bindings = <&kp TAB>;
+    };
   };
 
 	keymap {
@@ -55,9 +67,9 @@
 
 		layer_1 {
 			bindings = <
-        &kp LCTRL  &kp LGUI   &kp LALT   &mt LCTRL LSHIFT &mt LSHIFT TAB &mt_none RSHIFT 0 &mt_none RCTRL 0 &none      &none      &none
+        &kp GRAVE  &kp MINUS  &kp EQUAL  &mt LCTRL BSLH &mt LSHIFT SQT &mt_none RSHIFT 0 &mt_none RCTRL 0 &none      &none      &none
         &kp N1     &kp N2     &kp N3     &kp N4     &mt LALT N5 &mt RALT LEFT &kp DOWN   &kp UP     &kp RIGHT  &none
-        &kp N6     &kp N7     &kp N8     &kp N9     &mt LGUI N0 &mt_none RGUI 0 &none      &none      &none      &none
+        &kp N6     &kp N7     &kp N8     &kp N9     &mt LGUI N0 &mt_none RGUI 0 &none      &kp LBKT   &kp RBKT   &none
                                         &none      &none      &none      &mo 3
 			>;
 		};
