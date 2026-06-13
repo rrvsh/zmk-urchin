@@ -15,6 +15,30 @@ KEYMAP = ROOT / "config" / "urchin.keymap"
 OUTPUT = ROOT / "docs" / "keymap.html"
 KEYSYMS_CATALOG = ROOT / "docs" / "zmk-keysyms.json"
 
+SHIFT_DISPLAY = {
+    "GRAVE": "~",
+    "N1": "!",
+    "N2": "@",
+    "N3": "#",
+    "N4": "$",
+    "N5": "%",
+    "N6": "^",
+    "N7": "&",
+    "N8": "*",
+    "N9": "(",
+    "N0": ")",
+    "MINUS": "_",
+    "EQUAL": "+",
+    "LBKT": "{",
+    "RBKT": "}",
+    "BSLH": "|",
+    "SEMICOLON": ":",
+    "SQT": "\"",
+    "COMMA": "<",
+    "DOT": ">",
+    "SLASH": "?",
+}
+
 DISPLAY = {
     "LCTRL": "Ctrl",
     "RCTRL": "Ctrl",
@@ -58,6 +82,15 @@ DISPLAY = {
     "N0": "0",
 }
 
+
+def key_display(key: str) -> str:
+    label = DISPLAY.get(key, key)
+    shifted = SHIFT_DISPLAY.get(key)
+    if shifted is None:
+        return label
+    return f"{label}\x1f{shifted}"
+
+
 PHYSICAL_ROWS = [
     list(range(0, 5)),
     list(range(10, 15)),
@@ -74,16 +107,16 @@ def token_display(tokens: list[str], index: int) -> tuple[str, int]:
     token = tokens[index]
     if token == "&kp":
         key = tokens[index + 1]
-        return DISPLAY.get(key, key), index + 2
+        return key_display(key), index + 2
     if token == "&mo":
         return f"hold L{tokens[index + 1]}", index + 2
     if token == "&lt":
         layer = tokens[index + 1]
-        key = DISPLAY.get(tokens[index + 2], tokens[index + 2])
+        key = key_display(tokens[index + 2])
         return f"{key}\nhold L{layer}", index + 3
     if token == "&mt":
         mod = DISPLAY.get(tokens[index + 1], tokens[index + 1])
-        key = DISPLAY.get(tokens[index + 2], tokens[index + 2])
+        key = key_display(tokens[index + 2])
         return f"{key}\nhold {mod}", index + 3
     if token == "&mt_none":
         mod = DISPLAY.get(tokens[index + 1], tokens[index + 1])
@@ -164,8 +197,18 @@ def parse_combos(text: str) -> list[dict[str, object]]:
     return combos
 
 
+def label_line(line: str) -> str:
+    if "\x1f" not in line:
+        return f"<span>{html.escape(line)}</span>"
+    base, shifted = line.split("\x1f", 1)
+    return (
+        f"<span>{html.escape(base)} "
+        f'<span class="shifted">{html.escape(shifted)}</span></span>'
+    )
+
+
 def cell(label: str, index: int) -> str:
-    lines = "".join(f'<span>{html.escape(line)}</span>' for line in label.split("\n"))
+    lines = "".join(label_line(line) for line in label.split("\n"))
     return f'<td><span class="label">{lines}</span><sub>{index}</sub></td>'
 
 
@@ -325,7 +368,8 @@ def render_html(
     table {{ border-collapse: collapse; }}
     td {{ border: 1px solid #666; min-width: 5.5rem; height: 3.6rem; text-align: center; padding: 0.4rem 0.5rem 0.65rem; position: relative; }}
     td .label {{ display: flex; flex-direction: column; gap: 0.25rem; align-items: center; justify-content: center; min-height: 3rem; }}
-    td .label span + span {{ color: #555; font-size: 0.82rem; }}
+    td .label > span + span {{ color: #555; font-size: 0.82rem; }}
+    td .label .shifted {{ color: #888; font-size: 0.9em; }}
     td sub {{ position: absolute; right: 0.35rem; bottom: 0.2rem; color: #666; font-size: 0.68rem; }}
     .combo {{ margin: 1.5rem 0; }}
     .combo h3 {{ margin-bottom: 0.25rem; }}

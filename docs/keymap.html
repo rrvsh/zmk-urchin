@@ -14,7 +14,8 @@
     table { border-collapse: collapse; }
     td { border: 1px solid #666; min-width: 5.5rem; height: 3.6rem; text-align: center; padding: 0.4rem 0.5rem 0.65rem; position: relative; }
     td .label { display: flex; flex-direction: column; gap: 0.25rem; align-items: center; justify-content: center; min-height: 3rem; }
-    td .label span + span { color: #555; font-size: 0.82rem; }
+    td .label > span + span { color: #555; font-size: 0.82rem; }
+    td .label .shifted { color: #888; font-size: 0.9em; }
     td sub { position: absolute; right: 0.35rem; bottom: 0.2rem; color: #666; font-size: 0.68rem; }
     .combo { margin: 1.5rem 0; }
     .combo h3 { margin-bottom: 0.25rem; }
@@ -58,8 +59,8 @@
     <div class="side right-side">
       <table class="half right">
         <tr><td><span class="label"><span>Y</span><span>hold Shift</span></span><sub>5</sub></td><td><span class="label"><span>U</span><span>hold Ctrl</span></span><sub>6</sub></td><td><span class="label"><span>I</span></span><sub>7</sub></td><td><span class="label"><span>O</span></span><sub>8</sub></td><td><span class="label"><span>P</span></span><sub>9</sub></td></tr>
-        <tr><td><span class="label"><span>H</span><span>hold Opt</span></span><sub>15</sub></td><td><span class="label"><span>J</span></span><sub>16</sub></td><td><span class="label"><span>K</span></span><sub>17</sub></td><td><span class="label"><span>L</span></span><sub>18</sub></td><td><span class="label"><span>;</span></span><sub>19</sub></td></tr>
-        <tr><td><span class="label"><span>N</span><span>hold Cmd</span></span><sub>25</sub></td><td><span class="label"><span>M</span></span><sub>26</sub></td><td><span class="label"><span>,</span></span><sub>27</sub></td><td><span class="label"><span>.</span></span><sub>28</sub></td><td><span class="label"><span>/</span></span><sub>29</sub></td></tr>
+        <tr><td><span class="label"><span>H</span><span>hold Opt</span></span><sub>15</sub></td><td><span class="label"><span>J</span></span><sub>16</sub></td><td><span class="label"><span>K</span></span><sub>17</sub></td><td><span class="label"><span>L</span></span><sub>18</sub></td><td><span class="label"><span>; <span class="shifted">:</span></span></span><sub>19</sub></td></tr>
+        <tr><td><span class="label"><span>N</span><span>hold Cmd</span></span><sub>25</sub></td><td><span class="label"><span>M</span></span><sub>26</sub></td><td><span class="label"><span>, <span class="shifted">&lt;</span></span></span><sub>27</sub></td><td><span class="label"><span>. <span class="shifted">&gt;</span></span></span><sub>28</sub></td><td><span class="label"><span>/ <span class="shifted">?</span></span></span><sub>29</sub></td></tr>
       </table>
       <table class="thumbs right-thumbs"><tr><td><span class="label"><span>Backspace</span></span><sub>32</sub></td><td><span class="label"><span>hold L2</span></span><sub>33</sub></td></tr></table>
     </div>
@@ -72,9 +73,9 @@
   <div class="keyboard">
     <div class="side left-side">
       <table class="half left">
-        <tr><td><span class="label"><span>`</span></span><sub>34</sub></td><td><span class="label"><span>-</span></span><sub>35</sub></td><td><span class="label"><span>=</span></span><sub>36</sub></td><td><span class="label"><span>\</span><span>hold Ctrl</span></span><sub>37</sub></td><td><span class="label"><span>&#x27;</span><span>hold Shift</span></span><sub>38</sub></td></tr>
-        <tr><td><span class="label"><span>1</span></span><sub>44</sub></td><td><span class="label"><span>2</span></span><sub>45</sub></td><td><span class="label"><span>3</span></span><sub>46</sub></td><td><span class="label"><span>4</span></span><sub>47</sub></td><td><span class="label"><span>5</span><span>hold Opt</span></span><sub>48</sub></td></tr>
-        <tr><td><span class="label"><span>6</span></span><sub>54</sub></td><td><span class="label"><span>7</span></span><sub>55</sub></td><td><span class="label"><span>8</span></span><sub>56</sub></td><td><span class="label"><span>9</span></span><sub>57</sub></td><td><span class="label"><span>0</span><span>hold Cmd</span></span><sub>58</sub></td></tr>
+        <tr><td><span class="label"><span>` <span class="shifted">~</span></span></span><sub>34</sub></td><td><span class="label"><span>- <span class="shifted">_</span></span></span><sub>35</sub></td><td><span class="label"><span>= <span class="shifted">+</span></span></span><sub>36</sub></td><td><span class="label"><span>\ <span class="shifted">|</span></span><span>hold Ctrl</span></span><sub>37</sub></td><td><span class="label"><span>&#x27; <span class="shifted">&quot;</span></span><span>hold Shift</span></span><sub>38</sub></td></tr>
+        <tr><td><span class="label"><span>1 <span class="shifted">!</span></span></span><sub>44</sub></td><td><span class="label"><span>2 <span class="shifted">@</span></span></span><sub>45</sub></td><td><span class="label"><span>3 <span class="shifted">#</span></span></span><sub>46</sub></td><td><span class="label"><span>4 <span class="shifted">$</span></span></span><sub>47</sub></td><td><span class="label"><span>5 <span class="shifted">%</span></span><span>hold Opt</span></span><sub>48</sub></td></tr>
+        <tr><td><span class="label"><span>6 <span class="shifted">^</span></span></span><sub>54</sub></td><td><span class="label"><span>7 <span class="shifted">&amp;</span></span></span><sub>55</sub></td><td><span class="label"><span>8 <span class="shifted">*</span></span></span><sub>56</sub></td><td><span class="label"><span>9 <span class="shifted">(</span></span></span><sub>57</sub></td><td><span class="label"><span>0 <span class="shifted">)</span></span><span>hold Cmd</span></span><sub>58</sub></td></tr>
       </table>
       <table class="thumbs left-thumbs"><tr><td><span class="label"><span>--</span></span><sub>64</sub></td><td><span class="label"><span>--</span></span><sub>65</sub></td></tr></table>
     </div>
@@ -82,7 +83,7 @@
       <table class="half right">
         <tr><td><span class="label"><span>Home</span><span>hold Shift</span></span><sub>39</sub></td><td><span class="label"><span>PgDn</span><span>hold Ctrl</span></span><sub>40</sub></td><td><span class="label"><span>PgUp</span></span><sub>41</sub></td><td><span class="label"><span>End</span></span><sub>42</sub></td><td><span class="label"><span>Del</span></span><sub>43</sub></td></tr>
         <tr><td><span class="label"><span>LEFT</span><span>hold Opt</span></span><sub>49</sub></td><td><span class="label"><span>DOWN</span></span><sub>50</sub></td><td><span class="label"><span>UP</span></span><sub>51</sub></td><td><span class="label"><span>RIGHT</span></span><sub>52</sub></td><td><span class="label"><span>Ins</span></span><sub>53</sub></td></tr>
-        <tr><td><span class="label"><span>--</span><span>hold Cmd</span></span><sub>59</sub></td><td><span class="label"><span>--</span></span><sub>60</sub></td><td><span class="label"><span>[</span></span><sub>61</sub></td><td><span class="label"><span>]</span></span><sub>62</sub></td><td><span class="label"><span>--</span></span><sub>63</sub></td></tr>
+        <tr><td><span class="label"><span>--</span><span>hold Cmd</span></span><sub>59</sub></td><td><span class="label"><span>--</span></span><sub>60</sub></td><td><span class="label"><span>[ <span class="shifted">{</span></span></span><sub>61</sub></td><td><span class="label"><span>] <span class="shifted">}</span></span></span><sub>62</sub></td><td><span class="label"><span>--</span></span><sub>63</sub></td></tr>
       </table>
       <table class="thumbs right-thumbs"><tr><td><span class="label"><span>--</span></span><sub>66</sub></td><td><span class="label"><span>hold L3</span></span><sub>67</sub></td></tr></table>
     </div>
