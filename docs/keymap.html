@@ -49,17 +49,17 @@
   <div class="keyboard">
     <div class="side left-side">
       <table class="half left">
-        <tr><td><span class="label"><span>Q</span></span><sub>0</sub></td><td><span class="label"><span>W</span></span><sub>1</sub></td><td><span class="label"><span>E</span></span><sub>2</sub></td><td><span class="label"><span>R</span></span><sub>3</sub></td><td><span class="label"><span>T</span></span><sub>4</sub></td></tr>
-        <tr><td><span class="label"><span>A</span></span><sub>10</sub></td><td><span class="label"><span>S</span></span><sub>11</sub></td><td><span class="label"><span>D</span></span><sub>12</sub></td><td><span class="label"><span>F</span></span><sub>13</sub></td><td><span class="label"><span>G</span></span><sub>14</sub></td></tr>
-        <tr><td><span class="label"><span>Z</span></span><sub>20</sub></td><td><span class="label"><span>X</span></span><sub>21</sub></td><td><span class="label"><span>C</span></span><sub>22</sub></td><td><span class="label"><span>V</span></span><sub>23</sub></td><td><span class="label"><span>B</span></span><sub>24</sub></td></tr>
+        <tr><td><span class="label"><span>Q</span></span><sub>0</sub></td><td><span class="label"><span>W</span></span><sub>1</sub></td><td><span class="label"><span>E</span></span><sub>2</sub></td><td><span class="label"><span>R</span><span>hold Ctrl</span></span><sub>3</sub></td><td><span class="label"><span>T</span><span>hold Shift</span></span><sub>4</sub></td></tr>
+        <tr><td><span class="label"><span>A</span></span><sub>10</sub></td><td><span class="label"><span>S</span></span><sub>11</sub></td><td><span class="label"><span>D</span></span><sub>12</sub></td><td><span class="label"><span>F</span></span><sub>13</sub></td><td><span class="label"><span>G</span><span>hold Opt</span></span><sub>14</sub></td></tr>
+        <tr><td><span class="label"><span>Z</span></span><sub>20</sub></td><td><span class="label"><span>X</span></span><sub>21</sub></td><td><span class="label"><span>C</span></span><sub>22</sub></td><td><span class="label"><span>V</span></span><sub>23</sub></td><td><span class="label"><span>B</span><span>hold Cmd</span></span><sub>24</sub></td></tr>
       </table>
       <table class="thumbs left-thumbs"><tr><td><span class="label"><span>Esc</span><span>hold L1</span></span><sub>30</sub></td><td><span class="label"><span>Space</span></span><sub>31</sub></td></tr></table>
     </div>
     <div class="side right-side">
       <table class="half right">
-        <tr><td><span class="label"><span>Y</span></span><sub>5</sub></td><td><span class="label"><span>U</span></span><sub>6</sub></td><td><span class="label"><span>I</span></span><sub>7</sub></td><td><span class="label"><span>O</span></span><sub>8</sub></td><td><span class="label"><span>P</span></span><sub>9</sub></td></tr>
-        <tr><td><span class="label"><span>H</span></span><sub>15</sub></td><td><span class="label"><span>J</span></span><sub>16</sub></td><td><span class="label"><span>K</span></span><sub>17</sub></td><td><span class="label"><span>L</span></span><sub>18</sub></td><td><span class="label"><span>;</span></span><sub>19</sub></td></tr>
-        <tr><td><span class="label"><span>N</span></span><sub>25</sub></td><td><span class="label"><span>M</span></span><sub>26</sub></td><td><span class="label"><span>,</span></span><sub>27</sub></td><td><span class="label"><span>.</span></span><sub>28</sub></td><td><span class="label"><span>/</span></span><sub>29</sub></td></tr>
+        <tr><td><span class="label"><span>Y</span><span>hold Shift</span></span><sub>5</sub></td><td><span class="label"><span>U</span><span>hold Ctrl</span></span><sub>6</sub></td><td><span class="label"><span>I</span></span><sub>7</sub></td><td><span class="label"><span>O</span></span><sub>8</sub></td><td><span class="label"><span>P</span></span><sub>9</sub></td></tr>
+        <tr><td><span class="label"><span>H</span><span>hold Opt</span></span><sub>15</sub></td><td><span class="label"><span>J</span></span><sub>16</sub></td><td><span class="label"><span>K</span></span><sub>17</sub></td><td><span class="label"><span>L</span></span><sub>18</sub></td><td><span class="label"><span>;</span></span><sub>19</sub></td></tr>
+        <tr><td><span class="label"><span>N</span><span>hold Cmd</span></span><sub>25</sub></td><td><span class="label"><span>M</span></span><sub>26</sub></td><td><span class="label"><span>,</span></span><sub>27</sub></td><td><span class="label"><span>.</span></span><sub>28</sub></td><td><span class="label"><span>/</span></span><sub>29</sub></td></tr>
       </table>
       <table class="thumbs right-thumbs"><tr><td><span class="label"><span>Backspace</span></span><sub>32</sub></td><td><span class="label"><span>hold L2</span></span><sub>33</sub></td></tr></table>
     </div>
@@ -191,7 +191,7 @@
   <section>
     <h2>Missing ZMK keysyms</h2>
     <p>Loaded from tracked <code>docs/zmk-keysyms.json</code>. If any alias for a keysym is used in the keymap, that keysym is considered present.</p>
-    <p>Used 53 of 373 deduped keysyms; missing 320.</p>
+    <p>Used 57 of 373 deduped keysyms; missing 316.</p>
     <table class="missing-keysyms">
       <thead>
         <tr>
@@ -216,27 +216,6 @@
         <td><code>MINUS</code></td>
         <td>Minus And Underscore</td>
         <td></td>
-      </tr>
-      <tr class="category"><th colspan="3">Modifiers (4)</th></tr>
-      <tr>
-        <td><code>RALT</code></td>
-        <td>Modifier key: Rightalt</td>
-        <td><code>RIGHT_ALT</code></td>
-      </tr>
-      <tr>
-        <td><code>RCMD</code></td>
-        <td>Modifier key: Right Gui</td>
-        <td><code>RGUI</code>, <code>RIGHT_COMMAND</code>, <code>RIGHT_GUI</code>, <code>RIGHT_META</code>, <code>RIGHT_WIN</code>, <code>RMETA</code>, <code>RWIN</code></td>
-      </tr>
-      <tr>
-        <td><code>RCTRL</code></td>
-        <td>Modifier key: Rightcontrol</td>
-        <td><code>RCTL</code>, <code>RIGHT_CONTROL</code></td>
-      </tr>
-      <tr>
-        <td><code>RSHFT</code></td>
-        <td>Modifier key: Rightshift</td>
-        <td><code>RIGHT_SHIFT</code>, <code>RSFT</code>, <code>RSHIFT</code></td>
       </tr>
       <tr class="category"><th colspan="3">Navigation/editing (6)</th></tr>
       <tr>

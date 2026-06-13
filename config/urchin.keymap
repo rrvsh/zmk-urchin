@@ -1,6 +1,10 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+&mt {
+    flavor = "tap-preferred";
+};
+
 / {
   combos {
     compatible = "zmk,combos";
@@ -24,9 +28,9 @@
 
 		layer_0 {
 			bindings = <
-        &kp Q      &kp W      &kp E      &kp R      &kp T       &kp Y      &kp U      &kp I      &kp O      &kp P
-        &kp A      &kp S      &kp D      &kp F      &kp G       &kp H      &kp J      &kp K      &kp L      &kp SEMICOLON
-        &kp Z      &kp X      &kp C      &kp V      &kp B       &kp N      &kp M      &kp COMMA  &kp DOT    &kp SLASH
+        &kp Q      &kp W      &kp E      &mt LCTRL R &mt LSHIFT T &mt RSHIFT Y &mt RCTRL U &kp I      &kp O      &kp P
+        &kp A      &kp S      &kp D      &kp F      &mt LALT G  &mt RALT H  &kp J      &kp K      &kp L      &kp SEMICOLON
+        &kp Z      &kp X      &kp C      &kp V      &mt LGUI B  &mt RGUI N  &kp M      &kp COMMA  &kp DOT    &kp SLASH
                                         &lt 1 ESC  &kp SPACE   &kp BACKSPACE &mo 2
 			>;
 		};
