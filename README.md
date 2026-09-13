@@ -19,6 +19,7 @@ Hardware/configuration in this repo:
 - `config/urchin.json`: physical layout metadata for visual tools/ZMK Studio.
 - `flake.nix`: Nix/zmk-nix firmware packages and development shell.
 - `Justfile`: build, update, flash, and cleanup commands.
+- `scripts/flash.sh`: safe local UF2 detection, mount, copy, and cleanup.
 - `.github/workflows/build-zmk.yaml`: GitHub Actions wrapper that runs the Just/Nix build.
 - `.pi/skills/zmk-urchin/SKILL.md`: local Pi skill for working on this repo.
 
@@ -43,9 +44,20 @@ just build            # build all .uf2 files
 just build-firmware   # build only left/right Urchin firmware
 just build-settings-reset
 just update           # update West deps and zephyrDepsHash
-just flash left       # flash via zmk-nix helper
+just flash left       # build and flash with the local helper
 just clean            # remove result symlinks
 ```
+
+The local flash helper identifies the nice!nano UF2 bootloader by USB ID `239a:00b3`. This ID belongs to the bootloader, not to ZMK or the Urchin keyboard. Both halves use the same ID.
+
+To support a controller with a different bootloader:
+
+1. Put the controller into bootloader mode.
+2. Run `udevadm info --query=property --name=/dev/<device>`.
+3. Find `ID_VENDOR_ID` and `ID_MODEL_ID` in the output.
+4. Change `bootloader_vendor_id` and `bootloader_product_id` near the top of `scripts/flash.sh`.
+
+The helper also requires the matching device to be removable and connected through USB. It refuses to flash when more than one matching bootloader is present.
 
 Current output files:
 

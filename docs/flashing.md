@@ -65,20 +65,18 @@ The nice!nano v2 uses an nRF52 UF2 bootloader. In bootloader mode it appears as 
 
 ## Flashing with Just
 
-The repo exposes zmk-nix's flash helper:
+The repo uses `scripts/flash.sh` through these commands:
 
 ```sh
 just flash
 just flash right
 ```
 
-`just flash` without arguments builds the split firmware and flashes the left/central half. This is the normal iteration command for keymap-only changes.
+The helper builds the split firmware first. It then authenticates sudo while the keyboard can still type and prints the correct bootloader chord. `just flash` defaults to the left half.
 
-Pass an explicit part name when needed, for example `just flash right` for right/peripheral firmware changes.
+The helper waits for exactly one removable USB device with bootloader USB ID `239a:00b3`. It reads the ID through `udevadm`, so device names and padded model strings do not affect detection. It mounts the device at `/mnt/zmk-uf2`, copies the selected firmware, syncs writes, and cleans up the mount.
 
-The helper waits for an `nRF UF2` block device, tries to mount it with `udisksctl`, and copies the correct firmware. If it cannot detect or mount the device, use manual flashing.
-
-The helper is for the normal split firmware only. Use manual copy for `settings_reset-nice_nano_v2-zmk.uf2`.
+Use `just flash right` for the right half. The helper accepts only `left` or `right`. Use manual copy for `settings_reset-nice_nano_v2-zmk.uf2`.
 
 ## Expected file-copy errors
 

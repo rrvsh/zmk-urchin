@@ -6,12 +6,10 @@ When working here, load and follow the local skill at `.pi/skills/zmk-urchin/SKI
 
 Run Just tasks through the dev shell, e.g. `nix develop --command just build`.
 
-For keymap-only changes, flash the left half:
+The local `scripts/flash.sh` helper builds before bootloader mode, authenticates sudo while the keyboard works, detects bootloader USB ID `239a:00b3`, mounts the UF2 device, copies the firmware, and cleans up.
 
-1. Run `nix develop --command just flash left`.
-2. Hold both outer thumb keys to activate layer 2.
-3. Hold `T` to put the left half into bootloader mode.
+For keymap-only changes, run `nix develop --command just flash left`. When prompted, hold both outer thumb keys and hold `T`.
 
-To flash the right half, run `nix develop --command just flash right`, then use the same thumb chord and hold `Y`.
+To flash the right half, run `nix develop --command just flash right`. When prompted, use the same thumb chord and hold `Y`.
 
 Prefer keeping the GitHub Actions plus West workflow simple and reproducible. If adding Nix support, base it on `github:lilyinstarlight/zmk-nix` and document how to update `zephyrDepsHash`.

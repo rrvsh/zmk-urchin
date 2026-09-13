@@ -36,17 +36,9 @@ update-keysyms:
 update:
     nix run .#update
 
-# Flash split firmware. Defaults to building firmware and flashing the left/central half.
-# Pass explicit part names to flash other halves, e.g. `just flash right`.
-flash *parts:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    if [ -z "{{parts}}" ]; then
-      nix build .#firmware
-      nix run .#flash -- left
-    else
-      nix run .#flash -- {{parts}}
-    fi
+# Build and flash one split half with the local UF2 helper.
+flash part="left":
+    scripts/flash.sh "{{part}}"
 
 # Remove local Nix build result symlinks.
 clean:

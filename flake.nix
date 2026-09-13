@@ -89,7 +89,6 @@
             cp ${settings-reset}/zmk.uf2 $out/settings_reset-nice_nano_v2-zmk.uf2
           '';
 
-          flash = zmk-nix.packages.${system}.flash.override { inherit firmware; };
           update = zmk-nix.packages.${system}.update;
         }
       );
