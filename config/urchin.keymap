@@ -1,9 +1,16 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 30
 #include <dt-bindings/zmk/pointing.h>
 
 &mt {
     flavor = "tap-preferred";
+};
+
+&msc {
+    delay-ms = <0>;
+    time-to-max-speed-ms = <400>;
+    acceleration-exponent = <1>;
 };
 
 / {
@@ -68,14 +75,14 @@
     };
 
     combo_scroll_down {
-        timeout-ms = <50>;
+        timeout-ms = <10>;
         key-positions = <16 17>;
         bindings = <&msc SCRL_DOWN>;
         layers = <2>;
     };
 
     combo_scroll_up {
-        timeout-ms = <50>;
+        timeout-ms = <10>;
         key-positions = <17 18>;
         bindings = <&msc SCRL_UP>;
         layers = <2>;
@@ -105,9 +112,9 @@
 
 		layer_2 {
 			bindings = <
-        &mkp LCLK  &mkp RCLK  &none      &mt_none LSHIFT 0 &mt_bootloader LCTRL 0 &mt_bootloader RCTRL 0 &mt_none RSHIFT 0 &none      &none      &none
-        &kp F1     &kp F2     &kp F3     &kp F4     &mt_none LALT 0 &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &mkp MCLK
-        &kp F6     &kp F7     &kp F8     &kp F9     &mt_none LGUI 0 &mt_none RGUI 0 &none      &none      &none      &none
+        &mkp LCLK  &mkp RCLK  &kp F11    &mt LSHIFT F12 &mt_bootloader LCTRL 0 &mt_bootloader RCTRL 0 &mt_none RSHIFT 0 &none      &none      &none
+        &kp F1     &kp F2     &kp F3     &kp F4     &mt LALT F5 &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &mkp MCLK
+        &kp F6     &kp F7     &kp F8     &kp F9     &mt LGUI F10 &mt_none RGUI 0 &none      &none      &none      &none
                                         &none      &none       &none      &none
 			>;
 		};
