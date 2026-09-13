@@ -104,9 +104,9 @@
     </div>
     <div class="side right-side">
       <table class="half right">
-        <tr><td><span class="label"><span>Bootload</span><span>hold Ctrl</span></span><sub>73</sub></td><td><span class="label"><span>--</span><span>hold Shift</span></span><sub>74</sub></td><td><span class="label"><span>--</span><span>hold Opt</span></span><sub>75</sub></td><td><span class="label"><span>--</span></span><sub>76</sub></td><td><span class="label"><span>--</span></span><sub>77</sub></td></tr>
+        <tr><td><span class="label"><span>Previous</span><span>hold Ctrl</span></span><sub>73</sub></td><td><span class="label"><span>Volume −</span><span>hold Shift</span></span><sub>74</sub></td><td><span class="label"><span>Volume +</span><span>hold Opt</span></span><sub>75</sub></td><td><span class="label"><span>Next</span></span><sub>76</sub></td><td><span class="label"><span>Play/Pause</span></span><sub>77</sub></td></tr>
         <tr><td><span class="label"><span>Mouse ←</span></span><sub>83</sub></td><td><span class="label"><span>Mouse ↓</span></span><sub>84</sub></td><td><span class="label"><span>Mouse ↑</span></span><sub>85</sub></td><td><span class="label"><span>Mouse →</span></span><sub>86</sub></td><td><span class="label"><span>Middle click</span></span><sub>87</sub></td></tr>
-        <tr><td><span class="label"><span>--</span><span>hold Cmd</span></span><sub>93</sub></td><td><span class="label"><span>--</span></span><sub>94</sub></td><td><span class="label"><span>--</span></span><sub>95</sub></td><td><span class="label"><span>--</span></span><sub>96</sub></td><td><span class="label"><span>--</span></span><sub>97</sub></td></tr>
+        <tr><td><span class="label"><span>--</span><span>hold Cmd</span></span><sub>93</sub></td><td><span class="label"><span>--</span></span><sub>94</sub></td><td><span class="label"><span>--</span></span><sub>95</sub></td><td><span class="label"><span>--</span></span><sub>96</sub></td><td><span class="label"><span>Bootload</span></span><sub>97</sub></td></tr>
       </table>
       <table class="thumbs right-thumbs"><tr><td><span class="label"><span>--</span></span><sub>100</sub></td><td><span class="label"><span>--</span></span><sub>101</sub></td></tr></table>
     </div>
@@ -313,7 +313,7 @@
   <section>
     <h2>Missing ZMK keysyms</h2>
     <p>Loaded from tracked <code>docs/zmk-keysyms.json</code>. If any alias for a keysym is used in the keymap, that keysym is considered present.</p>
-    <p>Used 82 of 373 deduped keysyms; missing 291.</p>
+    <p>Used 87 of 373 deduped keysyms; missing 286.</p>
     <table class="missing-keysyms">
       <thead>
         <tr>
@@ -510,7 +510,7 @@
         <td>Keypad/numpad key: Keypad Space</td>
         <td></td>
       </tr>
-      <tr class="category"><th colspan="3">Consumer/media (152)</th></tr>
+      <tr class="category"><th colspan="3">Consumer/media (147)</th></tr>
       <tr>
         <td><code>C_AC_BACK</code></td>
         <td>Consumer/media control: Ac Back</td>
@@ -1142,11 +1142,6 @@
         <td><code>M_MUTE</code></td>
       </tr>
       <tr>
-        <td><code>C_NEXT</code></td>
-        <td>Consumer/media control: Scan Next Track</td>
-        <td><code>M_NEXT</code></td>
-      </tr>
-      <tr>
         <td><code>C_PAUSE</code></td>
         <td>Consumer/media control: Pause</td>
         <td></td>
@@ -1160,16 +1155,6 @@
         <td><code>C_PLAY</code></td>
         <td>Consumer/media control: Play</td>
         <td></td>
-      </tr>
-      <tr>
-        <td><code>C_PP</code></td>
-        <td>Consumer/media control: Play Pause</td>
-        <td><code>C_PLAY_PAUSE</code>, <code>M_PLAY</code></td>
-      </tr>
-      <tr>
-        <td><code>C_PREV</code></td>
-        <td>Consumer/media control: Scan Previous Track</td>
-        <td><code>C_PREVIOUS</code>, <code>M_PREV</code></td>
       </tr>
       <tr>
         <td><code>C_PWR</code></td>
@@ -1250,16 +1235,6 @@
         <td><code>C_VOICE_COMMAND</code></td>
         <td>Consumer/media control: Voice Command</td>
         <td></td>
-      </tr>
-      <tr>
-        <td><code>C_VOL_DN</code></td>
-        <td>Consumer/media control: Volume Decrement</td>
-        <td><code>C_VOLUME_DOWN</code>, <code>M_VOLD</code></td>
-      </tr>
-      <tr>
-        <td><code>C_VOL_UP</code></td>
-        <td>Consumer/media control: Volume Increment</td>
-        <td><code>C_VOLUME_UP</code>, <code>M_VOLU</code></td>
       </tr>
       <tr>
         <td><code>C_YELLOW</code></td>

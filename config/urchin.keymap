@@ -156,9 +156,9 @@
 
 		layer_2 {
 			bindings = <
-        &mkp LCLK  &mkp RCLK  &mt LALT F11 &mt LSHIFT F12 &mt_bootloader LCTRL 0 &mt_bootloader RCTRL 0 &mt_none RSHIFT 0 &mt_none RALT 0 &none &none
+        &mkp LCLK  &mkp RCLK  &mt LALT F11 &mt LSHIFT F12 &mt_bootloader LCTRL 0 &mt RCTRL C_PREV &mt RSHIFT C_VOL_DN &mt RALT C_VOL_UP &kp C_NEXT &kp C_PP
         &kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &mkp MCLK
-        &kp F6     &kp F7     &kp F8     &kp F9     &mt LGUI F10 &mt_none RGUI 0 &none      &none      &none      &none
+        &kp F6     &kp F7     &kp F8     &kp F9     &mt LGUI F10 &mt_none RGUI 0 &none      &none      &none      &bootloader
                                         &none      &none       &none      &none
 			>;
 		};
