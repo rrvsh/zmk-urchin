@@ -122,6 +122,10 @@ def token_display(tokens: list[str], index: int) -> tuple[str, int]:
     if token == "&kp":
         key = tokens[index + 1]
         return key_display(key), index + 2
+    if token == "&scroll_down":
+        return "Scroll ↓", index + 1
+    if token == "&scroll_up":
+        return "Scroll ↑", index + 1
     if token in {"&mkp", "&mmv", "&msc"}:
         value = tokens[index + 1]
         return MOUSE_DISPLAY.get(value, value), index + 2
