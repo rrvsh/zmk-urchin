@@ -39,6 +39,20 @@ SHIFT_DISPLAY = {
     "SLASH": "?",
 }
 
+MOUSE_DISPLAY = {
+    "LCLK": "Left click",
+    "RCLK": "Right click",
+    "MCLK": "Middle click",
+    "MOVE_LEFT": "Mouse ←",
+    "MOVE_DOWN": "Mouse ↓",
+    "MOVE_UP": "Mouse ↑",
+    "MOVE_RIGHT": "Mouse →",
+    "SCRL_LEFT": "Scroll ←",
+    "SCRL_DOWN": "Scroll ↓",
+    "SCRL_UP": "Scroll ↑",
+    "SCRL_RIGHT": "Scroll →",
+}
+
 DISPLAY = {
     "LCTRL": "Ctrl",
     "RCTRL": "Ctrl",
@@ -108,6 +122,9 @@ def token_display(tokens: list[str], index: int) -> tuple[str, int]:
     if token == "&kp":
         key = tokens[index + 1]
         return key_display(key), index + 2
+    if token in {"&mkp", "&mmv", "&msc"}:
+        value = tokens[index + 1]
+        return MOUSE_DISPLAY.get(value, value), index + 2
     if token == "&mo":
         return f"--\nhold L{tokens[index + 1]}", index + 2
     if token == "&lt":
