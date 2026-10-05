@@ -80,44 +80,6 @@
     compatible = "zmk,combos";
     // Finger-position combos intentionally apply on all layers.
 
-    combo_left_escape {
-        timeout-ms = <50>;
-        key-positions = <10 11 12 13>;
-        bindings = <&kp ESCAPE>;
-    };
-
-    combo_right_escape {
-        timeout-ms = <50>;
-        key-positions = <16 17 18 19>;
-        bindings = <&kp ESCAPE>;
-    };
-
-    combo_left_return {
-        timeout-ms = <50>;
-        key-positions = <11 12>;
-        bindings = <&kp RETURN>;
-    };
-
-    combo_right_return {
-        timeout-ms = <50>;
-        key-positions = <17 18>;
-        bindings = <&kp RETURN>;
-        layers = <0 1>;
-    };
-
-    combo_left_tab {
-        timeout-ms = <50>;
-        key-positions = <12 13>;
-        bindings = <&kp TAB>;
-    };
-
-    combo_right_tab {
-        timeout-ms = <50>;
-        key-positions = <16 17>;
-        bindings = <&kp TAB>;
-        layers = <0 1>;
-    };
-
     combo_scroll_down {
         timeout-ms = <10>;
         key-positions = <16 17>;
@@ -141,7 +103,7 @@
         &kp Q      &kp W      &mt LALT E &mt LSHIFT R &mt LCTRL T &mt RCTRL Y &mt RSHIFT U &mt RALT I &kp O      &kp P
         &kp A      &kp S      &kp D      &kp F      &kp G      &kp H      &kp J      &kp K      &kp L      &kp SEMICOLON
         &kp Z      &kp X      &kp C      &kp V      &mt LGUI B  &mt RGUI N  &kp M      &kp COMMA  &kp DOT    &kp SLASH
-                                        &lt 1 ESC  &kp SPACE   &kp BACKSPACE &mo 1
+                                        &lt 1 ESC  &kp SPACE   &kp BACKSPACE &lt 1 RETURN
 			>;
 		};
 
