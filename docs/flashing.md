@@ -1,167 +1,36 @@
-# Flashing Urchin ZMK firmware
+# Flashing the Dolphin34 port
 
-This repo builds UF2 firmware for an Urchin split keyboard with nice!nano v2 controllers.
-
-## Firmware artifacts
-
-Run:
+Build first:
 
 ```sh
-just build
+nix develop --command just build
 ```
 
-The `result/` symlink will contain:
+Keep the keyboard connected and working until the build and `sudo` authentication finish. The output is in `result/`:
 
-- `urchin_left-nice_view_adapter-nice_view_gem-nice_nano_v2-zmk.uf2`
-- `urchin_right-nice_view_adapter-nice_view_gem-nice_nano_v2-zmk.uf2`
-- `settings_reset-nice_nano_v2-zmk.uf2`
+- `dolphin34_left-nice_nano_v2-zmk.uf2`
+- `dolphin34_right-nice_nano_v2-zmk.uf2`
+- `settings_reset-nice_nano_v2-zmk.uf2` (only for deliberate settings recovery)
 
-Flash the left file to the left half, the right file to the right half, and the settings reset file to either half only when intentionally clearing persistent settings.
+## Enter the stock firmware's bootloader
 
-## Prerequisites
+In the [seller's keymap](https://github.com/bigeqali/dolphin34/blob/017db149d5379689e5b46533e5381af744cfc7bf/config/cradio.keymap), pressing the **two right thumb keys together** activates Media. While holding them, press **Q** for the left half or **P** for the right half. Alternatively double-tap the physical reset button on the half you intend to flash. Entering bootloader mode does not erase firmware; copying a UF2 does.
 
-For manual flashing:
+Check its USB identity and UF2 drive before using the flash helper. The helper defaults to the nice!nano UF2 ID `239a:00b3`, but the seller's controller/bootloader ID has not yet been verified. If it differs, pass the observed IDs as `ZMK_BOOTLOADER_VENDOR_ID` and `ZMK_BOOTLOADER_PRODUCT_ID`; never select a disk by name alone.
 
-- A data-capable USB cable.
-- A working USB port.
-- Ability to access/mount removable USB mass-storage volumes.
-- The built `.uf2` files from `just build` or the GitHub Actions `firmware` artifact.
+The bootloader may present `CURRENT.UF2`, a readback of the current application. Save both original halves before the first flash. The helper does this automatically under `~/Agents/artifacts/zmk-dolphin34/stock/left-stock.uf2` and `right-stock.uf2`. It mounts the UF2 device read-only first and refuses to flash if no readback or existing backup is available. If you deliberately waive only the right-half backup, set `ZMK_FLASH_SKIP_RIGHT_BACKUP=1`. Treat backups as private: they may include saved device state.
 
-For `just flash` on Linux:
-
-- Nix and this repo's dev shell.
-- `udisks2`/`udisksctl` available on the system.
-- A user-session automounter or permission to mount removable devices.
-- A running user session with polkit/udisks permission to mount removable media.
-
-On my NixOS machines, the `tools` repo should enable `services.udisks2` and the Home Manager `services.udiskie` user service for this.
-
-## Normal manual flashing
-
-The nice!nano v2 uses an nRF52 UF2 bootloader. In bootloader mode it appears as a USB flash drive. Flashing is copying a `.uf2` file to that drive.
-
-1. Build firmware:
-
-   ```sh
-   just build
-   ```
-
-2. Plug in the target keyboard half with a data-capable USB cable.
-
-3. Put the nice!nano into bootloader mode, usually by double-tapping reset quickly.
-
-4. Wait for the UF2 drive to appear.
-
-5. Copy the matching `.uf2` to the root of the UF2 drive:
-
-   ```sh
-   cp result/urchin_left-nice_view_adapter-nice_view_gem-nice_nano_v2-zmk.uf2 /run/media/$USER/<UF2_VOLUME>/
-   sync
-   ```
-
-6. The bootloader should write the firmware, disconnect the drive, and reboot automatically.
-
-7. Repeat for the other half with the matching file.
-
-## Flashing with Just
-
-The repo uses `scripts/flash.sh` through these commands:
+## First install
 
 ```sh
-just flash
-just flash right
+nix develop --command just flash left
+nix develop --command just flash right
 ```
 
-The helper builds the split firmware first. It then authenticates sudo while the keyboard can still type and prints the correct bootloader chord. `just flash` defaults to the left half.
+Run one command at a time, and enter bootloader mode on **only the named half** after the helper says it is ready. After flashing left, the new central keymap takes over: use a **double-tap of the physical reset button on the target half**. The factory chord no longer applies.
 
-The helper waits for exactly one removable USB device with bootloader USB ID `239a:00b3`. It reads the ID through `udevadm`, so device names and padded model strings do not affect detection. It mounts the device at `/mnt/zmk-uf2`, copies the selected firmware, syncs writes, and cleans up the mount.
+The helper builds before bootloader entry, authenticates sudo, waits for exactly one matching removable USB device, backs up stock `CURRENT.UF2` if not already saved, remounts read-write, copies the matching firmware, syncs, and unmounts. Do not copy `settings_reset` as part of the normal install.
 
-Use `just flash right` for the right half. The helper accepts only `left` or `right`. Use manual copy for `settings_reset-nice_nano_v2-zmk.uf2`.
+For later keymap-only edits, flash left/central only. For changes to the shield, board, ZMK version, or split transport, rebuild and flash both halves. ZMK Studio may retain runtime binding overrides from the factory keymap; restore stock bindings in Studio if the source keymap seems not to take effect. Preserve Bluetooth pairings unless a specific issue requires a deliberate settings reset.
 
-## Expected file-copy errors
-
-It is normal for Windows, Linux, or macOS to show a copy/I/O error when copying a UF2 file. The bootloader often resets and disconnects before the OS receives final write confirmation.
-
-Treat the flash as successful if the controller reboots and the firmware works.
-
-Known harmless examples:
-
-- Windows file transfer errors after copy.
-- Linux I/O errors after the volume disappears.
-- macOS Finder errors.
-- macOS Sonoma `fcopyfile failed: Input/output error`.
-
-## Split keyboard flashing rules
-
-Urchin is a wireless split keyboard:
-
-- Left is conventionally the central half.
-- Right is the peripheral half.
-- The central handles keymap processing and host USB/Bluetooth.
-- The peripheral sends key events to the central.
-
-Practical rules:
-
-- Initial install: flash both halves.
-- Keymap-only change: flash the left/central half only; the central owns keymap processing for both halves.
-- Config, display, split, module, or ZMK version change: flash both halves.
-- Flash the right/peripheral half only when right-side firmware itself changed or when doing a full refresh/reset.
-- When unsure: flash both halves.
-
-## Persistent settings and settings reset
-
-Regular firmware flashing does not clear ZMK persistent settings. ZMK intentionally preserves:
-
-- host Bluetooth bonds;
-- selected Bluetooth profile;
-- split central/peripheral pairing;
-- output selection;
-- ZMK Studio runtime edits;
-- lighting/power-management settings when applicable.
-
-Use `settings_reset-nice_nano_v2-zmk.uf2` when:
-
-- halves will not pair;
-- Bluetooth pairing is broken;
-- a controller was replaced;
-- central/peripheral roles changed;
-- the host shows connected but no keys arrive;
-- you want to clear ZMK Studio runtime state at firmware level.
-
-Full reset procedure:
-
-1. Put left into bootloader mode.
-2. Flash `settings_reset-nice_nano_v2-zmk.uf2` to left.
-3. Put right into bootloader mode.
-4. Flash `settings_reset-nice_nano_v2-zmk.uf2` to right.
-5. Flash normal left firmware to left.
-6. Flash normal right firmware to right.
-7. Power-cycle or reset both halves at roughly the same time.
-8. On host devices, forget/remove the old keyboard Bluetooth entry.
-9. Pair again.
-
-Important: settings-reset firmware has Bluetooth disabled, so the keyboard will not appear in Bluetooth scans until normal firmware has been flashed again.
-
-## Bluetooth profile notes
-
-ZMK has five Bluetooth profiles by default. Pairing a new host does not overwrite an already-bonded profile. Use an empty profile or clear an existing profile with keymap Bluetooth behaviors if they are available.
-
-If host pairing acts stale:
-
-1. Forget/remove the keyboard on the host.
-2. Clear keyboard bonds via keymap behavior or settings reset.
-3. Pair again.
-
-If a host says the keyboard is connected but no input arrives, stale bond keys are a common cause.
-
-## Bootloader recovery caveats
-
-Normal `.uf2` application flashing is low risk.
-
-Higher-risk operations include:
-
-- flashing bootloader or SoftDevice-level images;
-- using snippets/options that erase the SoftDevice on nRF52 boards;
-- recovering from a corrupted/missing bootloader.
-
-If double-reset no longer exposes a UF2 drive, recovery may require SWD/J-Link or equivalent hardware to reflash the bootloader.
+If the bootloader ID is absent, stop and investigate rather than bypassing the helper's checks. A missing `CURRENT.UF2` on the right half requires an explicit backup waiver. The old Urchin firmware is not for this board.

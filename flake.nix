@@ -32,7 +32,7 @@
           ".yml"
           "_defconfig"
         ];
-      zephyrDepsHash = "sha256-FJsXK7ctkQwkpQOxNWXOTSYySSMBNcyH8uj0xy0IV4o=";
+      zephyrDepsHash = "sha256-IhmzLaktf/F4cLvtVvZeL8v1/BDP/MQi/wM1uJpCpXI=";
     in
     {
       packages = forAllSystems (
@@ -45,16 +45,8 @@
             config = "config";
             zephyrDepsHash = zephyrDepsHash;
 
-            # nice-view-gem v0.3.0 builds cleanly in ZMK's official container,
-            # but nixpkgs currently supplies a much newer arm-none-eabi GCC
-            # which treats a few missing minimal-libc declarations as fatal.
-            extraCmakeFlags = [
-              "-DCMAKE_C_FLAGS=-Wno-implicit-function-declaration"
-              "-DCONFIG_NEWLIB_LIBC=y"
-            ];
-
             meta = {
-              description = "ZMK firmware for Urchin with nice!nano v2 and nice!view/gem";
+              description = "ZMK firmware for Dolphin34 with the Cradio shield";
               license = pkgs.lib.licenses.mit;
               platforms = pkgs.lib.platforms.all;
             };
@@ -66,9 +58,9 @@
           firmware = builders.buildSplitKeyboard (
             common
             // {
-              name = "urchin-firmware";
+              name = "dolphin34-firmware";
               board = "nice_nano_v2";
-              shield = "urchin_%PART% nice_view_adapter nice_view_gem";
+              shield = "cradio_%PART%";
               enableZmkStudio = true;
             }
           );
@@ -76,16 +68,16 @@
           settings-reset = builders.buildKeyboard (
             common
             // {
-              name = "urchin-settings-reset";
+              name = "dolphin34-settings-reset";
               board = "nice_nano_v2";
               shield = "settings_reset";
             }
           );
 
-          all = pkgs.runCommand "urchin-zmk-firmware" { } ''
+          all = pkgs.runCommand "dolphin34-zmk-firmware" { } ''
             mkdir -p $out
-            cp ${firmware}/zmk_left.uf2 $out/urchin_left-nice_view_adapter-nice_view_gem-nice_nano_v2-zmk.uf2
-            cp ${firmware}/zmk_right.uf2 $out/urchin_right-nice_view_adapter-nice_view_gem-nice_nano_v2-zmk.uf2
+            cp ${firmware}/zmk_left.uf2 $out/dolphin34_left-nice_nano_v2-zmk.uf2
+            cp ${firmware}/zmk_right.uf2 $out/dolphin34_right-nice_nano_v2-zmk.uf2
             cp ${settings-reset}/zmk.uf2 $out/settings_reset-nice_nano_v2-zmk.uf2
           '';
 

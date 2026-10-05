@@ -11,11 +11,12 @@ repo_root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
 firmware="$repo_root/result/zmk_${part}.uf2"
 mountpoint_path="${ZMK_FLASH_MOUNTPOINT:-/mnt/zmk-uf2}"
 timeout_seconds="${ZMK_FLASH_TIMEOUT_SECONDS:-120}"
-bootloader_vendor_id="239a"
-bootloader_product_id="00b3"
-bootloader_key="T"
+bootloader_vendor_id="${ZMK_BOOTLOADER_VENDOR_ID:-239a}"
+bootloader_product_id="${ZMK_BOOTLOADER_PRODUCT_ID:-00b3}"
+backup_dir="${ZMK_FLASH_BACKUP_DIR:-$HOME/Agents/artifacts/zmk-dolphin34/stock}"
+stock_key="Q"
 if [ "$part" = "right" ]; then
-  bootloader_key="Y"
+  stock_key="P"
 fi
 
 cd "$repo_root"
@@ -47,7 +48,13 @@ if mountpoint -q "$mountpoint_path"; then
   exit 1
 fi
 
-printf 'Ready. Hold both outer thumbs, then hold %s for the %s bootloader.\n' "$bootloader_key" "$part"
+printf 'Ready. Double-tap reset on the %s half if accessible.\n' "$part"
+if [ "$part" = left ]; then
+  printf 'Default Cradio keymap: hold the OUTER thumb on EACH half, then press A on the left.\n'
+else
+  printf 'Ported Urchin keymap: hold LEFT OUTER thumb, then RIGHT OUTER thumb, then press the right bottom-row pinky (/).\n'
+fi
+printf 'Factory Dolphin keymap only: both RIGHT thumbs plus %s.\n' "$stock_key"
 printf 'Waiting for one removable USB bootloader with ID %s:%s' "$bootloader_vendor_id" "$bootloader_product_id"
 device=""
 
@@ -92,8 +99,34 @@ if [ -z "$device" ]; then
 fi
 
 echo "Detected $device"
-sudo mount "$device" "$mountpoint_path"
-echo "Mounted $device at $mountpoint_path"
+sudo mount -o ro,uid="$(id -u)",gid="$(id -g)" "$device" "$mountpoint_path"
+echo "Mounted $device read-only at $mountpoint_path"
+
+# Keep the vendor firmware before writing anything to this half. Never replace it
+# with a later image of the ported firmware.
+backup="$backup_dir/${part}-stock.uf2"
+if [ ! -f "$backup" ]; then
+  if [ -f "$mountpoint_path/CURRENT.UF2" ]; then
+    mkdir -p "$backup_dir"
+    cp "$mountpoint_path/CURRENT.UF2" "$backup"
+    if [ ! -s "$backup" ]; then
+      rm -f "$backup"
+      echo "Refusing to flash: empty firmware backup." >&2
+      exit 1
+    fi
+    echo "Saved stock $part firmware: $backup"
+    sha256sum "$backup"
+  elif [ "$part" = right ] && [ "${ZMK_FLASH_SKIP_RIGHT_BACKUP:-0}" = 1 ]; then
+    echo "No CURRENT.UF2 available; skipping right backup as explicitly requested."
+  else
+    echo "Refusing to flash: no CURRENT.UF2 to back up from this bootloader." >&2
+    exit 1
+  fi
+else
+  echo "Preserving existing stock backup: $backup"
+fi
+
+sudo mount -o remount,rw "$mountpoint_path"
 sudo cp "$firmware" "$mountpoint_path/"
 sync
 echo "Copied and synced $(basename "$firmware")."

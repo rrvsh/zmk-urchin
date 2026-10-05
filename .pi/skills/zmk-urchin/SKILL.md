@@ -5,6 +5,8 @@ description: Work on this Urchin ZMK firmware config repository. Use for ZMK key
 
 # ZMK Urchin Skill
 
+> Branch override: `feat/dolphin34` targets Dolphin34 with the in-tree `cradio_left`/`cradio_right` shields, `nice_nano_v2`, no display, and `config/cradio.keymap`. Read this branch's `README.md` and `docs/flashing.md` for the current build and flash commands. The Urchin-specific paths, shields, outputs, and bootloader instructions below apply only to `prime`.
+
 ## Repository purpose
 
 This repo is a standalone ZMK user config for an Urchin split keyboard:
