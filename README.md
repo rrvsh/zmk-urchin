@@ -1,103 +1,61 @@
-# zmk-urchin
+# Urchin and Dolphin34 ZMK firmware
 
-Standalone ZMK firmware configuration for an Urchin split keyboard.
+This repository builds the same 34-position keymap for two split keyboards:
 
-Hardware/configuration in this repo:
+- **Urchin:** `urchin_left` and `urchin_right` with nice!view/nice-view-gem displays.
+- **Dolphin34:** ZMK's in-tree `cradio_left` and `cradio_right` shields without displays.
 
-- Keyboard shield: `urchin_left` / `urchin_right` from `duckyb/urchin-zmk-module`
-- Controller board: `nice_nano_v2`
-- Displays: `nice_view_adapter nice_view_gem` from `M165437/nice-view-gem`
-- ZMK: pinned to `v0.2.0` in `config/west.yml`
-- ZMK Studio: enabled for the left/central half via `studio-rpc-usb-uart` and `-DCONFIG_ZMK_STUDIO=y`
+Both use `nice_nano_v2` and ZMK `v0.2.0`. The shared behaviors, combos, macros, and layers live in `config/shared.keymap.dtsi`. The shield-specific `config/urchin.keymap` and `config/cradio.keymap` files only include that shared layout.
 
-## Layout
+## Repository layout
 
-- `config/build.yaml`: build matrix for left, right, and settings reset firmware.
-- `config/west.yml`: West manifest with ZMK and external modules.
-- `config/urchin.conf`: Kconfig options for Bluetooth, sleep, display, and nice-view-gem.
-- `config/urchin.keymap`: layers, home-row mods, combos, and thumb keys.
-- `config/urchin.json`: physical layout metadata for visual tools/ZMK Studio.
-- `flake.nix`: Nix/zmk-nix firmware packages and development shell.
-- `Justfile`: build, update, flash, and cleanup commands.
-- `scripts/flash.sh`: safe local UF2 detection, mount, copy, and cleanup.
-- `.github/workflows/build-zmk.yaml`: GitHub Actions wrapper that runs the Just/Nix build.
-- `.pi/skills/zmk-urchin/SKILL.md`: local Pi skill for working on this repo.
+- `config/shared.keymap.dtsi`: shared 34-key layout.
+- `config/urchin.keymap`, `config/urchin.conf`, `config/urchin.json`: Urchin entry point and hardware configuration.
+- `config/cradio.keymap`, `config/cradio.conf`, `config/cradio_left.conf`: Dolphin34 entry point and hardware configuration.
+- `config/build.yaml`: reference build matrix for both keyboards and settings reset.
+- `config/west.yml`: pinned ZMK, Urchin, and display modules.
+- `flake.nix`: Nix builds for both keyboards.
+- `docs/keymap.html`: rendered shared layout.
+- `docs/flashing.md`: flashing overview and links to hardware-specific instructions.
 
-## Nix and Just build
+## Build
 
-Enter the development shell:
+Run commands through the Nix development shell:
 
 ```sh
-nix develop
+nix develop --command just build
+nix develop --command just render-keymap
 ```
 
-Build all firmware into the `result` symlink:
-
-```sh
-just build
-```
-
-Useful tasks:
-
-```sh
-just build            # build all .uf2 files
-just build-firmware   # build only left/right Urchin firmware
-just build-settings-reset
-just update           # update West deps and zephyrDepsHash
-just flash left       # build and flash with the local helper
-just clean            # remove result symlinks
-```
-
-The local flash helper identifies the nice!nano UF2 bootloader by USB ID `239a:00b3`. This ID belongs to the bootloader, not to ZMK or the Urchin keyboard. Both halves use the same ID.
-
-To support a controller with a different bootloader:
-
-1. Put the controller into bootloader mode.
-2. Run `udevadm info --query=property --name=/dev/<device>`.
-3. Find `ID_VENDOR_ID` and `ID_MODEL_ID` in the output.
-4. Change `bootloader_vendor_id` and `bootloader_product_id` near the top of `scripts/flash.sh`.
-
-The helper also requires the matching device to be removable and connected through USB. It refuses to flash when more than one matching bootloader is present.
-
-Current output files:
+`just build` writes five files under `result/`:
 
 - `urchin_left-nice_view_adapter-nice_view_gem-nice_nano_v2-zmk.uf2`
 - `urchin_right-nice_view_adapter-nice_view_gem-nice_nano_v2-zmk.uf2`
+- `dolphin34_left-nice_nano_v2-zmk.uf2`
+- `dolphin34_right-nice_nano_v2-zmk.uf2`
 - `settings_reset-nice_nano_v2-zmk.uf2`
 
-## GitHub Actions build
-
-Push or run the workflow manually. The workflow installs Nix and runs `nix develop --command just build`. It builds artifacts for:
-
-- `urchin_left nice_view_adapter nice_view_gem` on `nice_nano_v2`
-- `urchin_right nice_view_adapter nice_view_gem` on `nice_nano_v2`
-- `settings_reset` on `nice_nano_v2`
-
-Download the `firmware` artifact from the workflow run and flash the `.uf2` files by putting the matching controller into bootloader mode and copying the `.uf2` to the mounted drive. See [docs/flashing.md](docs/flashing.md) for prerequisites, normal flashing, `just flash`, and settings-reset procedures.
-
-## Local west build sketch
-
-The Nix/Just flow is the canonical build path. For manual source builds without Nix, initialize a West workspace from this config and build each side separately:
+Targeted builds are also available:
 
 ```sh
-BASE_DIR=/tmp/zmk-urchin-build
-mkdir -p "$BASE_DIR"
-cp -R config "$BASE_DIR/config"
-cd "$BASE_DIR"
-west init -l config
-west update --fetch-opt=--filter=tree:0
-west zephyr-export
-west build -s zmk/app -d build/left -b nice_nano_v2 -S studio-rpc-usb-uart -- \
-  -DSHIELD="urchin_left nice_view_adapter nice_view_gem" \
-  -DZMK_CONFIG="$BASE_DIR/config" \
-  -DCONFIG_ZMK_STUDIO=y
-west build -s zmk/app -d build/right -b nice_nano_v2 -- \
-  -DSHIELD="urchin_right nice_view_adapter nice_view_gem" \
-  -DZMK_CONFIG="$BASE_DIR/config"
+nix develop --command just build-urchin
+nix develop --command just build-dolphin34
+nix develop --command just build-settings-reset
 ```
 
-## Nix note
+## Flash
 
-This repo uses `github:lilyinstarlight/zmk-nix` with `buildSplitKeyboard` for the Urchin halves and `buildKeyboard` for `settings_reset`. `zephyrDepsHash` pins the resolved West dependency tree. If `config/west.yml` changes, run `just update` or temporarily use a fake hash and rebuild to get the expected hash.
+Read [`docs/flashing.md`](docs/flashing.md) before flashing. The helper requires an explicit keyboard and half so it cannot silently select the wrong firmware:
 
-The Nix build currently enables `CONFIG_NEWLIB_LIBC=y` and suppresses implicit function declaration diagnostics to keep `nice-view-gem v0.3.0` building with nixpkgs' newer `arm-none-eabi-gcc`. If nice-view-gem becomes too expensive to maintain, remove `nice_view_adapter nice_view_gem` from the shield strings and remove the display-specific Kconfig options while keeping `config/urchin.keymap` intact.
+```sh
+nix develop --command just flash urchin left
+nix develop --command just flash dolphin34 left
+```
+
+A keymap-only change normally requires flashing only the left/central half. Hardware, display, split, module, or ZMK changes require both halves.
+
+The helper builds the selected keyboard, verifies one removable UF2 bootloader, saves the existing firmware under a hardware-specific private backup directory, and then copies the matching image. It never chooses a keyboard target implicitly.
+
+## Updating dependencies
+
+`zephyrDepsHash` pins the resolved West dependency tree. After changing `config/west.yml`, run `nix develop --command just update` and validate `just build`. Urchin keeps the compatibility flags needed to build nice-view-gem with the current Nix ARM toolchain; Dolphin34 does not use them.

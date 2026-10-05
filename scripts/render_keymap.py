@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render config/urchin.keymap to docs/keymap.html."""
+"""Render config/shared.keymap.dtsi to docs/keymap.html."""
 
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-KEYMAP = ROOT / "config" / "urchin.keymap"
+KEYMAP = ROOT / "config" / "shared.keymap.dtsi"
 OUTPUT = ROOT / "docs" / "keymap.html"
 KEYSYMS_CATALOG = ROOT / "docs" / "zmk-keysyms.json"
 
@@ -382,7 +382,7 @@ def render_html(
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Urchin Keymap</title>
+  <title>Shared Urchin and Dolphin34 keymap</title>
   <style>
     body {{ font-family: system-ui, sans-serif; margin: 2rem; }}
     section {{ margin-bottom: 2rem; }}
@@ -411,8 +411,8 @@ def render_html(
   </style>
 </head>
 <body>
-  <h1>Urchin Keymap</h1>
-  <p>Generated from <code>config/urchin.keymap</code>.</p>
+  <h1>Shared Urchin and Dolphin34 keymap</h1>
+  <p>Generated from <code>config/shared.keymap.dtsi</code>.</p>
   <section>
     <h2>Legend</h2>
     <ul>
@@ -459,7 +459,7 @@ def watch(interval: float) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--watch", action="store_true", help="rerender whenever config/urchin.keymap changes")
+    parser.add_argument("--watch", action="store_true", help="rerender whenever config/shared.keymap.dtsi changes")
     parser.add_argument("--interval", type=float, default=0.5, help="watch polling interval in seconds")
     args = parser.parse_args()
 

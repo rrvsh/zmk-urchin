@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "docs" / "zmk-keysyms.json"
-KEYS_HEADER_GLOB = "/nix/store/*urchin-firmware-west-deps/zmk/app/include/dt-bindings/zmk/keys.h"
+KEYS_HEADER_GLOB = "/nix/store/*-firmware-west-deps/zmk/app/include/dt-bindings/zmk/keys.h"
 
 CATEGORY_ORDER = [
     "Letters",

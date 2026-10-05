@@ -8,23 +8,31 @@ default:
 shell:
     nix develop
 
-# Build all firmware artifacts into ./result.
+# Build every firmware artifact into ./result.
 build:
     nix build .#all
 
-# Build only the left/right Urchin firmware.
+# Build both split-keyboard firmware outputs.
 build-firmware:
-    nix build .#firmware
+    nix build .#urchin-firmware .#dolphin34-firmware
+
+# Build only the Urchin firmware.
+build-urchin:
+    nix build .#urchin-firmware
+
+# Build only the Dolphin34 firmware.
+build-dolphin34:
+    nix build .#dolphin34-firmware
 
 # Build only the settings reset firmware.
 build-settings-reset:
     nix build .#settings-reset
 
-# Update the rendered keymap HTML.
+# Update the rendered shared keymap HTML.
 render-keymap:
     python3 scripts/render_keymap.py
 
-# Watch the keymap and update the rendered HTML whenever it changes.
+# Watch the shared keymap and update the rendered HTML whenever it changes.
 watch-keymap:
     python3 scripts/render_keymap.py --watch
 
@@ -36,9 +44,9 @@ update-keysyms:
 update:
     nix run .#update
 
-# Build and flash one split half with the local UF2 helper.
-flash part="left":
-    scripts/flash.sh "{{part}}"
+# Build and flash an explicit keyboard half with the local UF2 helper.
+flash keyboard part="left":
+    scripts/flash.sh "{{keyboard}}" "{{part}}"
 
 # Remove local Nix build result symlinks.
 clean:

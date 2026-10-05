@@ -44,48 +44,65 @@
             src = zmkSource pkgs.lib;
             config = "config";
             zephyrDepsHash = zephyrDepsHash;
-
-            # nice-view-gem v0.3.0 builds cleanly in ZMK's official container,
-            # but nixpkgs currently supplies a much newer arm-none-eabi GCC
-            # which treats a few missing minimal-libc declarations as fatal.
-            extraCmakeFlags = [
-              "-DCMAKE_C_FLAGS=-Wno-implicit-function-declaration"
-              "-DCONFIG_NEWLIB_LIBC=y"
-            ];
-
-            meta = {
-              description = "ZMK firmware for Urchin with nice!nano v2 and nice!view/gem";
-              license = pkgs.lib.licenses.mit;
-              platforms = pkgs.lib.platforms.all;
-            };
           };
         in
         rec {
           default = all;
 
-          firmware = builders.buildSplitKeyboard (
+          urchin-firmware = builders.buildSplitKeyboard (
             common
             // {
               name = "urchin-firmware";
               board = "nice_nano_v2";
               shield = "urchin_%PART% nice_view_adapter nice_view_gem";
               enableZmkStudio = true;
+              extraCmakeFlags = [
+                "-DCMAKE_C_FLAGS=-Wno-implicit-function-declaration"
+                "-DCONFIG_NEWLIB_LIBC=y"
+              ];
+              meta = {
+                description = "ZMK firmware for Urchin with nice!nano v2 and nice!view/gem";
+                license = pkgs.lib.licenses.mit;
+                platforms = pkgs.lib.platforms.all;
+              };
+            }
+          );
+
+          dolphin34-firmware = builders.buildSplitKeyboard (
+            common
+            // {
+              name = "dolphin34-firmware";
+              board = "nice_nano_v2";
+              shield = "cradio_%PART%";
+              enableZmkStudio = true;
+              meta = {
+                description = "ZMK firmware for Dolphin34 with the Cradio shield";
+                license = pkgs.lib.licenses.mit;
+                platforms = pkgs.lib.platforms.all;
+              };
             }
           );
 
           settings-reset = builders.buildKeyboard (
             common
             // {
-              name = "urchin-settings-reset";
+              name = "settings-reset";
               board = "nice_nano_v2";
               shield = "settings_reset";
+              meta = {
+                description = "ZMK settings reset firmware";
+                license = pkgs.lib.licenses.mit;
+                platforms = pkgs.lib.platforms.all;
+              };
             }
           );
 
-          all = pkgs.runCommand "urchin-zmk-firmware" { } ''
+          all = pkgs.runCommand "zmk-urchin-and-dolphin34-firmware" { } ''
             mkdir -p $out
-            cp ${firmware}/zmk_left.uf2 $out/urchin_left-nice_view_adapter-nice_view_gem-nice_nano_v2-zmk.uf2
-            cp ${firmware}/zmk_right.uf2 $out/urchin_right-nice_view_adapter-nice_view_gem-nice_nano_v2-zmk.uf2
+            cp ${urchin-firmware}/zmk_left.uf2 $out/urchin_left-nice_view_adapter-nice_view_gem-nice_nano_v2-zmk.uf2
+            cp ${urchin-firmware}/zmk_right.uf2 $out/urchin_right-nice_view_adapter-nice_view_gem-nice_nano_v2-zmk.uf2
+            cp ${dolphin34-firmware}/zmk_left.uf2 $out/dolphin34_left-nice_nano_v2-zmk.uf2
+            cp ${dolphin34-firmware}/zmk_right.uf2 $out/dolphin34_right-nice_nano_v2-zmk.uf2
             cp ${settings-reset}/zmk.uf2 $out/settings_reset-nice_nano_v2-zmk.uf2
           '';
 
